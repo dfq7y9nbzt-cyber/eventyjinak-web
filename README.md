@@ -1,22 +1,24 @@
 # Eventy Jinak
 
-Statický web připravený pro GitHub Pages.
+Statický vícestránkový web připravený pro GitHub Pages.
 
 ## Co je hotové
 
-- Jednostránkový web v čistém `HTML`, `CSS` a `JavaScriptu`
-- Sekce `Domů`, `Zážitky`, `Rezervace`, `Kontakt`, `O nás`
+- Vícestránkový web v čistém `HTML`, `CSS` a `JavaScriptu`
+- Samostatné stránky `Domů`, `Zážitky`, `Rezervace`, `Kontakt`, `O nás`
 - Jasná stromová struktura kategorií a konkrétních služeb
 - Ceny, délka programu a kapacita u jednotlivých služeb
 - Jednoduchý klientský kalendář dostupnosti
-- `CNAME` pro doménu `www.eventyjinak.cz`
 
 ## Soubory
 
-- `index.html` - struktura webu
-- `styles.css` - vizuální styl a responzivita
-- `script.js` - data služeb, filtrování a kalendář
-- `CNAME` - vlastní doména pro GitHub Pages
+- `index.html` - domovská stránka
+- `zazitky.html` - nabídka služeb
+- `rezervace.html` - kalendář dostupnosti
+- `kontakt.html` - kontaktní stránka
+- `o-nas.html` - stránka o značce
+- `styles.css` - sdílený vizuální styl a responzivita
+- `script.js` - data služeb, render nabídky a kalendář
 
 ## Nasazení na GitHub Pages
 
@@ -24,8 +26,7 @@ Statický web připravený pro GitHub Pages.
 2. Nahrajte do něj tyto soubory.
 3. V nastavení repozitáře otevřete `Pages`.
 4. Jako zdroj zvolte větev `main` a kořenový adresář `/ (root)`.
-5. Po publikaci nastavte u domény DNS záznamy podle GitHub Pages.
-6. Soubor `CNAME` už obsahuje `www.eventyjinak.cz`.
+5. Pokud zatím nechcete řešit vlastní doménu, nechte web běžet jen na výchozí adrese GitHub Pages.
 
 ## Co doporučuji doplnit dál
 

@@ -222,21 +222,6 @@ const months = [
   "prosinec"
 ];
 
-const heroHighlights = document.querySelector("#hero-highlights");
-const categoryGrid = document.querySelector("#category-grid");
-const experienceSections = document.querySelector("#experience-sections");
-const categorySelect = document.querySelector("#category-select");
-const serviceSelect = document.querySelector("#service-select");
-const selectedServiceBox = document.querySelector("#selected-service");
-const calendarGrid = document.querySelector("#calendar-grid");
-const calendarLegend = document.querySelector("#calendar-legend");
-const calendarTitle = document.querySelector("#calendar-title");
-const upcomingDates = document.querySelector("#upcoming-dates");
-const prevMonthButton = document.querySelector("#prev-month");
-const nextMonthButton = document.querySelector("#next-month");
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector("#site-nav");
-
 let activeCategoryId = siteData[0].id;
 let activeServiceId = siteData[0].services[0].id;
 let visibleMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
@@ -281,6 +266,9 @@ function getStatusForDay(serviceId, date) {
 }
 
 function renderHeroHighlights() {
+  const heroHighlights = document.querySelector("#hero-highlights");
+  if (!heroHighlights) return;
+
   const highlightedServices = siteData.map((category) => ({
     categoryName: category.name,
     service: category.services[0]
@@ -299,14 +287,17 @@ function renderHeroHighlights() {
     .join("");
 }
 
-function renderCategories() {
-  categoryGrid.innerHTML = siteData
+function renderCategoryGrid(selector) {
+  const grid = document.querySelector(selector);
+  if (!grid) return;
+
+  grid.innerHTML = siteData
     .map(
       (category) => `
         <article class="category-card reveal">
           <h3>${category.name}</h3>
           <p>${category.shortDescription}</p>
-          <a href="#${category.id}">Zobrazit služby</a>
+          <a href="zazitky.html#${category.id}">Zobrazit služby</a>
         </article>
       `
     )
@@ -314,6 +305,9 @@ function renderCategories() {
 }
 
 function renderExperienceSections() {
+  const experienceSections = document.querySelector("#experience-sections");
+  if (!experienceSections) return;
+
   experienceSections.innerHTML = siteData
     .map(
       (category) => `
@@ -342,9 +336,9 @@ function renderExperienceSections() {
                     <ul class="service-bullets">
                       ${service.bullets.map((item) => `<li>${item}</li>`).join("")}
                     </ul>
-                    <button type="button" data-category="${category.id}" data-service="${service.id}">
+                    <a class="inline-link-button" href="rezervace.html?category=${category.id}&service=${service.id}">
                       Zobrazit v rezervacích
-                    </button>
+                    </a>
                   </article>
                 `
               )
@@ -354,43 +348,27 @@ function renderExperienceSections() {
       `
     )
     .join("");
-
-  experienceSections.querySelectorAll("button[data-service]").forEach((button) => {
-    button.addEventListener("click", () => {
-      activeCategoryId = button.dataset.category;
-      activeServiceId = button.dataset.service;
-      syncReservationSelectors();
-      renderSelectedService();
-      renderCalendar();
-      document.querySelector("#rezervace").scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
 }
 
-function renderSelectors() {
-  categorySelect.innerHTML = siteData
-    .map((category) => `<option value="${category.id}">${category.name}</option>`)
-    .join("");
+function getPreselectedValues() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+  const service = params.get("service");
 
-  categorySelect.addEventListener("change", () => {
-    activeCategoryId = categorySelect.value;
-    const currentCategory = siteData.find((item) => item.id === activeCategoryId);
-    activeServiceId = currentCategory.services[0].id;
-    renderServiceOptions();
-    renderSelectedService();
-    renderCalendar();
-  });
+  if (category && siteData.some((item) => item.id === category)) {
+    activeCategoryId = category;
+  }
 
-  serviceSelect.addEventListener("change", () => {
-    activeServiceId = serviceSelect.value;
-    renderSelectedService();
-    renderCalendar();
-  });
-
-  syncReservationSelectors();
+  const serviceResult = service ? getServiceById(service) : null;
+  if (serviceResult) {
+    activeCategoryId = serviceResult.category.id;
+    activeServiceId = service;
+  } else {
+    activeServiceId = siteData.find((item) => item.id === activeCategoryId).services[0].id;
+  }
 }
 
-function renderServiceOptions() {
+function renderServiceOptions(serviceSelect) {
   const activeCategory = siteData.find((category) => category.id === activeCategoryId) || siteData[0];
 
   serviceSelect.innerHTML = activeCategory.services
@@ -404,12 +382,7 @@ function renderServiceOptions() {
   serviceSelect.value = activeServiceId;
 }
 
-function syncReservationSelectors() {
-  categorySelect.value = activeCategoryId;
-  renderServiceOptions();
-}
-
-function renderSelectedService() {
+function renderSelectedService(selectedServiceBox) {
   const result = getServiceById(activeServiceId);
   if (!result) return;
 
@@ -428,17 +401,39 @@ function renderSelectedService() {
   `;
 }
 
-function renderLegend() {
+function renderLegend(calendarLegend) {
   calendarLegend.innerHTML = Object.entries(availabilityLabels)
-    .map(
-      ([status, label]) => `
-        <span class="status-pill" data-status="${status}">${label}</span>
-      `
-    )
+    .map(([status, label]) => `<span class="status-pill" data-status="${status}">${label}</span>`)
     .join("");
 }
 
-function renderCalendar() {
+function renderUpcomingDates(serviceId, upcomingDates) {
+  const upcoming = [];
+  const cursor = new Date();
+  let scanned = 0;
+
+  while (upcoming.length < 5 && scanned < 120) {
+    const status = getStatusForDay(serviceId, cursor);
+    if (status === "dostupne" || status === "omezeně") {
+      upcoming.push({
+        label: formatDateLabel(cursor),
+        status: availabilityLabels[status]
+      });
+    }
+    cursor.setDate(cursor.getDate() + 1);
+    scanned += 1;
+  }
+
+  upcomingDates.innerHTML = `
+    <p class="eyebrow">Nejbližší možné termíny</p>
+    <p>Ukázka termínů, které jsou právě dostupné nebo omezeně dostupné pro vybranou službu.</p>
+    <ul>
+      ${upcoming.map((item) => `<li>${item.label} | ${item.status}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function renderCalendar(calendarTitle, calendarGrid, upcomingDates) {
   const current = getServiceById(activeServiceId);
   if (!current) return;
 
@@ -485,48 +480,66 @@ function renderCalendar() {
     </div>
   `;
 
-  renderUpcomingDates(service.id);
+  renderUpcomingDates(service.id, upcomingDates);
 }
 
-function renderUpcomingDates(serviceId) {
-  const upcoming = [];
-  const cursor = new Date();
-  let scanned = 0;
+function initReservationPage() {
+  const categorySelect = document.querySelector("#category-select");
+  const serviceSelect = document.querySelector("#service-select");
+  const selectedServiceBox = document.querySelector("#selected-service");
+  const calendarGrid = document.querySelector("#calendar-grid");
+  const calendarLegend = document.querySelector("#calendar-legend");
+  const calendarTitle = document.querySelector("#calendar-title");
+  const upcomingDates = document.querySelector("#upcoming-dates");
+  const prevMonthButton = document.querySelector("#prev-month");
+  const nextMonthButton = document.querySelector("#next-month");
 
-  while (upcoming.length < 5 && scanned < 120) {
-    const status = getStatusForDay(serviceId, cursor);
-    if (status === "dostupne" || status === "omezeně") {
-      upcoming.push({
-        label: formatDateLabel(cursor),
-        status: availabilityLabels[status]
-      });
-    }
-    cursor.setDate(cursor.getDate() + 1);
-    scanned += 1;
+  if (!categorySelect || !serviceSelect || !calendarGrid || !calendarLegend || !calendarTitle || !upcomingDates) {
+    return;
   }
 
-  upcomingDates.innerHTML = `
-    <p class="eyebrow">Nejbližší možné termíny</p>
-    <p>Ukázka termínů, které jsou právě dostupné nebo omezeně dostupné pro vybranou službu.</p>
-    <ul>
-      ${upcoming.map((item) => `<li>${item.label} | ${item.status}</li>`).join("")}
-    </ul>
-  `;
-}
+  getPreselectedValues();
 
-function initCalendarNavigation() {
+  categorySelect.innerHTML = siteData
+    .map((category) => `<option value="${category.id}">${category.name}</option>`)
+    .join("");
+
+  categorySelect.value = activeCategoryId;
+  renderServiceOptions(serviceSelect);
+  renderSelectedService(selectedServiceBox);
+  renderLegend(calendarLegend);
+  renderCalendar(calendarTitle, calendarGrid, upcomingDates);
+
+  categorySelect.addEventListener("change", () => {
+    activeCategoryId = categorySelect.value;
+    activeServiceId = siteData.find((item) => item.id === activeCategoryId).services[0].id;
+    renderServiceOptions(serviceSelect);
+    renderSelectedService(selectedServiceBox);
+    renderCalendar(calendarTitle, calendarGrid, upcomingDates);
+  });
+
+  serviceSelect.addEventListener("change", () => {
+    activeServiceId = serviceSelect.value;
+    renderSelectedService(selectedServiceBox);
+    renderCalendar(calendarTitle, calendarGrid, upcomingDates);
+  });
+
   prevMonthButton.addEventListener("click", () => {
     visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1);
-    renderCalendar();
+    renderCalendar(calendarTitle, calendarGrid, upcomingDates);
   });
 
   nextMonthButton.addEventListener("click", () => {
     visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
-    renderCalendar();
+    renderCalendar(calendarTitle, calendarGrid, upcomingDates);
   });
 }
 
 function initMenu() {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const siteNav = document.querySelector("#site-nav");
+  if (!menuToggle || !siteNav) return;
+
   menuToggle.addEventListener("click", () => {
     const expanded = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!expanded));
@@ -542,6 +555,9 @@ function initMenu() {
 }
 
 function initRevealAnimation() {
+  const targets = document.querySelectorAll(".reveal");
+  if (!targets.length) return;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -554,18 +570,15 @@ function initRevealAnimation() {
     { threshold: 0.12 }
   );
 
-  document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+  targets.forEach((item) => observer.observe(item));
 }
 
 function init() {
   renderHeroHighlights();
-  renderCategories();
+  renderCategoryGrid("#home-category-grid");
+  renderCategoryGrid("#category-grid");
   renderExperienceSections();
-  renderSelectors();
-  renderSelectedService();
-  renderLegend();
-  renderCalendar();
-  initCalendarNavigation();
+  initReservationPage();
   initMenu();
   initRevealAnimation();
 }
