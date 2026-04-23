@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventy Jinak | Lezecké eventy, outdoor zážitky a kurzy</title>
+  <meta
+    name="description"
+    content="Lezecké eventy, outdoor zážitky a kurzy od lezců. Vyberte si zážitek, podívejte se na cenu a dostupnost a rezervujte si termín na Eventy Jinak."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#domu" aria-label="Eventy Jinak">
+        <span class="brand-mark">EI</span>
+        <span class="brand-copy">
+          <strong>Eventy Jinak</strong>
+          <small>Lezecké eventy a outdoor zážitky</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Hlavní navigace">
+        <a href="#domu">Domů</a>
+        <a href="#zazitky">Zážitky</a>
+        <a href="#rezervace">Rezervace</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#onas">O nás</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="domu" class="hero reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Od lezců pro firmy, skupiny i jednotlivce</p>
+          <h1>Lezecké a outdoor zážitky, ve kterých se lidé rychle zorientují a ještě rychleji si je rezervují.</h1>
+          <p class="hero-text">
+            Nabízíme programy spojené hlavně s lezením a přírodou. Od prvního lezení venku přes
+            firemní teambuilding až po přespání ve skalách. Každá služba má jasný popis, cenu,
+            kapacitu a dostupnost.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#zazitky">Prohlédnout nabídku</a>
+            <a class="button button-secondary" href="#rezervace">Zobrazit dostupnost</a>
+          </div>
+          <ul class="hero-points">
+            <li>Jasně rozdělené kategorie služeb</li>
+            <li>Ceny a rozsah programu na jednom místě</li>
+            <li>Jednoduchý kalendář dostupnosti pro zákazníka</li>
+          </ul>
+        </div>
+
+        <aside class="hero-panel reveal">
+          <p class="panel-kicker">Rychlý výběr</p>
+          <div id="hero-highlights" class="hero-highlights"></div>
+        </aside>
+      </section>
+
+      <section class="section section-intro reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Jak je web postavený</p>
+          <h2>Nejdřív kategorie, pak konkrétní služba, cena a rovnou rezervace.</h2>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-card">
+            <span>1</span>
+            <h3>Domovská stránka</h3>
+            <p>Zákazník hned vidí hlavní typy zážitků a může kliknout do konkrétní nabídky.</p>
+          </article>
+          <article class="flow-card">
+            <span>2</span>
+            <h3>Zážitky</h3>
+            <p>Každá kategorie má pod sebou konkrétní služby, cenu, délku, kapacitu a přínos.</p>
+          </article>
+          <article class="flow-card">
+            <span>3</span>
+            <h3>Rezervace</h3>
+            <p>Vybranou službu si návštěvník otevře v kalendáři a uvidí dostupné termíny.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="zazitky" class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Nabídka služeb</p>
+          <h2>Zážitky a eventy rozdělené tak, aby byl výběr přirozený a přehledný.</h2>
+          <p>
+            Každá kategorie níže obsahuje konkrétní služby. Kliknutím na službu v sekci rezervací
+            se automaticky zobrazí její dostupnost.
+          </p>
+        </div>
+        <div id="category-grid" class="category-grid"></div>
+        <div id="experience-sections" class="experience-sections"></div>
+      </section>
+
+      <section id="rezervace" class="section reservation-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Rezervace</p>
+          <h2>Vyberte konkrétní službu a zkontrolujte si dostupnost termínu.</h2>
+          <p>
+            Kalendář je připravený pro GitHub Pages jako jednoduché klientské řešení. Později jej
+            můžeme napojit na formulář, e-mail nebo externí rezervační nástroj.
+          </p>
+        </div>
+
+        <div class="reservation-layout">
+          <aside class="reservation-panel">
+            <label class="field">
+              <span>Kategorie</span>
+              <select id="category-select"></select>
+            </label>
+            <label class="field">
+              <span>Služba</span>
+              <select id="service-select"></select>
+            </label>
+            <div id="selected-service" class="selected-service"></div>
+            <div class="reservation-actions">
+              <a class="button button-primary" href="#kontakt">Poptat termín</a>
+              <a class="button button-secondary" href="mailto:ahoj@eventyjinak.cz?subject=Popt%C3%A1vka%20term%C3%ADnu">Napsat e-mail</a>
+            </div>
+          </aside>
+
+          <div class="calendar-panel">
+            <div class="calendar-header">
+              <div>
+                <p class="calendar-kicker">Dostupnost</p>
+                <h3 id="calendar-title">Kalendář služby</h3>
+              </div>
+              <div class="calendar-nav">
+                <button id="prev-month" class="calendar-button" type="button" aria-label="Předchozí měsíc">Předchozí</button>
+                <button id="next-month" class="calendar-button" type="button" aria-label="Další měsíc">Další</button>
+              </div>
+            </div>
+            <div id="calendar-legend" class="calendar-legend"></div>
+            <div id="calendar-grid" class="calendar-grid" aria-live="polite"></div>
+            <div id="upcoming-dates" class="upcoming-dates"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" class="section contact-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Zájemce má hned vědět, kam napsat a co poslat.</h2>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Rychlý kontakt</h3>
+            <p><strong>E-mail:</strong> <a href="mailto:ahoj@eventyjinak.cz">ahoj@eventyjinak.cz</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+420777123456">+420 777 123 456</a></p>
+            <p><strong>Web:</strong> <a href="https://www.eventyjinak.cz">www.eventyjinak.cz</a></p>
+          </article>
+          <article class="contact-card">
+            <h3>Co má zákazník poslat</h3>
+            <ul class="plain-list">
+              <li>Vybranou službu nebo kategorii</li>
+              <li>Počet lidí a přibližný termín</li>
+              <li>Zda jde o jednotlivce, firmu nebo oslavu</li>
+              <li>Místo konání nebo preferovanou oblast</li>
+            </ul>
+          </article>
+          <article class="contact-card">
+            <h3>Jak reagujeme</h3>
+            <p>
+              Na poptávku můžeme navázat konkrétním termínem, doporučením varianty služby a
+              doplněním detailů k průběhu akce.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="onas" class="section about-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">O nás</p>
+          <h2>Eventy Jinak stojí na lidech, kteří lezou, vedou skupiny a umí připravit zážitek bezpečně i s nadhledem.</h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-copy">
+            <p>
+              Tvoříme akce, které nejsou jen o výkonu, ale i o zážitku, důvěře a dobrém vedení
+              skupiny. Nabídka je postavená tak, aby si zákazník rychle našel správnou variantu a
+              nemusel dlouze zjišťovat, co je pro něj vhodné.
+            </p>
+            <p>
+              Web je připravený jako první verze. Můžeme do něj doplnit reálné fotografie, přesné
+              lokality, reference, obchodní podmínky i ostrý rezervační formulář.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <strong>6</strong>
+              <span>hlavních kategorií</span>
+            </div>
+            <div class="stat-card">
+              <strong>15</strong>
+              <span>konkrétních služeb</span>
+            </div>
+            <div class="stat-card">
+              <strong>1</strong>
+              <span>jasná cesta k rezervaci</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Eventy Jinak | Lezecké eventy, outdoor zážitky a kurzy od lezců</p>
+      <a href="#domu">Zpět nahoru</a>
+    </footer>
+  </div>
+</body>
+</html>
