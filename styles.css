@@ -105,20 +105,10 @@ img {
   text-decoration: none;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  background:
-    linear-gradient(135deg, rgba(147, 255, 95, 0.24), rgba(8, 9, 8, 0.96)),
-    linear-gradient(135deg, var(--moss), #111511);
-  color: #fff;
-  border: 1px solid rgba(147, 255, 95, 0.24);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
 }
 
 .brand-copy {
@@ -193,18 +183,31 @@ img {
 }
 
 body[data-page="home"] .hero h1 {
-  font-size: clamp(0.95rem, 1.35vw, 1.3rem);
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
   max-width: none;
-  line-height: 1.35;
-  letter-spacing: 0.01em;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   font-family: "Archivo", sans-serif;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 body[data-page="home"] .hero .hero-text {
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  color: var(--text);
-  max-width: 34ch;
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 58ch;
+}
+
+body[data-page="home"] .section-heading h2,
+body[data-page="home"] .home-promise h2 {
+  font-size: clamp(1.28rem, 1.8vw, 1.55rem);
+  line-height: 1.22;
+  max-width: 26ch;
+}
+
+body[data-page="home"] .entry-card h3,
+body[data-page="home"] .rock-overlay h3 {
+  font-size: 1rem;
 }
 
 .page-hero {
@@ -286,18 +289,18 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.7rem, 6vw, 5.4rem);
-  max-width: 12ch;
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  max-width: 13ch;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  max-width: 14ch;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  max-width: 16ch;
 }
 
 h3 {
   margin: 0 0 10px;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
 }
 
 .hero-text,
@@ -311,6 +314,7 @@ h3 {
 .upcoming-dates p {
   color: var(--muted);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 .hero-actions {
@@ -370,6 +374,44 @@ h3 {
   margin-top: 26px;
   padding-top: 20px;
   border-top: 1px solid rgba(147, 255, 95, 0.12);
+}
+
+.rock-gallery {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 18px;
+}
+
+.rock-card {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(147, 255, 95, 0.12);
+  box-shadow: var(--shadow);
+}
+
+.rock-card-wide {
+  min-height: 320px;
+}
+
+.rock-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.rock-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px;
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 4, 3, 0.18) 18%, rgba(3, 4, 3, 0.88) 100%);
+}
+
+.rock-overlay h3 {
+  max-width: 20ch;
 }
 
 .highlight-card {
@@ -851,6 +893,7 @@ h3 {
 }
 
 @media (max-width: 1040px) {
+  .rock-gallery,
   .reservation-layout,
   .about-layout,
   .flow-grid,
@@ -908,7 +951,8 @@ h3 {
   }
 
   body[data-page="home"] .hero h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    white-space: normal;
   }
 
   h2 {
