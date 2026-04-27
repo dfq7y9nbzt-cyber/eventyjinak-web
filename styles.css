@@ -192,6 +192,21 @@ img {
   padding: 22px 0 10px;
 }
 
+body[data-page="home"] .hero h1 {
+  font-size: clamp(0.95rem, 1.35vw, 1.3rem);
+  max-width: none;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  font-family: "Archivo", sans-serif;
+  font-weight: 800;
+}
+
+body[data-page="home"] .hero .hero-text {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--text);
+  max-width: 34ch;
+}
+
 .page-hero {
   padding: 34px 0 8px;
   display: grid;
@@ -429,6 +444,14 @@ h3 {
   backdrop-filter: blur(8px);
   border: 1px solid rgba(147, 255, 95, 0.12);
   box-shadow: var(--shadow);
+}
+
+.home-promise h2 {
+  max-width: 24ch;
+}
+
+.home-promise p:last-child {
+  max-width: 72ch;
 }
 
 .entry-card a,
@@ -882,6 +905,10 @@ h3 {
 
   h1 {
     max-width: none;
+  }
+
+  body[data-page="home"] .hero h1 {
+    font-size: 1rem;
   }
 
   h2 {
