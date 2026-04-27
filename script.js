@@ -277,11 +277,11 @@ function renderHeroHighlights() {
   heroHighlights.innerHTML = highlightedServices
     .map(
       ({ categoryName, service }) => `
-        <article class="highlight-card">
+        <a class="highlight-card" href="rezervace.html?service=${service.id}">
           <strong>${service.name}</strong>
           <p>${categoryName}</p>
           <p>${service.price}</p>
-        </article>
+        </a>
       `
     )
     .join("");
