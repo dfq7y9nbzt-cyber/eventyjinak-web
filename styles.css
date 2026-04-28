@@ -197,7 +197,8 @@ body[data-page="home"] .hero h1 {
 body[data-page="home"] .hero .hero-text {
   font-size: 1rem;
   color: var(--muted);
-  max-width: 58ch;
+  max-width: none;
+  width: 100%;
 }
 
 body[data-page="home"] .section-heading h2,
@@ -322,10 +323,19 @@ h3 {
 .hero-text-long {
   display: grid;
   gap: 14px;
+  max-width: none;
 }
 
 .hero-text-long p {
   margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+a {
+  overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -964,6 +974,11 @@ h3 {
   body[data-page="home"] .hero h1 {
     font-size: 1.5rem;
     white-space: normal;
+  }
+
+  body[data-page="home"] .hero .hero-text {
+    width: 100%;
+    max-width: 100%;
   }
 
   h2 {
