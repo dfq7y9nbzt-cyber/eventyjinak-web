@@ -106,9 +106,11 @@ img {
 }
 
 .brand-logo {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   flex: 0 0 auto;
+  display: block;
+  object-fit: contain;
 }
 
 .brand-copy {
