@@ -104,30 +104,16 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
 }
 
 .brand-logo {
-  width: 56px;
-  height: 56px;
+  width: auto;
+  height: 74px;
+  max-width: min(34vw, 230px);
   flex: 0 0 auto;
   display: block;
   object-fit: contain;
-}
-
-.brand-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.brand-copy strong {
-  font-size: 1rem;
-}
-
-.brand-copy small {
-  color: var(--muted);
 }
 
 .site-nav {
@@ -962,6 +948,11 @@ a {
 
   .site-nav.is-open {
     display: flex;
+  }
+
+  .brand-logo {
+    height: 60px;
+    max-width: min(46vw, 188px);
   }
 
   .experience-block,

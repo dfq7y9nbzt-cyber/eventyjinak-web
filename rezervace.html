@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <title>Rezervace | Eventy Jinak</title>
   <meta
     name="description"
-    content="Vyberte službu Eventy Jinak a zobrazte si orientační dostupnost termínů v kalendáři."
+    content="Vyberte sluĹľbu Eventy Jinak a zobrazte si orientaÄŤnĂ­ dostupnost termĂ­nĹŻ v kalendĂˇĹ™i."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,40 +21,36 @@
   <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Eventy Jinak">
-        <img class="brand-logo" src="assets/logo-rope.png" alt="Logo Eventy Jinak">
-        <span class="brand-copy">
-          <strong>Eventy Jinak</strong>
-          <small>Lezecké eventy a outdoor zážitky</small>
-        </span>
+        <img class="brand-logo" src="assets/logo-eventy-jinak.png" alt="Eventy Jinak">
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         Menu
       </button>
 
-      <nav id="site-nav" class="site-nav" aria-label="Hlavní navigace">
-        <a href="index.html">Domů</a>
-        <a href="zazitky.html">Zážitky</a>
+      <nav id="site-nav" class="site-nav" aria-label="HlavnĂ­ navigace">
+        <a href="index.html">DomĹŻ</a>
+        <a href="zazitky.html">ZĂˇĹľitky</a>
         <a href="rezervace.html" aria-current="page">Rezervace</a>
         <a href="kontakt.html">Kontakt</a>
-        <a href="o-nas.html">O nás</a>
+        <a href="o-nas.html">O nĂˇs</a>
       </nav>
     </header>
 
     <main>
       <section class="page-hero reveal">
         <p class="eyebrow">Rezervace</p>
-        <h1>Jednoduchá stránka, kde si zákazník zvolí službu a hned vidí dostupnost.</h1>
+        <h1>JednoduchĂˇ strĂˇnka, kde si zĂˇkaznĂ­k zvolĂ­ sluĹľbu a hned vidĂ­ dostupnost.</h1>
         <p>
-          Rezervace je oddělená od nabídky schválně. Když už je člověk rozhodnutý, nemá být rušený
-          dalším obsahem. Tady má vybrat službu, zkontrolovat termín a poslat poptávku.
+          Rezervace je oddÄ›lenĂˇ od nabĂ­dky schvĂˇlnÄ›. KdyĹľ uĹľ je ÄŤlovÄ›k rozhodnutĂ˝, nemĂˇ bĂ˝t ruĹˇenĂ˝
+          dalĹˇĂ­m obsahem. Tady mĂˇ vybrat sluĹľbu, zkontrolovat termĂ­n a poslat poptĂˇvku.
         </p>
       </section>
 
       <section class="section reservation-section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Kalendář dostupnosti</p>
-          <h2>Vyberte konkrétní službu a zkontrolujte si, jaké termíny připadají v úvahu.</h2>
+          <p class="eyebrow">KalendĂˇĹ™ dostupnosti</p>
+          <h2>Vyberte konkrĂ©tnĂ­ sluĹľbu a zkontrolujte si, jakĂ© termĂ­ny pĹ™ipadajĂ­ v Ăşvahu.</h2>
         </div>
 
         <div class="reservation-layout">
@@ -64,12 +60,12 @@
               <select id="category-select"></select>
             </label>
             <label class="field">
-              <span>Služba</span>
+              <span>SluĹľba</span>
               <select id="service-select"></select>
             </label>
             <div id="selected-service" class="selected-service"></div>
             <div class="reservation-actions">
-              <a class="button button-primary" href="kontakt.html">Poptat termín</a>
+              <a class="button button-primary" href="kontakt.html">Poptat termĂ­n</a>
               <a class="button button-secondary" href="mailto:ahoj@eventyjinak.cz?subject=Popt%C3%A1vka%20term%C3%ADnu">Napsat e-mail</a>
             </div>
           </aside>
@@ -78,11 +74,11 @@
             <div class="calendar-header">
               <div>
                 <p class="calendar-kicker">Dostupnost</p>
-                <h3 id="calendar-title">Kalendář služby</h3>
+                <h3 id="calendar-title">KalendĂˇĹ™ sluĹľby</h3>
               </div>
               <div class="calendar-nav">
-                <button id="prev-month" class="calendar-button" type="button" aria-label="Předchozí měsíc">Předchozí</button>
-                <button id="next-month" class="calendar-button" type="button" aria-label="Další měsíc">Další</button>
+                <button id="prev-month" class="calendar-button" type="button" aria-label="PĹ™edchozĂ­ mÄ›sĂ­c">PĹ™edchozĂ­</button>
+                <button id="next-month" class="calendar-button" type="button" aria-label="DalĹˇĂ­ mÄ›sĂ­c">DalĹˇĂ­</button>
               </div>
             </div>
             <div id="calendar-legend" class="calendar-legend"></div>
@@ -94,12 +90,13 @@
     </main>
 
     <footer class="site-footer">
-      <p>Eventy Jinak | Rezervační přehled dostupnosti</p>
+      <p>Eventy Jinak | RezervaÄŤnĂ­ pĹ™ehled dostupnosti</p>
       <div class="footer-links">
-        <a href="zazitky.html">Zpět na nabídku</a>
+        <a href="zazitky.html">ZpÄ›t na nabĂ­dku</a>
         <a href="kontakt.html">Kontakt</a>
       </div>
     </footer>
   </div>
 </body>
 </html>
+
