@@ -808,7 +808,7 @@ a {
   color: #ddffc5;
 }
 
-.status-pill[data-status="omezeně"] {
+.status-pill[data-status="omezen�"] {
   background: rgba(216, 167, 72, 0.18);
   color: #f5d47d;
 }

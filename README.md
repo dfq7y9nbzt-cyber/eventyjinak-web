@@ -1,37 +1,37 @@
 # Eventy Jinak
 
-Statický vícestránkový web připravený pro GitHub Pages.
+Statick� v�cestr�nkov� web p�ipraven� pro GitHub Pages.
 
-## Co je hotové
+## Co je hotov�
 
-- Vícestránkový web v čistém `HTML`, `CSS` a `JavaScriptu`
-- Samostatné stránky `Domů`, `Zážitky`, `Rezervace`, `Kontakt`, `O nás`
-- Jasná stromová struktura kategorií a konkrétních služeb
-- Ceny, délka programu a kapacita u jednotlivých služeb
-- Jednoduchý klientský kalendář dostupnosti
+- V�cestr�nkov� web v �ist�m `HTML`, `CSS` a `JavaScriptu`
+- Samostatn� str�nky `Dom�`, `Z�itky`, `Rezervace`, `Kontakt`, `O n�s`
+- Jasn� stromov� struktura kategori� a konkr�tn�ch slu�eb
+- Ceny, d�lka programu a kapacita u jednotliv�ch slu�eb
+- Jednoduch� klientsk� kalend�� dostupnosti
 
 ## Soubory
 
-- `index.html` - domovská stránka
-- `zazitky.html` - nabídka služeb
-- `rezervace.html` - kalendář dostupnosti
-- `kontakt.html` - kontaktní stránka
-- `o-nas.html` - stránka o značce
-- `styles.css` - sdílený vizuální styl a responzivita
-- `script.js` - data služeb, render nabídky a kalendář
+- `index.html` - domovsk� str�nka
+- `zazitky.html` - nab�dka slu�eb
+- `rezervace.html` - kalend�� dostupnosti
+- `kontakt.html` - kontaktn� str�nka
+- `o-nas.html` - str�nka o zna�ce
+- `styles.css` - sd�len� vizu�ln� styl a responzivita
+- `script.js` - data slu�eb, render nab�dky a kalend��
 
-## Nasazení na GitHub Pages
+## Nasazen� na GitHub Pages
 
-1. Vytvořte na GitHubu nový repozitář, například `eventyjinak-web`.
-2. Nahrajte do něj tyto soubory.
-3. V nastavení repozitáře otevřete `Pages`.
-4. Jako zdroj zvolte větev `main` a kořenový adresář `/ (root)`.
-5. Pokud zatím nechcete řešit vlastní doménu, nechte web běžet jen na výchozí adrese GitHub Pages.
+1. Vytvo�te na GitHubu nov� repozit��, nap��klad `eventyjinak-web`.
+2. Nahrajte do n�j tyto soubory.
+3. V nastaven� repozit��e otev�ete `Pages`.
+4. Jako zdroj zvolte v�tev `main` a ko�enov� adres�� `/ (root)`.
+5. Pokud zat�m nechcete �e�it vlastn� dom�nu, nechte web b�et jen na v�choz� adrese GitHub Pages.
 
-## Co doporučuji doplnit dál
+## Co doporu�uji doplnit d�l
 
-- Reálné ceny a přesné lokality
-- Vlastní fotografie z lezení a outdoor akcí
-- Ostrý kontaktní nebo rezervační formulář
-- Reference klientů
-- Napojení kalendáře na reálná data
+- Re�ln� ceny a p�esn� lokality
+- Vlastn� fotografie z lezen� a outdoor akc�
+- Ostr� kontaktn� nebo rezerva�n� formul��
+- Reference klient�
+- Napojen� kalend��e na re�ln� data

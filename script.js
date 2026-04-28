@@ -1,223 +1,223 @@
 const siteData = [
   {
     id: "skaly",
-    name: "Lezení ve skalách",
-    shortDescription: "Programy pro první kroky venku i pro zkušenější lezce.",
+    name: "Lezen� ve skal�ch",
+    shortDescription: "Programy pro prvn� kroky venku i pro zku�en�j�� lezce.",
     description:
-      "Skalní programy pro jednotlivce i menší skupiny. Důraz na bezpečnost, vedení a opravdový zážitek ve skále.",
+      "Skaln� programy pro jednotlivce i men�� skupiny. D�raz na bezpe�nost, veden� a opravdov� z�itek ve sk�le.",
     services: [
       {
         id: "prvni-lezeni-venku",
-        name: "První lezení venku",
-        price: "od 2 490 Kč / osoba",
+        name: "Prvn� lezen� venku",
+        price: "od 2 490 K� / osoba",
         duration: "3-4 hodiny",
         capacity: "1-4 osoby",
-        summary: "Seznámení se skalou, jištěním, pohybem a prvním lezením v přírodě.",
-        bullets: ["Zapůjčení základního vybavení", "Instruktor po celou dobu", "Vhodné i bez předchozí zkušenosti"]
+        summary: "Sezn�men� se skalou, ji�t�n�m, pohybem a prvn�m lezen�m v p��rod�.",
+        bullets: ["Zap�j�en� z�kladn�ho vybaven�", "Instruktor po celou dobu", "Vhodn� i bez p�edchoz� zku�enosti"]
       },
       {
         id: "pokrocili-zazitek",
-        name: "Lezecký zážitek pro pokročilé",
-        price: "od 3 900 Kč / skupina",
+        name: "Lezeck� z�itek pro pokro�il�",
+        price: "od 3 900 K� / skupina",
         duration: "5 hodin",
         capacity: "1-3 osoby",
-        summary: "Technika, práce v terénu, výběr cest a vedený den pro lezce se zkušeností.",
-        bullets: ["Vhodné pro lezce se základy", "Možnost zaměření na techniku", "Program podle výkonnosti skupiny"]
+        summary: "Technika, pr�ce v ter�nu, v�b�r cest a veden� den pro lezce se zku�enost�.",
+        bullets: ["Vhodn� pro lezce se z�klady", "Mo�nost zam��en� na techniku", "Program podle v�konnosti skupiny"]
       },
       {
         id: "lezecke-objevovani",
-        name: "Lezecké objevování",
-        price: "od 4 500 Kč / skupina",
-        duration: "celý den",
+        name: "Lezeck� objevov�n�",
+        price: "od 4 500 K� / skupina",
+        duration: "cel� den",
         capacity: "2-6 osob",
-        summary: "Celodenní objevování skalní oblasti, kombinace lezení a pohybu v přírodě.",
-        bullets: ["Více stanovišť během dne", "Důraz na atmosféru a objevování", "Vhodné pro kamarády i páry"]
+        summary: "Celodenn� objevov�n� skaln� oblasti, kombinace lezen� a pohybu v p��rod�.",
+        bullets: ["V�ce stanovi�� b�hem dne", "D�raz na atmosf�ru a objevov�n�", "Vhodn� pro kamar�dy i p�ry"]
       }
     ]
   },
   {
     id: "teambuilding-skaly",
-    name: "Teambuilding ve skalách",
-    shortDescription: "Firemní a skupinové programy s jasným rozdělením podle velikosti týmu.",
+    name: "Teambuilding ve skal�ch",
+    shortDescription: "Firemn� a skupinov� programy s jasn�m rozd�len�m podle velikosti t�mu.",
     description:
-      "Společný zážitek ve skalách, který můžeme přizpůsobit menším týmům i větším skupinám. Program je vedený s ohledem na bezpečí a flow celé akce.",
+      "Spole�n� z�itek ve skal�ch, kter� m��eme p�izp�sobit men��m t�m�m i v�t��m skupin�m. Program je veden� s ohledem na bezpe�� a flow cel� akce.",
     services: [
       {
         id: "male-skupiny",
-        name: "Malé skupiny do 7 lidí",
-        price: "od 12 900 Kč / akce",
+        name: "Mal� skupiny do 7 lid�",
+        price: "od 12 900 K� / akce",
         duration: "4 hodiny",
-        capacity: "do 7 lidí",
-        summary: "Kompaktní teambuilding s intenzivním zapojením všech účastníků.",
-        bullets: ["Vhodné pro malé firmy", "Vyšší míra individuálního vedení", "Možnost přidat společný piknik"]
+        capacity: "do 7 lid�",
+        summary: "Kompaktn� teambuilding s intenzivn�m zapojen�m v�ech ��astn�k�.",
+        bullets: ["Vhodn� pro mal� firmy", "Vy��� m�ra individu�ln�ho veden�", "Mo�nost p�idat spole�n� piknik"]
       },
       {
         id: "stredni-skupiny",
-        name: "Skupiny 8-16 lidí",
-        price: "od 21 500 Kč / akce",
+        name: "Skupiny 8-16 lid�",
+        price: "od 21 500 K� / akce",
         duration: "4-6 hodin",
-        capacity: "8-16 lidí",
-        summary: "Skalní program s rotací stanovišť a zapojením všech členů týmu.",
-        bullets: ["Vhodné pro týmové dny", "Možnost rozdělení do menších skupin", "Dobře funguje i pro smíšené úrovně zkušeností"]
+        capacity: "8-16 lid�",
+        summary: "Skaln� program s rotac� stanovi�� a zapojen�m v�ech �len� t�mu.",
+        bullets: ["Vhodn� pro t�mov� dny", "Mo�nost rozd�len� do men��ch skupin", "Dob�e funguje i pro sm�en� �rovn� zku�enost�"]
       },
       {
         id: "velke-skupiny",
-        name: "Velké skupiny",
-        price: "od 34 900 Kč / akce",
-        duration: "na míru",
-        capacity: "17+ lidí",
-        summary: "Zážitkový program ve větším formátu s koordinací více instruktorů.",
-        bullets: ["Scénář na míru", "Možnost kombinovat lezení a outdoor výzvy", "Vhodné pro větší firmy nebo eventy"]
+        name: "Velk� skupiny",
+        price: "od 34 900 K� / akce",
+        duration: "na m�ru",
+        capacity: "17+ lid�",
+        summary: "Z�itkov� program ve v�t��m form�tu s koordinac� v�ce instruktor�.",
+        bullets: ["Sc�n�� na m�ru", "Mo�nost kombinovat lezen� a outdoor v�zvy", "Vhodn� pro v�t�� firmy nebo eventy"]
       }
     ]
   },
   {
     id: "oslavy",
-    name: "Oslavy s lezením",
-    shortDescription: "Zážitkové oslavy pro děti i venkovní akce s lezením.",
+    name: "Oslavy s lezen�m",
+    shortDescription: "Z�itkov� oslavy pro d�ti i venkovn� akce s lezen�m.",
     description:
-      "Lezení jako středobod oslavy. Pro děti i pro skupiny, které chtějí netradiční program venku.",
+      "Lezen� jako st�edobod oslavy. Pro d�ti i pro skupiny, kter� cht�j� netradi�n� program venku.",
     services: [
       {
         id: "oslavy-pro-deti",
-        name: "Oslavy pro děti",
-        price: "od 6 900 Kč / akce",
+        name: "Oslavy pro d�ti",
+        price: "od 6 900 K� / akce",
         duration: "3 hodiny",
-        capacity: "až 12 dětí",
-        summary: "Hravá oslava s lezením, jednoduchými výzvami a bezpečným vedením.",
-        bullets: ["Program přiměřený věku", "Možnost tematického scénáře", "Vhodné pro začátečníky"]
+        capacity: "a� 12 d�t�",
+        summary: "Hrava� oslava s lezen�m, jednoduch�mi v�zvami a bezpe�n�m veden�m.",
+        bullets: ["Program p�im��en� v�ku", "Mo�nost tematick�ho sc�n��e", "Vhodn� pro za��te�n�ky"]
       },
       {
         id: "zazitkova-oslava-venku",
-        name: "Zážitková oslava venku",
-        price: "od 9 500 Kč / akce",
+        name: "Z�itkov� oslava venku",
+        price: "od 9 500 K� / akce",
         duration: "4 hodiny",
         capacity: "6-16 osob",
-        summary: "Venkovní oslava postavená na lezení, pohybu a společném zážitku.",
-        bullets: ["Pro partu přátel i rodinu", "Lezení doplněné o další aktivity", "Možnost fotografického balíčku"]
+        summary: "Venkovn� oslava postaven� na lezen�, pohybu a spole�n�m z�itku.",
+        bullets: ["Pro partu p��tel i rodinu", "Lezen� dopln�n� o dal�� aktivity", "Mo�nost fotografick�ho bal��ku"]
       }
     ]
   },
   {
     id: "prespani",
-    name: "Přespání ve skalách",
-    shortDescription: "Netradiční noc v přírodě rozdělená podle velikosti skupiny.",
+    name: "P�esp�n� ve skal�ch",
+    shortDescription: "Netradi�n� noc v p��rod� rozd�len� podle velikosti skupiny.",
     description:
-      "Zážitkové přespání ve skalním prostředí s přípravou, vedením a bezpečným průběhem. Program lze přizpůsobit velikosti skupiny.",
+      "Z�itkov� p�esp�n� ve skaln�m prost�ed� s p��pravou, veden�m a bezpe�n�m pr�b�hem. Program lze p�izp�sobit velikosti skupiny.",
     services: [
       {
         id: "prespani-1-3",
-        name: "Přespání ve skalách pro 1-3 lidi",
-        price: "od 8 900 Kč / noc",
-        duration: "večer + noc + ráno",
+        name: "P�esp�n� ve skal�ch pro 1-3 lidi",
+        price: "od 8 900 K� / noc",
+        duration: "ve�er + noc + r�no",
         capacity: "1-3 osoby",
-        summary: "Intimnější varianta pro dvojice, trojici přátel nebo malý tým.",
-        bullets: ["Komorní vedený zážitek", "Doporučení vhodné lokality", "Vhodné i jako dárkový zážitek"]
+        summary: "Intimn�j�� varianta pro dvojice, trojici p��tel nebo mal� t�m.",
+        bullets: ["Komorn� veden� z�itek", "Doporu�en� vhodn� lokality", "Vhodn� i jako d�rkov� z�itek"]
       },
       {
         id: "prespani-4-5",
-        name: "Přespání ve skalách pro 4-5 lidí",
-        price: "od 12 900 Kč / noc",
-        duration: "večer + noc + ráno",
+        name: "P�esp�n� ve skal�ch pro 4-5 lid�",
+        price: "od 12 900 K� / noc",
+        duration: "ve�er + noc + r�no",
         capacity: "4-5 osob",
-        summary: "Vyvážený formát pro menší skupinu, která chce společný zážitek v přírodě.",
-        bullets: ["Skvělé pro kamarády i menší tým", "Program s večerní atmosférou", "Možnost doplnit ranní aktivitu"]
+        summary: "Vyv�en� form�t pro men�� skupinu, kter� chce spole�n� z�itek v p��rod�.",
+        bullets: ["Skv�l� pro kamar�dy i men�� t�m", "Program s ve�ern� atmosf�rou", "Mo�nost doplnit rann� aktivitu"]
       },
       {
         id: "prespani-6-7",
-        name: "Přespání ve skalách pro 6-7 lidí",
-        price: "od 17 500 Kč / noc",
-        duration: "večer + noc + ráno",
+        name: "P�esp�n� ve skal�ch pro 6-7 lid�",
+        price: "od 17 500 K� / noc",
+        duration: "ve�er + noc + r�no",
         capacity: "6-7 osob",
-        summary: "Silný skupinový zážitek s větším důrazem na organizaci a scénář.",
-        bullets: ["Vhodné pro oslavu nebo teambuilding", "Důraz na logistiku a komfort", "Možnost rozšíření o denní program"]
+        summary: "Siln� skupinov� z�itek s v�t��m d�razem na organizaci a sc�n��.",
+        bullets: ["Vhodn� pro oslavu nebo teambuilding", "D�raz na logistiku a komfort", "Mo�nost roz���en� o denn� program"]
       }
     ]
   },
   {
     id: "indoor",
-    name: "Indoor stěny",
-    shortDescription: "Varianta pro město, firmy i oslavy, když chcete lezení pod střechou.",
+    name: "Indoor st�ny",
+    shortDescription: "Varianta pro m�sto, firmy i oslavy, kdy� chcete lezen� pod st�echou.",
     description:
-      "Lezecké programy na indoor stěnách. Dobré pro firmy, skupiny i první kontakt s lezením bez ohledu na počasí.",
+      "Lezeck� programy na indoor st�n�ch. Dobr� pro firmy, skupiny i prvn� kontakt s lezen�m bez ohledu na po�as�.",
     services: [
       {
         id: "indoor-teambuilding",
-        name: "Teambuilding s lezením",
-        price: "od 11 500 Kč / akce",
+        name: "Teambuilding s lezen�m",
+        price: "od 11 500 K� / akce",
         duration: "3 hodiny",
         capacity: "6-18 osob",
-        summary: "Firemní lezení na stěně s programem přizpůsobeným skupině.",
-        bullets: ["Vhodné celoročně", "Nenáročné na logistiku", "Možnost doplnit o soutěžní prvky"]
+        summary: "Firemn� lezen� na st�n� s programem p�izp�soben�m skupin�.",
+        bullets: ["Vhodn� celoro�n�", "Nen�ro�n� na logistiku", "Mo�nost doplnit o sout�n� prvky"]
       },
       {
         id: "indoor-oslava",
-        name: "Oslava s lezením",
-        price: "od 7 900 Kč / akce",
+        name: "Oslava s lezen�m",
+        price: "od 7 900 K� / akce",
         duration: "2,5 hodiny",
         capacity: "6-14 osob",
-        summary: "Dynamická indoor oslava s lezením a jednoduchým organizačním průběhem.",
-        bullets: ["Vhodné pro děti i dospělé", "Program přizpůsoben úrovni skupiny", "Praktické i za horšího počasí"]
+        summary: "Dynamick� indoor oslava s lezen�m a jednoduch�m organiza�n�m pr�b�hem.",
+        bullets: ["Vhodn� pro d�ti i dosp�l�", "Program p�izp�soben �rovni skupiny", "Praktick� i za hor��ho po�as�"]
       },
       {
         id: "seznamuji-se-s-lezenim",
-        name: "Seznamuji se s lezením",
-        price: "od 1 690 Kč / osoba",
+        name: "Seznamuji se s lezen�m",
+        price: "od 1 690 K� / osoba",
         duration: "2 hodiny",
         capacity: "1-6 osob",
-        summary: "První bezpečné setkání s lezením na stěně pod vedením instruktora.",
-        bullets: ["Ideální start pro začátečníky", "Bez nutnosti vlastní výbavy", "Vhodné i jako dárek"]
+        summary: "Prvn� bezpe�n� setk�n� s lezen�m na st�n� pod veden�m instruktora.",
+        bullets: ["Ide�ln� start pro za��te�n�ky", "Bez nutnosti vlastn� v�bavy", "Vhodn� i jako d�rek"]
       }
     ]
   },
   {
     id: "zima",
-    name: "Zimní zážitky",
-    shortDescription: "Outdoor programy pro chladnější část roku.",
+    name: "Zimn� z�itky",
+    shortDescription: "Outdoor programy pro chladn�j�� ��st roku.",
     description:
-      "Zimní varianty zážitků pro skupiny i jednotlivce. Víc příroda, víc atmosféra, pořád jasná organizace a vedení.",
+      "Zimn� varianty z�itk� pro skupiny i jednotlivce. V�c p��roda, v�c atmosf�ra, po��d jasn� organizace a veden�.",
     services: [
       {
         id: "zimni-teambuilding",
-        name: "Teambuilding v přírodě",
-        price: "od 14 500 Kč / akce",
+        name: "Teambuilding v p��rod�",
+        price: "od 14 500 K� / akce",
         duration: "4-5 hodin",
         capacity: "6-20 osob",
-        summary: "Zimní firemní program s outdoor prvky a společným zážitkem v přírodě.",
-        bullets: ["Varianta pro firmy a týmy", "Lze spojit s krátkým workshopem", "Program přizpůsoben počasí"]
+        summary: "Zimn� firemn� program s outdoor prvky a spole�n�m z�itkem v p��rod�.",
+        bullets: ["Varianta pro firmy a t�my", "Lze spojit s kr�tk�m workshopem", "Program p�izp�soben po�as�"]
       },
       {
         id: "ledolezecky-zazitek",
-        name: "Ledolezecký zážitek",
-        price: "od 4 900 Kč / osoba",
-        duration: "celý den",
+        name: "Ledolezeck� z�itek",
+        price: "od 4 900 K� / osoba",
+        duration: "cel� den",
         capacity: "1-4 osoby",
-        summary: "Vedený ledolezecký den pro klienty, kteří chtějí silný zimní zážitek.",
-        bullets: ["Specifická zimní disciplína", "Možnost zapůjčení vybavení", "Vhodné po domluvě podle podmínek"]
+        summary: "Veden� ledolezeck� den pro klienty, kte�� cht�j� siln� zimn� z�itek.",
+        bullets: ["Specifick� zimn� discipl�na", "Mo�nost zap�j�en� vybaven�", "Vhodn� po domluv� podle podm�nek"]
       }
     ]
   }
 ];
 
 const availabilityLabels = {
-  dostupne: "Dostupné",
-  "omezeně": "Omezeně",
+  dostupne: "Dostupn�",
+  "omezen�": "Omezen�",
   obsazeno: "Obsazeno",
   "na-dotaz": "Na dotaz"
 };
 
-const weekdays = ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"];
+const weekdays = ["Po", "�t", "St", "�t", "P�", "So", "Ne"];
 const months = [
   "leden",
-  "únor",
-  "březen",
+  "�nor",
+  "b�ezen",
   "duben",
-  "květen",
-  "červen",
-  "červenec",
+  "kv�ten",
+  "�erven",
+  "�ervenec",
   "srpen",
-  "září",
-  "říjen",
+  "z���",
+  "��jen",
   "listopad",
   "prosinec"
 ];
@@ -254,14 +254,14 @@ function getStatusForDay(serviceId, date) {
 
   if (normalizedDay >= 6) {
     if (bucket < 6) return "dostupne";
-    if (bucket < 8) return "omezeně";
+    if (bucket < 8) return "omezen�";
     if (bucket < 10) return "na-dotaz";
     return "obsazeno";
   }
 
   if (bucket < 2) return "dostupne";
   if (bucket < 5) return "na-dotaz";
-  if (bucket < 8) return "omezeně";
+  if (bucket < 8) return "omezen�";
   return "obsazeno";
 }
 
@@ -297,7 +297,7 @@ function renderCategoryGrid(selector) {
         <article class="category-card reveal">
           <h3>${category.name}</h3>
           <p>${category.shortDescription}</p>
-          <a href="zazitky.html#${category.id}">Zobrazit služby</a>
+          <a href="zazitky.html#${category.id}">Zobrazit slu�by</a>
         </article>
       `
     )
@@ -317,7 +317,7 @@ function renderExperienceSections() {
               <p class="eyebrow">${category.name}</p>
               <h3>${category.description}</h3>
             </div>
-            <p>${category.services.length} variant${category.services.length > 1 ? "y" : "a"} služby</p>
+            <p>${category.services.length} variant${category.services.length > 1 ? "y" : "a"} slu�by</p>
           </div>
           <div class="service-list">
             ${category.services
@@ -337,7 +337,7 @@ function renderExperienceSections() {
                       ${service.bullets.map((item) => `<li>${item}</li>`).join("")}
                     </ul>
                     <a class="inline-link-button" href="rezervace.html?category=${category.id}&service=${service.id}">
-                      Zobrazit v rezervacích
+                      Zobrazit v rezervac�ch
                     </a>
                   </article>
                 `
@@ -389,7 +389,7 @@ function renderSelectedService(selectedServiceBox) {
   const { service, category } = result;
 
   selectedServiceBox.innerHTML = `
-    <p class="eyebrow">Vybraná služba</p>
+    <p class="eyebrow">Vybran� slu�ba</p>
     <h3>${service.name}</h3>
     <div class="selected-service-tags">
       <span class="price-pill">${service.price}</span>
@@ -414,7 +414,7 @@ function renderUpcomingDates(serviceId, upcomingDates) {
 
   while (upcoming.length < 5 && scanned < 120) {
     const status = getStatusForDay(serviceId, cursor);
-    if (status === "dostupne" || status === "omezeně") {
+    if (status === "dostupne" || status === "omezen�") {
       upcoming.push({
         label: formatDateLabel(cursor),
         status: availabilityLabels[status]
@@ -425,8 +425,8 @@ function renderUpcomingDates(serviceId, upcomingDates) {
   }
 
   upcomingDates.innerHTML = `
-    <p class="eyebrow">Nejbližší možné termíny</p>
-    <p>Ukázka termínů, které jsou právě dostupné nebo omezeně dostupné pro vybranou službu.</p>
+    <p class="eyebrow">Nejbli��� mo�n� term�ny</p>
+    <p>Uk�zka term�n�, kter� jsou pr�v� dostupn� nebo omezen� dostupn� pro vybranou slu�bu.</p>
     <ul>
       ${upcoming.map((item) => `<li>${item.label} | ${item.status}</li>`).join("")}
     </ul>
