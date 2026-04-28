@@ -319,6 +319,15 @@ h3 {
   font-size: 1rem;
 }
 
+.hero-text-long {
+  display: grid;
+  gap: 14px;
+}
+
+.hero-text-long p {
+  margin: 0;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
