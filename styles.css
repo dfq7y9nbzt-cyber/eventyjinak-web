@@ -316,6 +316,10 @@ body[data-page="about"] .page-hero h1 {
   max-width: 22ch;
 }
 
+body[data-page="services"] .page-hero h1 {
+  max-width: 30ch;
+}
+
 body[data-page="home"] .content-card--accent .cta-question {
   font-size: clamp(1.08rem, 1.65vw, 1.24rem);
   font-weight: 700;

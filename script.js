@@ -143,11 +143,6 @@ function renderHomePage() {
 }
 
 function renderServicesPage() {
-  const listings = qs("#service-listings");
-  if (listings) {
-    eventyData.services.forEach((service) => listings.appendChild(createServiceCard(service)));
-  }
-
   const detailSections = qs("#service-details");
   if (detailSections) {
     eventyData.services.forEach((service) => {
@@ -200,41 +195,24 @@ function renderServicesPage() {
         createPackageCard("Premium", service.premium)
       );
 
-      const addons = createElement("section", "section-card");
-      addons.innerHTML = `
-        <div class="section-heading section-heading--compact">
-          <p class="eyebrow">Příplatkové služby</p>
-          <h3>Rozšíření programu, cateringu, dopravy i fotodokumentace.</h3>
-        </div>
-      `;
-      const addOnGrid = createElement("div", "info-grid");
-      eventyData.addOns.forEach((addon) => addOnGrid.appendChild(createAddonCard(addon)));
-      addons.appendChild(addOnGrid);
-
-      const faqSection = createElement("section", "section-card");
-      faqSection.innerHTML = `
-        <div class="section-heading section-heading--compact">
-          <p class="eyebrow">Časté dotazy</p>
-          <h3>To nejdůležitější k organizaci a průběhu akce.</h3>
-        </div>
-      `;
-      const faqList = createElement("div", "faq-list");
-      eventyData.faq.forEach((faq) => faqList.appendChild(createFaqItem(faq)));
-      faqSection.appendChild(faqList);
-
       const ctaBar = createElement("div", "detail-actions");
       ctaBar.innerHTML = `
         <a class="button button-primary" href="rezervace.html?service=${service.id}">Poptat termín</a>
         <a class="button button-secondary" href="kontakt.html">Nejdřív se poradit</a>
       `;
 
-      detailSections.append(section, textBlock, metaGrid, packages, addons, faqSection, ctaBar);
+      detailSections.append(section, textBlock, metaGrid, packages, ctaBar);
     });
   }
 
   const addOnsOverview = qs("#addons-overview");
   if (addOnsOverview) {
     eventyData.addOns.forEach((addon) => addOnsOverview.appendChild(createAddonCard(addon)));
+  }
+
+  const faqOverview = qs("#services-faq");
+  if (faqOverview) {
+    eventyData.faq.forEach((faq) => faqOverview.appendChild(createFaqItem(faq)));
   }
 }
 
