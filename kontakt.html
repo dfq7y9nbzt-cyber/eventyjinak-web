@@ -51,18 +51,58 @@
         <div class="contact-grid">
           <article class="content-card">
             <p class="eyebrow">Kontaktní e-mail</p>
-            <h2><a href="mailto:ahoj@eventyjinak.cz">ahoj@eventyjinak.cz</a></h2>
+            <h2><a href="mailto:info@eventyjinak.cz">info@eventyjinak.cz</a></h2>
             <p>Primární kontakt pro nezávazné poptávky, termíny, rozpočty a doplňkové dotazy.</p>
-          </article>
-          <article class="content-card">
-            <p class="eyebrow">Telefon</p>
-            <h2>Telefon doplníme při spuštění</h2>
-            <p>Zatím doporučujeme využít e-mail nebo formulář, kde si rovnou sepíšeme detaily akce.</p>
           </article>
           <article class="content-card">
             <p class="eyebrow">Výchozí region</p>
             <h2>Praha / Středočeský kraj</h2>
             <p>Většinu akcí připravujeme pro firmy a skupiny z Prahy s dopravou na místo i zpět.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="split-layout split-layout--wide">
+          <article class="content-card">
+            <p class="eyebrow">Nezávazný dotaz</p>
+            <h2>Napište nám jednoduše, co Vás zajímá.</h2>
+            <form id="contact-form" class="inquiry-form inquiry-form--compact" novalidate>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Jméno</span>
+                  <input type="text" name="first-name" required>
+                </label>
+                <label class="field">
+                  <span>Příjmení</span>
+                  <input type="text" name="last-name" required>
+                </label>
+                <label class="field field--full">
+                  <span>E-mail</span>
+                  <input type="email" name="email" required>
+                </label>
+              </div>
+              <label class="field field--full">
+                <span>Dotaz</span>
+                <textarea name="question" rows="6" required></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="button button-primary" type="submit">Odeslat dotaz</button>
+              </div>
+            </form>
+            <div id="contact-form-notice" class="section-space"></div>
+            <div class="section-space">
+              <p class="eyebrow">Kontaktní e-mail</p>
+              <p><a href="mailto:info@eventyjinak.cz">info@eventyjinak.cz</a></p>
+            </div>
+          </article>
+          <article class="content-card content-card--accent">
+            <p class="eyebrow">Co poslat do dotazu</p>
+            <ul class="plain-list">
+              <li>o jakou službu nebo lokalitu se zajímáte</li>
+              <li>jestli řešíte termín, kapacitu nebo rozpočet</li>
+              <li>co už víte a s čím potřebujete poradit</li>
+            </ul>
           </article>
         </div>
       </section>

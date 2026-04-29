@@ -1,7 +1,17 @@
 const eventyData = {
-  recipientEmail: "ahoj@eventyjinak.cz",
+  recipientEmail: "info@eventyjinak.cz",
   primaryContactLabel: "Kontaktní e-mail pro poptávky",
   primaryPhone: "Telefon doplníme při spuštění",
+  formDelivery: {
+    inquiry: {
+      endpoint: "",
+      recipient: "info@eventyjinak.cz"
+    },
+    contact: {
+      endpoint: "",
+      recipient: "info@eventyjinak.cz"
+    }
+  },
   baseLocation: "Praha / Středočeský kraj",
   hero: {
     title: "Outdoorové a lezecké eventy jinak",
@@ -466,13 +476,10 @@ const eventyData = {
     addOnChoices: [
       "Fotograf",
       "Video / reels",
-      "Catering",
-      "Lepší občerstvení",
-      "Ubytování",
+      "Plná penze (3x jídlo)",
       "Večerní program",
       "Anglicky mluvící instruktor",
-      "Dárkové balíčky",
-      "Jiné"
+      "Dárkové balíčky"
     ],
     consents: [
       "Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.",
@@ -482,23 +489,15 @@ const eventyData = {
     ]
   },
   mailTemplates: {
-    customerSubject: "Poptávka přijata – Eventy Jinak",
+    customerSubject: "Poptávku jsme přijali – Eventy Jinak",
     customerBody: [
-      "Dobrý den,",
+      "Vaši poptávku jsme v pořádku přijali, budeme se jí hned věnovat a ozveme se vám s dalšími informacemi nejpozději do 3 dnů.",
       "",
-      "děkujeme za vaši poptávku akce u Eventy Jinak.",
+      "Děkujeme, že jste si nás vybrali!",
       "",
-      "Obdrželi jsme informace k plánovanému termínu, počtu osob a typu akce. Nyní ověříme dostupnost instruktorů, dopravy, vhodné lokality a případných doplňkových služeb.",
-      "",
-      "Do 3 pracovních dnů se vám ozveme s potvrzením, zda jsme schopni termín kapacitně zajistit, případně navrhneme vhodnou alternativu.",
-      "",
-      "Odesláním poptávky zatím nevzniká závazná rezervace. Termín je platný až po našem potvrzení a domluvení konkrétních podmínek.",
-      "",
-      "Děkujeme a těšíme se na společnou akci.",
-      "",
-      "Eventy Jinak",
-      "provozuje IronBros s.r.o."
+      "Eventy Jinak"
     ],
-    adminSubjectPrefix: "Nová poptávka Eventy Jinak"
+    adminSubjectPrefix: "Nová poptávka Eventy Jinak",
+    contactSubjectPrefix: "Nový dotaz Eventy Jinak"
   }
 };

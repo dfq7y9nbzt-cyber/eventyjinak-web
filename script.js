@@ -239,6 +239,27 @@ function buildEmailPreview(subject, bodyLines) {
   `;
 }
 
+async function submitFormToEndpoint(form, endpoint, extraFields = {}) {
+  const formData = new FormData(form);
+  Object.entries(extraFields).forEach(([key, value]) => {
+    if (value) {
+      formData.append(key, value);
+    }
+  });
+
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Accept: "application/json"
+    },
+    body: formData
+  });
+
+  if (!response.ok) {
+    throw new Error(`Form submit failed with status ${response.status}`);
+  }
+}
+
 function renderInquiryForm() {
   const form = qs("#inquiry-form");
   if (!form) return;
@@ -249,7 +270,6 @@ function renderInquiryForm() {
   const packageSelect = qs("#package-choice", form);
   const addOnBox = qs("#addon-options", form);
   const formNotice = qs("#form-notice");
-  const emailOutput = qs("#email-output");
   const serviceFromQuery = new URLSearchParams(window.location.search).get("service");
 
   eventyData.formOptions.actionTypes.forEach((item) => actionSelect.appendChild(buildOption(item)));
@@ -295,10 +315,18 @@ function renderInquiryForm() {
 
     if (!form.reportValidity()) return;
 
-    const formData = new FormData(form);
-    const addOns = formData.getAll("addons");
-    const consents = formData.getAll("consents");
+    const endpoint = eventyData.formDelivery.inquiry.endpoint.trim();
+    if (!endpoint) {
+      formNotice.innerHTML = `
+        <div class="notice">
+          <h3>Odeslání formuláře zatím není aktivní</h3>
+          <p>Formulář je připravený pro externí formulářovou službu, ale endpoint ještě není doplněný. Prozatím prosím napište na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+        </div>
+      `;
+      return;
+    }
 
+    const formData = new FormData(form);
     const summary = {
       name: formData.get("full-name"),
       company: formData.get("company"),
@@ -313,42 +341,90 @@ function renderInquiryForm() {
       backupTwo: formData.get("backup-date-two"),
       flexibility: formData.get("time-flexibility"),
       packageChoice: formData.get("package-choice"),
-      addOns,
+      addOns: formData.getAll("addons"),
       notes: formData.get("notes")
     };
 
-    formNotice.innerHTML = `
-      <div class="notice notice--success">
-        <h3>Nezávazná poptávka je připravená</h3>
-        <p>Frontend formuláře je validovaný a připravený na pozdější napojení na e-mail nebo backend. Níže vidíte, jak budou vypadat oba e-maily po odeslání.</p>
-        <p><strong>Příjemce pro budoucí napojení:</strong> ${eventyData.recipientEmail}</p>
-      </div>
-    `;
-
     const adminSubject = `${eventyData.mailTemplates.adminSubjectPrefix} – ${summary.actionType} – ${summary.preferredDate || "termín doplníme"}`;
-    const adminLines = [
-      `Jméno: ${summary.name}`,
-      `Firma: ${summary.company || "neuvedeno"}`,
-      `E-mail: ${summary.email}`,
-      `Telefon: ${summary.phone}`,
-      `Typ akce: ${summary.actionType}`,
-      `Balíček: ${summary.packageChoice}`,
-      `Počet osob: ${summary.participants}`,
-      `Věk / složení skupiny: ${summary.groupProfile || "neuvedeno"}`,
-      `Zkušenosti skupiny: ${summary.experience}`,
-      `Preferovaný termín: ${summary.preferredDate || "neuvedeno"}`,
-      `Náhradní termín 1: ${summary.backupOne || "neuvedeno"}`,
-      `Náhradní termín 2: ${summary.backupTwo || "neuvedeno"}`,
-      `Časová flexibilita: ${summary.flexibility}`,
-      `Příplatkové služby: ${addOns.length ? addOns.join(", ") : "bez příplatků"}`,
-      `Individuální požadavky: ${summary.notes || "neuvedeno"}`,
-      `Souhlasy: ${consents.length ? consents.join(" | ") : "neuvedeno"}`,
-      `Datum odeslání: ${new Date().toLocaleString("cs-CZ")}`
-    ];
 
-    emailOutput.innerHTML =
-      buildEmailPreview(eventyData.mailTemplates.customerSubject, eventyData.mailTemplates.customerBody) +
-      buildEmailPreview(adminSubject, adminLines);
+    submitFormToEndpoint(form, endpoint, {
+      _subject: adminSubject,
+      _replyto: summary.email,
+      recipient: eventyData.formDelivery.inquiry.recipient
+    })
+      .then(() => {
+        const customerMessage = eventyData.mailTemplates.customerBody
+          .filter(Boolean)
+          .map((line) => `<p>${line}</p>`)
+          .join("");
+        formNotice.innerHTML = `
+          <div class="notice notice--success">
+            <h3>${eventyData.mailTemplates.customerSubject}</h3>
+            ${customerMessage}
+          </div>
+        `;
+        form.reset();
+      })
+      .catch(() => {
+        formNotice.innerHTML = `
+          <div class="notice">
+            <h3>Formulář se nepodařilo odeslat</h3>
+            <p>Zkuste to prosím znovu, nebo napište přímo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+          </div>
+        `;
+      });
+  });
+}
+
+function renderContactForm() {
+  const form = qs("#contact-form");
+  if (!form) return;
+
+  const formNotice = qs("#contact-form-notice");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const endpoint = eventyData.formDelivery.contact.endpoint.trim();
+    if (!endpoint) {
+      formNotice.innerHTML = `
+        <div class="notice">
+          <h3>Odeslání formuláře zatím není aktivní</h3>
+          <p>Prozatím prosím napište svůj dotaz na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const formData = new FormData(form);
+    const email = formData.get("email");
+    const fullName = `${formData.get("first-name")} ${formData.get("last-name")}`.trim();
+    const subject = `${eventyData.mailTemplates.contactSubjectPrefix} – ${fullName || "bez jména"}`;
+
+    submitFormToEndpoint(form, endpoint, {
+      _subject: subject,
+      _replyto: email,
+      recipient: eventyData.formDelivery.contact.recipient
+    })
+      .then(() => {
+        formNotice.innerHTML = `
+          <div class="notice notice--success">
+            <h3>Dotaz jsme přijali</h3>
+            <p>Ozveme se vám co nejdříve na uvedený e-mail.</p>
+          </div>
+        `;
+        form.reset();
+      })
+      .catch(() => {
+        formNotice.innerHTML = `
+          <div class="notice">
+            <h3>Dotaz se nepodařilo odeslat</h3>
+            <p>Zkuste to prosím znovu, nebo napište přímo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+          </div>
+        `;
+      });
   });
 }
 
@@ -406,4 +482,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderServicesPage();
   renderDocumentsPage();
   renderInquiryForm();
+  renderContactForm();
 });
