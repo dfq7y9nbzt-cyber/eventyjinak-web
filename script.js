@@ -30,7 +30,6 @@ function createServiceCard(service) {
   card.innerHTML = `
     <img src="${service.cardImage}" alt="${service.cardAlt}" class="service-card__image">
     <div class="service-card__body">
-      <p class="eyebrow">Hlavní služba</p>
       <h3>${service.name}</h3>
       <p class="service-card__audience">${service.audience}</p>
       <p>${service.teaser}</p>

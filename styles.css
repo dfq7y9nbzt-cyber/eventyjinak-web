@@ -449,6 +449,36 @@ img {
   gap: 24px;
 }
 
+body[data-page="services"] .section {
+  margin-top: 32px;
+}
+
+body[data-page="services"] .section-heading {
+  margin-bottom: 20px;
+}
+
+body[data-page="services"] .service-card__body {
+  gap: 10px;
+}
+
+body[data-page="services"] .service-card h3 {
+  font-size: 1.28rem;
+}
+
+body[data-page="services"] .service-card__audience,
+body[data-page="services"] .service-card__body > p:not(.price-tag),
+body[data-page="services"] .detail-copy p,
+body[data-page="services"] .info-card,
+body[data-page="services"] .package-card,
+body[data-page="services"] .faq-item summary,
+body[data-page="services"] .faq-item p {
+  font-size: 0.96rem;
+}
+
+body[data-page="services"] .service-details-stack {
+  gap: 18px;
+}
+
 .service-detail {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -471,6 +501,12 @@ img {
   display: grid;
   align-content: start;
   gap: 12px;
+}
+
+body[data-page="services"] .service-detail__content h2,
+body[data-page="services"] .section-heading h2,
+body[data-page="services"] .section-heading h3 {
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem);
 }
 
 .detail-copy,
