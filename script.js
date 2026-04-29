@@ -36,7 +36,7 @@ function createServiceCard(service) {
       <p class="price-tag">${service.priceFrom}</p>
       <div class="card-actions">
         <a class="button button-primary" href="sluzby.html#${service.id}">Detail služby</a>
-        <a class="button button-secondary" href="rezervace.html?service=${service.id}">Poptat termín</a>
+        <a class="button button-cta-green" href="rezervace.html?service=${service.id}">Poptat termín</a>
       </div>
     </div>
   `;
