@@ -294,6 +294,13 @@ function buildReturnUrl(submittedKey) {
   return url.toString();
 }
 
+function buildCurrentPageUrl() {
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.hash = "";
+  return url.toString();
+}
+
 function consumeSubmittedState(formNotice, submittedKey, title, lines) {
   if (!formNotice) return;
 
@@ -333,6 +340,7 @@ function configureHostedForm(form, endpoint, options) {
   }
 
   upsertHiddenField(form, "_next", buildReturnUrl(submittedKey));
+  upsertHiddenField(form, "_url", buildCurrentPageUrl());
   upsertHiddenField(form, "_template", "table");
 
   form.addEventListener("submit", (event) => {
