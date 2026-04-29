@@ -509,6 +509,12 @@ body[data-page="services"] .section-heading h3 {
   font-size: clamp(1.45rem, 2.4vw, 2.05rem);
 }
 
+body[data-page="services"] .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 .detail-copy,
 .detail-actions {
   margin-top: -4px;
