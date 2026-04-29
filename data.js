@@ -23,6 +23,14 @@ const eventyData = {
       {
         src: "assets/images/img-0381.jpg",
         alt: "IMG 0381"
+      },
+      {
+        src: "assets/images/tatry-inverze.jpg",
+        alt: "Tatry inverze"
+      },
+      {
+        src: "assets/images/tatry-padajici-tma.jpg",
+        alt: "Tatry a padajĂ­cĂ­ tma"
       }
     ],
     body: [
@@ -140,10 +148,10 @@ const eventyData = {
       teaser:
         "Kompletní organizace, doprava, lezení, týmové aktivity a možnost fotografa nebo cateringu.",
       priceFrom: "od 39 000 Kč / skupina bez DPH",
-      heroImage: "assets/images/sam-spara-tisa.jpg",
-      heroAlt: "Lezec ve spáře v Tisé pro firemní lezecký teambuilding",
-      cardImage: "assets/images/sam-spara-tisa.jpg",
-      cardAlt: "Autentická lezecká fotografie Sam spára Tisá pro firemní teambuilding",
+      heroImage: "assets/images/sam-leze-jura.jpg",
+      heroAlt: "Lezecká skupina pod skalou pro firemní teambuilding",
+      cardImage: "assets/images/sam-leze-jura.jpg",
+      cardAlt: "Lezecká skupina pod skalou pro firemní lezecký teambuilding",
       detailText: [
         "Vezmeme váš tým z kanceláře do přírody a připravíme den, na který se bude vzpomínat. Lezení ve skalách, týmové výzvy, bezpečný program, doprava z Prahy a kompletní organizace v jednom balíčku.",
         "Program stavíme tak, aby byl vhodný i pro úplné začátečníky. Účastníci si vyzkouší lezení, práci s důvěrou, komunikaci a společné překonávání výzev. Vy nám řeknete počet lidí a představu o akci, my připravíme vše ostatní."
