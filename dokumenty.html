@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumenty | Eventy Jinak</title>
+  <meta
+    name="description"
+    content="Místa pro budoucí PDF dokumenty Eventy Jinak: VOP, ochrana osobních údajů, bezpečnostní pravidla a souhlas s fotografiemi."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body data-page="documents">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Eventy Jinak">
+        <img class="brand-logo" src="assets/logo-eventy-jinak.png" alt="Eventy Jinak">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Hlavní navigace">
+        <a href="index.html">Domů</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="rezervace.html">Poptávka</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="o-nas.html">O nás</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero reveal">
+        <p class="eyebrow">Dokumenty</p>
+        <h1>Stránka je připravená pro pozdější doplnění PDF dokumentů a formálních odkazů.</h1>
+        <p>
+          Dokumenty teď nemusíme znovu vytvářet. Stačí je později nahrát do připravené složky a vyměnit placeholder tlačítka za finální PDF nebo samostatné stránky.
+        </p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Formální odkazy</p>
+          <h2>Místa pro VOP, osobní údaje, bezpečnostní pravidla a souhlas s fotografiemi.</h2>
+        </div>
+        <div id="documents-grid" class="documents-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">Eventy Jinak</p>
+        <p>Dokumenty a formální odkazy | IronBros s.r.o.</p>
+      </div>
+      <div class="footer-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="rezervace.html">Poptávka</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

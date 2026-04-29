@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventy Jinak | Lezecké eventy, outdoor zážitky a kurzy</title>
+  <title>Eventy Jinak | Outdoorové a lezecké eventy pro firmy a skupiny z Prahy</title>
   <meta
     name="description"
-    content="Lezecké eventy, outdoor zážitky a kurzy od lezců. Přehledná nabídka, rezervace a rychlá orientace v jednotlivých typech zážitků."
+    content="Prémiové outdoorové a lezecké eventy pro firmy a skupiny z Prahy. Kompletně zařízené od dopravy přes program až po bezpečný průběh a fotodokumentaci."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body data-page="home">
@@ -30,8 +31,8 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Hlavní navigace">
         <a href="index.html" aria-current="page">Domů</a>
-        <a href="zazitky.html">Zážitky</a>
-        <a href="rezervace.html">Rezervace</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="rezervace.html">Poptávka</a>
         <a href="kontakt.html">Kontakt</a>
         <a href="o-nas.html">O nás</a>
       </nav>
@@ -41,98 +42,85 @@
       <section class="hero hero--rocks reveal">
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__content">
-          <p class="eyebrow">Od lezců pro firmy, skupiny i jednotlivce</p>
-          <h1>Lezecké zážitky na skalách bez starostí</h1>
+          <p class="eyebrow">Od lezců pro firmy a uzavřené skupiny</p>
+          <h1>Outdoorové a lezecké eventy jinak</h1>
           <p class="hero__lead">
-            Teambuildingy, dětské oslavy, první lezení venku i víkendové programy v české přírodě.
-            Vše připravíme, zorganizujeme a zdokumentujeme za vás.
+            Prémiové zážitky pro firmy a skupiny z Prahy. Zajistíme dopravu, instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.
           </p>
           <div class="hero__actions">
-            <a class="button button-primary" href="kontakt.html">Chci zážitek na míru</a>
-            <a class="button button-secondary" href="zazitky.html">Zobrazit programy</a>
+            <a class="button button-primary" href="sluzby.html">Vybrat zážitek</a>
+            <a class="button button-secondary" href="rezervace.html">Poptat akci na míru</a>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Skály v ČR</p>
-          <h2>Lokality, které mají atmosféru a fungují pro silný zážitek i dobře vedený program.</h2>
+          <p class="eyebrow">Co nabízíme</p>
+          <h2>Kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.</h2>
         </div>
-        <div class="rock-gallery">
-          <article class="rock-card rock-card-wide">
-            <img src="assets/images/tisa.jpg" alt="Skalní stěny v oblasti Tisá">
-            <div class="rock-overlay">
-              <span class="entry-label">Tisá</span>
-              <h3>Pískovcové stěny a severočeská atmosféra</h3>
-            </div>
-          </article>
-          <article class="rock-card">
-            <img src="assets/images/prachov.jpg" alt="Výhled na Prachovské skály">
-            <div class="rock-overlay">
-              <span class="entry-label">Prachov</span>
-              <h3>Český ráj pro první dojem i větší skupiny</h3>
-            </div>
-          </article>
-          <article class="rock-card">
-            <img src="assets/images/hruboskalsko.jpg" alt="Pískovcové věže v Hruboskalsku">
-            <div class="rock-overlay">
-              <span class="entry-label">Pískovec</span>
-              <h3>Hruboskalsko a silný vizuál českých skal</h3>
-            </div>
-          </article>
+        <div class="content-card">
+          <p>
+            Pořádáme outdoorové a lezecké zážitky pro firmy, týmy a uzavřené skupiny. Nejsme klasický kurz lezení. Připravujeme kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.
+          </p>
+          <p>
+            Ať chcete jednodenní lezecký zážitek, firemní teambuilding, víkendový pobyt v přírodě nebo intenzivní adrenalinový program pro malý tým, postaráme se o vše potřebné.
+          </p>
+          <p class="small-note" data-price-note></p>
         </div>
       </section>
 
       <section class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Jak se tu návštěvník pohybuje</p>
-          <h2>Vyberte si zážitek a objednejte si termín!</h2>
+          <p class="eyebrow">Výhody služby</p>
+          <h2>Vy přijedete na hotové. My řešíme program, bezpečnost i logistiku.</h2>
         </div>
-        <div class="entry-grid">
-          <article class="entry-card">
-            <span class="entry-label">Domů</span>
-            <h3>Rychlý přehled nabídky</h3>
-            <p>Úvodní stránka slouží jako rozcestník. Návštěvník hned pochopí, co nabízíte a kam kliknout dál.</p>
-            <a href="index.html">Zůstat na úvodu</a>
-          </article>
-          <article class="entry-card">
-            <span class="entry-label">Zážitky</span>
-            <h3>Plná nabídka služeb</h3>
-            <p>Každá kategorie má svoje místo, konkrétní varianty, cenu, délku programu a kapacitu.</p>
-            <a href="zazitky.html">Otevřít nabídku</a>
-          </article>
-          <article class="entry-card">
-            <span class="entry-label">Rezervace</span>
-            <h3>Dostupnost a termíny</h3>
-            <p>Rezervační stránka je čistá a účelová. Zákazník si vybere službu a hned vidí, co je volné.</p>
-            <a href="rezervace.html">Zobrazit kalendář</a>
-          </article>
-        </div>
+        <div id="benefits-grid" class="benefits-grid"></div>
       </section>
 
       <section class="section reveal">
-        <div class="info-panel home-promise">
-          <p class="eyebrow">Proč s námi</p>
-          <h2>Máme zkušenosti s lezením, organizací a přípravou lezeckých akcí či eventů, a proto vy nic nemusíte řešit.</h2>
-          <p>
-            Vyzvedneme vás na zvoleném místě a plné zážitků vás na požadovaném místě zase vyložíme.
-            Vy si užijete nevšední zážitek, oslavu či teambuilding a nic víc řešit nemusíte.
-            Obraťte se na nás a přesvědčte se sami.
-          </p>
+        <div class="section-heading">
+          <p class="eyebrow">Hlavní služby</p>
+          <h2>Čtyři hlavní formáty akcí, které dnes dělají největší smysl pro firmy a uzavřené skupiny.</h2>
+        </div>
+        <div id="featured-services" class="services-grid"></div>
+      </section>
+
+      <section class="section reveal">
+        <div class="split-layout">
+          <article class="content-card">
+            <p class="eyebrow">Bezpečné dobrodružství</p>
+            <h2>Prémiový zážitek ano. Zbytečný chaos a improvizace ne.</h2>
+            <p>
+              Bezpečnost je pro nás základ každé akce. Program přizpůsobujeme zkušenostem účastníků, počasí, lokalitě i aktuálním podmínkám. Lezení a outdoorové aktivity probíhají pod dohledem zkušených instruktorů, s vhodným vybavením a jasnou bezpečnostní instruktáží.
+            </p>
+            <p>
+              Každá akce je připravena individuálně tak, aby byla zážitková, ale zároveň rozumně vedená a přístupná i lidem bez předchozích zkušeností.
+            </p>
+          </article>
+          <article class="content-card content-card--accent">
+            <p class="eyebrow">Další krok</p>
+            <h2>Když už víte, co hledáte, pokračujte rovnou na služby nebo do poptávky.</h2>
+            <div class="card-actions">
+              <a class="button button-primary" href="sluzby.html">Zobrazit služby</a>
+              <a class="button button-secondary" href="rezervace.html">Odeslat poptávku</a>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Eventy Jinak | Lezecké eventy, outdoor zážitky a kurzy od lezců</p>
+      <div>
+        <p class="footer-brand">Eventy Jinak</p>
+        <p>Provozovatel značky: IronBros s.r.o. | Plátce DPH</p>
+      </div>
       <div class="footer-links">
-        <a href="zazitky.html">Zážitky</a>
-        <a href="rezervace.html">Rezervace</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="rezervace.html">Poptávka</a>
+        <a href="dokumenty.html">Dokumenty</a>
       </div>
     </footer>
   </div>
 </body>
 </html>
-

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rezervace | Eventy Jinak</title>
+  <title>Poptávka termínu | Eventy Jinak</title>
   <meta
     name="description"
-    content="Vyberte službu Eventy Jinak a zobrazte si orientační dostupnost termínů v kalendáři."
+    content="Nezávazná poptávka akce Eventy Jinak. Vyplňte typ akce, termíny, počet osob a doplňkové požadavky."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +15,10 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
   <script defer src="script.js"></script>
 </head>
-<body data-page="reservation">
+<body data-page="inquiry">
   <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Eventy Jinak">
@@ -30,8 +31,8 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Hlavní navigace">
         <a href="index.html">Domů</a>
-        <a href="zazitky.html">Zážitky</a>
-        <a href="rezervace.html" aria-current="page">Rezervace</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="rezervace.html" aria-current="page">Poptávka</a>
         <a href="kontakt.html">Kontakt</a>
         <a href="o-nas.html">O nás</a>
       </nav>
@@ -39,64 +40,146 @@
 
     <main>
       <section class="page-hero reveal">
-        <p class="eyebrow">Rezervace</p>
-        <h1>Jednoduchá stránka, kde si zákazník zvolí službu a hned vidí dostupnost.</h1>
+        <p class="eyebrow">Nezávazná poptávka</p>
+        <h1>Poptat termín je první krok. Rezervace vzniká až po ověření kapacity, dopravy a vhodné lokality.</h1>
         <p>
-          Rezervace je oddělená od nabídky schválně. Když už je člověk rozhodnutý, nemá být rušený
-          dalším obsahem. Tady má vybrat službu, zkontrolovat termín a poslat poptávku.
+          Odesláním formuláře nám posíláte nezávaznou poptávku. Dostupnost termínu, instruktorů, dopravy a vhodné lokality vám potvrdíme individuálně do 3 pracovních dnů.
         </p>
       </section>
 
-      <section class="section reservation-section reveal">
+      <section class="section reveal">
+        <div class="split-layout split-layout--wide">
+          <article class="content-card">
+            <p class="eyebrow">Jak to funguje</p>
+            <h2>Vyplníte základní informace, my připravíme konkrétní návrh akce a potvrdíme možnosti termínu.</h2>
+            <ul class="plain-list">
+              <li>Vyberete typ akce nebo napíšete, že chcete poradit.</li>
+              <li>Doplníte termíny, počet lidí, zkušenosti a požadavky.</li>
+              <li>My ověříme instruktory, dopravu, lokalitu a doplňky.</li>
+              <li>Do 3 pracovních dnů se ozveme s konkrétním návrhem.</li>
+            </ul>
+          </article>
+          <article class="content-card content-card--accent">
+            <p class="eyebrow">Důležité</p>
+            <h2>Formulář je připravený na budoucí e-mailové napojení.</h2>
+            <p>
+              Zatím jde o čistý front-end s validací a návrhem e-mailů pro zákazníka i administrátora. Díky tomu půjde později snadno napojit na libovolný e-mailový backend bez závislosti na hostingu.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Kalendář dostupnosti</p>
-          <h2>Vyberte konkrétní službu a zkontrolujte si, jaké termíny připadají v úvahu.</h2>
+          <p class="eyebrow">Formulář</p>
+          <h2>Nezávazná poptávka akce na míru</h2>
         </div>
 
-        <div class="reservation-layout">
-          <aside class="reservation-panel">
+        <form id="inquiry-form" class="inquiry-form" novalidate>
+          <div class="form-grid">
             <label class="field">
-              <span>Kategorie</span>
-              <select id="category-select"></select>
+              <span>Jméno a příjmení</span>
+              <input type="text" name="full-name" required>
             </label>
             <label class="field">
-              <span>Služba</span>
-              <select id="service-select"></select>
+              <span>Firma</span>
+              <input type="text" name="company">
             </label>
-            <div id="selected-service" class="selected-service"></div>
-            <div class="reservation-actions">
-              <a class="button button-primary" href="kontakt.html">Poptat termín</a>
-              <a class="button button-secondary" href="mailto:ahoj@eventyjinak.cz?subject=Popt%C3%A1vka%20term%C3%ADnu">Napsat e-mail</a>
-            </div>
-          </aside>
-
-          <div class="calendar-panel">
-            <div class="calendar-header">
-              <div>
-                <p class="calendar-kicker">Dostupnost</p>
-                <h3 id="calendar-title">Kalendář služby</h3>
-              </div>
-              <div class="calendar-nav">
-                <button id="prev-month" class="calendar-button" type="button" aria-label="Předchozí měsíc">Předchozí</button>
-                <button id="next-month" class="calendar-button" type="button" aria-label="Další měsíc">Další</button>
-              </div>
-            </div>
-            <div id="calendar-legend" class="calendar-legend"></div>
-            <div id="calendar-grid" class="calendar-grid" aria-live="polite"></div>
-            <div id="upcoming-dates" class="upcoming-dates"></div>
+            <label class="field">
+              <span>E-mail</span>
+              <input type="email" name="email" required>
+            </label>
+            <label class="field">
+              <span>Telefon</span>
+              <input type="tel" name="phone" required>
+            </label>
+            <label class="field">
+              <span>Typ akce</span>
+              <select id="action-type" name="action-type" required>
+                <option value="">Vyberte typ akce</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Přibližný počet účastníků</span>
+              <input type="text" name="participants" placeholder="např. 12 osob" required>
+            </label>
+            <label class="field">
+              <span>Věk / složení skupiny</span>
+              <input type="text" name="group-profile" placeholder="např. firemní tým 30–45 let">
+            </label>
+            <label class="field">
+              <span>Zkušenosti s lezením</span>
+              <select id="experience-level" name="experience-level" required>
+                <option value="">Vyberte zkušenosti skupiny</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Preferovaný termín</span>
+              <input id="preferred-date" type="date" name="preferred-date" required>
+            </label>
+            <label class="field">
+              <span>Náhradní termín 1</span>
+              <input id="backup-date-one" type="date" name="backup-date-one">
+            </label>
+            <label class="field">
+              <span>Náhradní termín 2</span>
+              <input id="backup-date-two" type="date" name="backup-date-two">
+            </label>
+            <label class="field">
+              <span>Časová flexibilita</span>
+              <select id="time-flexibility" name="time-flexibility" required>
+                <option value="">Vyberte flexibilitu termínu</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Balíček</span>
+              <select id="package-choice" name="package-choice" required>
+                <option value="">Vyberte balíček</option>
+              </select>
+            </label>
           </div>
-        </div>
+
+          <div class="field field--full">
+            <span>Příplatkové služby</span>
+            <div id="addon-options" class="checkbox-grid"></div>
+          </div>
+
+          <label class="field field--full">
+            <span>Individuální požadavky</span>
+            <textarea
+              name="notes"
+              rows="7"
+              placeholder="Cíl akce, specifika skupiny, zdravotní omezení, požadavky na dopravu, firemní zadání nebo další poznámky."
+            ></textarea>
+          </label>
+
+          <div class="field field--full">
+            <span>Souhlasy</span>
+            <div id="consent-options" class="checkbox-grid checkbox-grid--single"></div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Poptat termín</button>
+            <a class="button button-secondary" href="kontakt.html">Nejdřív se poradit</a>
+          </div>
+        </form>
+
+        <div id="form-notice" class="section-space"></div>
+        <div id="email-output" class="email-preview-grid section-space"></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Eventy Jinak | Rezervační přehled dostupnosti</p>
+      <div>
+        <p class="footer-brand">Eventy Jinak</p>
+        <p>Nezávazná poptávka | Provozovatel značky: IronBros s.r.o.</p>
+      </div>
       <div class="footer-links">
-        <a href="zazitky.html">Zpět na nabídku</a>
+        <a href="sluzby.html">Služby</a>
         <a href="kontakt.html">Kontakt</a>
+        <a href="dokumenty.html">Dokumenty</a>
       </div>
     </footer>
   </div>
 </body>
 </html>
-
