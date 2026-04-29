@@ -260,6 +260,104 @@ async function submitFormToEndpoint(form, endpoint, extraFields = {}) {
   }
 }
 
+function renderNoticeMessage(title, lines, className = "") {
+  const body = lines
+    .map((line) => (line ? `<p>${line}</p>` : ""))
+    .join("");
+
+  return `
+    <div class="notice${className ? ` ${className}` : ""}">
+      <h3>${title}</h3>
+      ${body}
+    </div>
+  `;
+}
+
+function upsertHiddenField(form, name, value) {
+  let field = qs(`input[name="${name}"]`, form);
+
+  if (!field) {
+    field = document.createElement("input");
+    field.type = "hidden";
+    field.name = name;
+    form.appendChild(field);
+  }
+
+  field.value = value;
+}
+
+function buildReturnUrl(submittedKey) {
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.hash = "";
+  url.searchParams.set("submitted", submittedKey);
+  return url.toString();
+}
+
+function consumeSubmittedState(formNotice, submittedKey, title, lines) {
+  if (!formNotice) return;
+
+  const url = new URL(window.location.href);
+  if (url.searchParams.get("submitted") !== submittedKey) return;
+
+  formNotice.innerHTML = renderNoticeMessage(title, lines, "notice--success");
+  url.searchParams.delete("submitted");
+  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function configureHostedForm(form, endpoint, options) {
+  const {
+    formNotice,
+    submittedKey,
+    successTitle,
+    successLines,
+    inactiveTitle,
+    inactiveLines,
+    subjectBuilder,
+    autoresponseLines
+  } = options;
+
+  if (formNotice) {
+    consumeSubmittedState(formNotice, submittedKey, successTitle, successLines);
+  }
+
+  form.method = "POST";
+  form.action = endpoint || "";
+  form.acceptCharset = "UTF-8";
+
+  if (!endpoint) {
+    if (formNotice) {
+      formNotice.innerHTML = renderNoticeMessage(inactiveTitle, inactiveLines);
+    }
+    return;
+  }
+
+  upsertHiddenField(form, "_next", buildReturnUrl(submittedKey));
+  upsertHiddenField(form, "_template", "table");
+
+  form.addEventListener("submit", (event) => {
+    if (!form.reportValidity()) {
+      event.preventDefault();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const replyTo = (formData.get("email") || "").toString().trim();
+    const dynamicSubject = subjectBuilder(formData);
+    const autoresponse = autoresponseLines.join("\n");
+
+    upsertHiddenField(form, "_subject", dynamicSubject);
+    upsertHiddenField(form, "_replyto", replyTo);
+    upsertHiddenField(form, "_autoresponse", autoresponse);
+
+    if (formNotice) {
+      formNotice.innerHTML = renderNoticeMessage("Odesíláme formulář", [
+        "Po potvrzení se vrátíte zpět na tuto stránku."
+      ]);
+    }
+  });
+}
+
 function renderInquiryForm() {
   const form = qs("#inquiry-form");
   if (!form) return;
@@ -309,6 +407,24 @@ function renderInquiryForm() {
       field.min = new Date().toISOString().split("T")[0];
     }
   });
+
+  configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
+    formNotice,
+    submittedKey: "inquiry",
+    successTitle: eventyData.mailTemplates.customerSubject,
+    successLines: eventyData.mailTemplates.customerBody,
+    inactiveTitle: "Odeslání formuláře zatím není aktivní",
+    inactiveLines: [
+      `Prozatím prosím napište na ${eventyData.recipientEmail}.`
+    ],
+    subjectBuilder(formData) {
+      const actionType = formData.get("action-type");
+      const preferredDate = formData.get("preferred-date");
+      return `${eventyData.mailTemplates.adminSubjectPrefix} – ${actionType} – ${preferredDate || "termín doplníme"}`;
+    },
+    autoresponseLines: eventyData.mailTemplates.customerBody
+  });
+  return;
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -381,6 +497,25 @@ function renderContactForm() {
   if (!form) return;
 
   const formNotice = qs("#contact-form-notice");
+
+  configureHostedForm(form, eventyData.formDelivery.contact.endpoint.trim(), {
+    formNotice,
+    submittedKey: "contact",
+    successTitle: eventyData.mailTemplates.contactCustomerSubject,
+    successLines: eventyData.mailTemplates.contactCustomerBody,
+    inactiveTitle: "Odeslání formuláře zatím není aktivní",
+    inactiveLines: [
+      `Prozatím prosím napište svůj dotaz na ${eventyData.recipientEmail}.`
+    ],
+    subjectBuilder(formData) {
+      const firstName = (formData.get("first-name") || "").toString().trim();
+      const lastName = (formData.get("last-name") || "").toString().trim();
+      const fullName = `${firstName} ${lastName}`.trim();
+      return `${eventyData.mailTemplates.contactSubjectPrefix} – ${fullName || "bez jména"}`;
+    },
+    autoresponseLines: eventyData.mailTemplates.contactCustomerBody
+  });
+  return;
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

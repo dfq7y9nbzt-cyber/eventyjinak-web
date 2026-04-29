@@ -639,9 +639,28 @@ body[data-page="services"] .reveal {
   box-shadow: none;
 }
 
-.process-grid .info-card {
+body[data-page="inquiry"] .process-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+body[data-page="inquiry"] .process-grid .info-card {
   display: grid;
-  gap: 10px;
+  align-content: start;
+  gap: 8px;
+  padding: 16px 18px;
+  min-height: 0;
+}
+
+body[data-page="inquiry"] .process-grid .eyebrow {
+  font-size: 0.78rem;
+}
+
+body[data-page="inquiry"] .process-grid .info-card p:last-child {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .field span {

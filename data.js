@@ -4,11 +4,11 @@ const eventyData = {
   primaryPhone: "Telefon doplníme při spuštění",
   formDelivery: {
     inquiry: {
-      endpoint: "",
+      endpoint: "https://formsubmit.co/info@eventyjinak.cz",
       recipient: "info@eventyjinak.cz"
     },
     contact: {
-      endpoint: "",
+      endpoint: "https://formsubmit.co/info@eventyjinak.cz",
       recipient: "info@eventyjinak.cz"
     }
   },
@@ -494,6 +494,12 @@ const eventyData = {
       "Vaši poptávku jsme v pořádku přijali, budeme se jí hned věnovat a ozveme se vám s dalšími informacemi nejpozději do 3 dnů.",
       "",
       "Děkujeme, že jste si nás vybrali!",
+      "",
+      "Eventy Jinak"
+    ],
+    contactCustomerSubject: "Dotaz jsme přijali – Eventy Jinak",
+    contactCustomerBody: [
+      "Děkujeme za váš dotaz. Ozveme se vám co nejdříve na uvedený e-mail.",
       "",
       "Eventy Jinak"
     ],
