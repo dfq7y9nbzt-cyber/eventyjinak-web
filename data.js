@@ -43,6 +43,10 @@ const eventyData = {
     {
       title: "Akce na míru",
       text: "Každý termín a program přizpůsobíme lidem, počasí, rozpočtu a cíli celé akce."
+    },
+    {
+      title: "Náhradní plán předem",
+      text: "Počasí nás nezaskočí. Pro každou akci umíme předem připravit náhradní variantu programu, kterou s vámi odsouhlasíme ještě před termínem akce."
     }
   ],
   services: [
@@ -52,7 +56,7 @@ const eventyData = {
       audience: "Pro malé skupiny 4–6 osob",
       teaser:
         "Jednodenní lezecký zážitek s dopravou z Prahy, instruktory, vybavením a bezpečně vedeným programem.",
-      priceFrom: "od 32 000 Kč / skupina bez DPH",
+      priceFrom: "od 19 000 Kč / skupina bez DPH",
       heroImage: "assets/images/prachov.jpg",
       heroAlt: "Prachovské skály jako placeholder hlavní fotografie služby",
       cardImage: "assets/images/prachov.jpg",
@@ -83,7 +87,7 @@ const eventyData = {
         "pitný režim a drobné občerstvení"
       ],
       standard: {
-        price: "od 32 000 Kč / skupina bez DPH",
+        price: "od 19 000 Kč / skupina bez DPH",
         note: "Vhodné pro 4–6 osob.",
         items: [
           "dopravu z Prahy a zpět vlastním autem",
@@ -117,7 +121,7 @@ const eventyData = {
       audience: "Pro týmy 8–20 osob",
       teaser:
         "Kompletní organizace, doprava, lezení, týmové aktivity a možnost fotografa nebo cateringu.",
-      priceFrom: "od 59 000 Kč / skupina bez DPH",
+      priceFrom: "od 39 000 Kč / skupina bez DPH",
       heroImage: "assets/images/tisa.jpg",
       heroAlt: "Tiské stěny jako placeholder fotografie firemního teambuildingu",
       cardImage: "assets/images/tisa.jpg",
@@ -149,7 +153,7 @@ const eventyData = {
         "pitný režim a snack"
       ],
       standard: {
-        price: "od 59 000 Kč / skupina bez DPH",
+        price: "od 39 000 Kč / skupina bez DPH",
         note: "Doporučeno pro 8–12 osob. 13–16 osob od 79 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
         items: [
           "návrh programu",
@@ -185,10 +189,10 @@ const eventyData = {
       teaser:
         "Víkend nebo vícedenní pobyt v přírodě s lezením, outdoor programem, dopravou, ubytováním a kompletním servisem.",
       priceFrom: "od 8 900 Kč / osoba bez DPH",
-      heroImage: "assets/images/hruboskalsko.jpg",
-      heroAlt: "Hruboskalsko jako placeholder fotografie vícedenního pobytu",
-      cardImage: "assets/images/hruboskalsko.jpg",
-      cardAlt: "Hruboskalsko jako placeholder karty služby",
+      heroImage: "assets/images/ostrov-vez.jpg",
+      heroAlt: "Výhled na české skály a přírodu pro vícedenní outdoor pobyt",
+      cardImage: "assets/images/ostrov-vez.jpg",
+      cardAlt: "Skalní krajina a příroda pro vícedenní outdoor pobyt",
       detailText: [
         "Víkend nebo vícedenní pobyt v přírodě pro firmy a skupiny, které chtějí zažít víc než jednodenní akci. Připravíme dopravu, ubytování, program, instruktory, lezení, outdoorové aktivity, večerní část i bezpečný průběh.",
         "Pobyt může být komfortní a zážitkový, sportovní a aktivní, nebo dobrodružnější podle složení skupiny. Vše připravíme na míru tak, aby účastníci nemuseli řešit organizaci a mohli si naplno užít společný čas venku."
@@ -249,14 +253,14 @@ const eventyData = {
     {
       id: "adrenalinovy-teambuilding",
       name: "Adrenalinový teambuilding",
-      audience: "Pro malé týmy 3–7 osob",
+      audience: "Pro malé týmy 3–6 osob",
       teaser:
         "Intenzivní program s lezením, slaňováním, výškou a týmovou spoluprací.",
-      priceFrom: "od 29 000 Kč / skupina bez DPH",
-      heroImage: "assets/images/tisa.jpg",
-      heroAlt: "Skály jako placeholder fotografie adrenalinového teambuildingu",
-      cardImage: "assets/images/tisa.jpg",
-      cardAlt: "Skalní terén jako placeholder karty služby",
+      priceFrom: "od 18 000 Kč / skupina bez DPH",
+      heroImage: "assets/images/sam-jisti-na-vezicku.jpg",
+      heroAlt: "Lezec na skále při adrenalinovém teambuildingu",
+      cardImage: "assets/images/sam-jisti-na-vezicku.jpg",
+      cardAlt: "Autentická lezecká fotografie pro adrenalinový teambuilding",
       detailText: [
         "Intenzivní outdoorový program pro malé týmy, které chtějí zažít něco silnějšího než běžný teambuilding. Lezení, slaňování, výška, týmová spolupráce a bezpečně vedené dobrodružství v přírodě.",
         "Program připravujeme individuálně podle zkušeností a odvahy skupiny. Může být sportovnější, zážitkovější nebo více týmový. Po celou dobu dbáme na bezpečnost, vhodné tempo a profesionální vedení."
@@ -266,7 +270,7 @@ const eventyData = {
         "management",
         "obchodní týmy",
         "skupiny přátel",
-        "skupiny 3–7 osob"
+        "skupiny 3–6 osob"
       ],
       process: [
         "Sladíme očekávání skupiny a úroveň intenzity programu.",
@@ -285,8 +289,8 @@ const eventyData = {
         "organizaci akce"
       ],
       standard: {
-        price: "od 29 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–5 osob. Pro 6–7 osob od 39 000 Kč bez DPH.",
+        price: "od 18 000 Kč / skupina bez DPH",
+        note: "Doporučeno pro 3–5 osob. Pro 6 osob od 39 000 Kč bez DPH.",
         items: [
           "přípravu programu",
           "dopravu z Prahy podle velikosti skupiny",
@@ -300,7 +304,7 @@ const eventyData = {
       },
       premium: {
         price: "od 45 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–5 osob. Pro 6–7 osob od 59 000 Kč bez DPH.",
+        note: "Doporučeno pro 3–5 osob. Pro 6 osob od 59 000 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "fotografa",

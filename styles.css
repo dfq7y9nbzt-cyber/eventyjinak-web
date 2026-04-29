@@ -80,12 +80,18 @@ img {
   border: 1px solid rgba(45, 102, 52, 0.12);
   border-radius: 999px;
   box-shadow: var(--shadow);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(45, 102, 52, 0.08);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .brand-logo {
@@ -93,6 +99,17 @@ img {
   height: 74px;
   max-width: min(34vw, 230px);
   object-fit: contain;
+}
+
+.site-header.is-scrolled {
+  background: rgba(243, 246, 239, 0.96);
+  border-color: rgba(45, 102, 52, 0.16);
+  box-shadow: 0 14px 30px rgba(22, 33, 21, 0.14);
+}
+
+.site-header.is-scrolled .brand {
+  background: rgba(243, 246, 239, 0.96);
+  border-color: rgba(45, 102, 52, 0.1);
 }
 
 .site-nav {
@@ -326,7 +343,10 @@ img {
   gap: 20px;
 }
 
-.benefits-grid,
+.benefits-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
 .contact-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }

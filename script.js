@@ -354,6 +354,18 @@ function initMenu() {
   });
 }
 
+function initHeaderScrollState() {
+  const header = qs(".site-header");
+  if (!header) return;
+
+  const syncHeader = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 18);
+  };
+
+  syncHeader();
+  window.addEventListener("scroll", syncHeader, { passive: true });
+}
+
 function initReveal() {
   const items = qsa(".reveal");
   if (!items.length || !("IntersectionObserver" in window)) {
@@ -378,6 +390,7 @@ function initReveal() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
+  initHeaderScrollState();
   initReveal();
   renderHomePage();
   renderServicesPage();
