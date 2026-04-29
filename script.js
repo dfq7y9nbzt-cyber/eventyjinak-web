@@ -287,10 +287,8 @@ function upsertHiddenField(form, name, value) {
 }
 
 function buildReturnUrl(submittedKey) {
-  const url = new URL(window.location.href);
-  url.search = "";
-  url.hash = "";
-  url.searchParams.set("submitted", submittedKey);
+  const url = new URL("odeslano.html", window.location.href);
+  url.searchParams.set("from", submittedKey);
   return url.toString();
 }
 
@@ -301,32 +299,15 @@ function buildCurrentPageUrl() {
   return url.toString();
 }
 
-function consumeSubmittedState(formNotice, submittedKey, title, lines) {
-  if (!formNotice) return;
-
-  const url = new URL(window.location.href);
-  if (url.searchParams.get("submitted") !== submittedKey) return;
-
-  formNotice.innerHTML = renderNoticeMessage(title, lines, "notice--success");
-  url.searchParams.delete("submitted");
-  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-}
-
 function configureHostedForm(form, endpoint, options) {
   const {
     formNotice,
     submittedKey,
-    successTitle,
-    successLines,
     inactiveTitle,
     inactiveLines,
     subjectBuilder,
     autoresponseLines
   } = options;
-
-  if (formNotice) {
-    consumeSubmittedState(formNotice, submittedKey, successTitle, successLines);
-  }
 
   form.method = "POST";
   form.action = endpoint || "";
@@ -419,8 +400,6 @@ function renderInquiryForm() {
   configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
     formNotice,
     submittedKey: "inquiry",
-    successTitle: eventyData.mailTemplates.customerSubject,
-    successLines: eventyData.mailTemplates.customerBody,
     inactiveTitle: "Odeslání formuláře zatím není aktivní",
     inactiveLines: [
       `Prozatím prosím napište na ${eventyData.recipientEmail}.`
@@ -509,8 +488,6 @@ function renderContactForm() {
   configureHostedForm(form, eventyData.formDelivery.contact.endpoint.trim(), {
     formNotice,
     submittedKey: "contact",
-    successTitle: eventyData.mailTemplates.contactCustomerSubject,
-    successLines: eventyData.mailTemplates.contactCustomerBody,
     inactiveTitle: "Odeslání formuláře zatím není aktivní",
     inactiveLines: [
       `Prozatím prosím napište svůj dotaz na ${eventyData.recipientEmail}.`

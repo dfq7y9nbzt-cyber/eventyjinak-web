@@ -394,6 +394,16 @@ body[data-page="home"] .content-card--accent .cta-question {
   color: var(--accent-deep);
 }
 
+.section-card--center {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-card--center .card-actions {
+  justify-content: center;
+}
+
 .benefits-grid,
 .services-grid,
 .contact-grid,
