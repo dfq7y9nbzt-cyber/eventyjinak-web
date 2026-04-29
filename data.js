@@ -55,7 +55,7 @@ const eventyData = {
   },
   benefits: [
     {
-      title: "Doprava z Prahy",
+      title: "Doprava z Prahy a okolí",
       text: "Vyzvednutí skupiny, doprava na místo a návrat zpět podle domluveného scénáře."
     },
     {
