@@ -7,6 +7,24 @@ const eventyData = {
     title: "Outdoorové a lezecké eventy jinak",
     subtitle:
       "Prémiové zážitky pro firmy a skupiny z Prahy. Zajistíme dopravu, instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
+    slides: [
+      {
+        src: "assets/images/prilepska-skala-bez-lidi.jpg",
+        alt: "Přílepská skála bez lidí"
+      },
+      {
+        src: "assets/images/tatry-scenerie.jpg",
+        alt: "Tatry scenerie"
+      },
+      {
+        src: "assets/images/tatry-zima-a-slunicko.jpg",
+        alt: "Tatry zima a sluníčko"
+      },
+      {
+        src: "assets/images/img-0381.jpg",
+        alt: "IMG 0381"
+      }
+    ],
     body: [
       "Pořádáme outdoorové a lezecké zážitky pro firmy, týmy a uzavřené skupiny. Nejsme klasický kurz lezení. Připravujeme kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.",
       "Ať chcete jednodenní lezecký zážitek, firemní teambuilding, víkendový pobyt v přírodě nebo intenzivní adrenalinový program pro malý tým, postaráme se o vše potřebné."
@@ -122,10 +140,10 @@ const eventyData = {
       teaser:
         "Kompletní organizace, doprava, lezení, týmové aktivity a možnost fotografa nebo cateringu.",
       priceFrom: "od 39 000 Kč / skupina bez DPH",
-      heroImage: "assets/images/tisa.jpg",
-      heroAlt: "Tiské stěny jako placeholder fotografie firemního teambuildingu",
-      cardImage: "assets/images/tisa.jpg",
-      cardAlt: "Skalní oblast Tisá jako placeholder karty služby",
+      heroImage: "assets/images/sam-spara-tisa.jpg",
+      heroAlt: "Lezec ve spáře v Tisé pro firemní lezecký teambuilding",
+      cardImage: "assets/images/sam-spara-tisa.jpg",
+      cardAlt: "Autentická lezecká fotografie Sam spára Tisá pro firemní teambuilding",
       detailText: [
         "Vezmeme váš tým z kanceláře do přírody a připravíme den, na který se bude vzpomínat. Lezení ve skalách, týmové výzvy, bezpečný program, doprava z Prahy a kompletní organizace v jednom balíčku.",
         "Program stavíme tak, aby byl vhodný i pro úplné začátečníky. Účastníci si vyzkouší lezení, práci s důvěrou, komunikaci a společné překonávání výzev. Vy nám řeknete počet lidí a představu o akci, my připravíme vše ostatní."

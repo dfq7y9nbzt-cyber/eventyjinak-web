@@ -94,7 +94,40 @@ function createPackageCard(title, packageData) {
   return card;
 }
 
+function renderHomeHeroSlider() {
+  const hero = qs(".hero--rocks");
+  if (!hero || !eventyData.hero?.slides?.length) return;
+
+  const slides = eventyData.hero.slides;
+  const wrapper = createElement("div", "hero-slides");
+
+  slides.forEach((slide, index) => {
+    const item = createElement("div", `hero-slide${index === 0 ? " is-active" : ""}`);
+    item.style.backgroundImage = `url("${slide.src}")`;
+    item.setAttribute("role", "img");
+    item.setAttribute("aria-label", slide.alt);
+    wrapper.appendChild(item);
+  });
+
+  hero.prepend(wrapper);
+
+  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const slideNodes = qsa(".hero-slide", wrapper);
+  let activeIndex = 0;
+
+  window.setInterval(() => {
+    slideNodes[activeIndex].classList.remove("is-active");
+    activeIndex = (activeIndex + 1) % slideNodes.length;
+    slideNodes[activeIndex].classList.add("is-active");
+  }, 5000);
+}
+
 function renderHomePage() {
+  renderHomeHeroSlider();
+
   const benefitGrid = qs("#benefits-grid");
   if (benefitGrid) {
     eventyData.benefits.forEach((benefit) => benefitGrid.appendChild(createBenefitCard(benefit)));
