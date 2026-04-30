@@ -87,16 +87,17 @@ img {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(45, 102, 52, 0.08);
-  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  padding: 2px 4px 2px 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transition: opacity 180ms ease;
 }
 
 .brand-logo {
   width: auto;
-  height: 74px;
+  height: 78px;
   max-width: min(34vw, 230px);
   object-fit: contain;
 }
@@ -108,8 +109,8 @@ img {
 }
 
 .site-header.is-scrolled .brand {
-  background: rgba(243, 246, 239, 0.96);
-  border-color: rgba(45, 102, 52, 0.1);
+  background: transparent;
+  border-color: transparent;
 }
 
 .site-nav {
