@@ -91,14 +91,14 @@ const eventyData = {
       name: "Lezecký den bez starostí",
       audience: "Pro malé skupiny 4–6 osob",
       teaser:
-        "Jednodenní lezecký zážitek s dopravou z Prahy, instruktory, vybavením a bezpečně vedeným programem.",
+        "Jednodenní lezecký zážitek s dopravou z Prahy a okolí, instruktory, vybavením a bezpečně vedeným programem.",
       priceFrom: "od 19 000 Kč / skupina bez DPH",
       heroImage: "assets/images/prachov.jpg",
       heroAlt: "Prachovské skály jako placeholder hlavní fotografie služby",
       cardImage: "assets/images/prachov.jpg",
       cardAlt: "Prachovské skály jako placeholder karty služby",
       detailText: [
-        "Vyrazte s malým týmem nebo skupinou ven do skal bez plánování, stresu a složité organizace. Připravíme pro vás jednodenní lezecký zážitek s dopravou z Prahy, instruktory, vybavením a bezpečně vedeným programem.",
+        "Vyrazte s malým týmem nebo skupinou ven do skal bez plánování, stresu a složité organizace. Připravíme pro vás jednodenní lezecký zážitek s dopravou z Prahy a okolí, instruktory, vybavením a bezpečně vedeným programem.",
         "Ráno vás vyzvedneme, odvezeme do vhodné lezecké oblasti, připravíme program podle zkušeností skupiny a po celý den se postaráme o bezpečný a plynulý průběh. Vy si jen užijete lezení, přírodu a společný zážitek."
       ],
       idealFor: [
@@ -110,12 +110,12 @@ const eventyData = {
       ],
       process: [
         "Domluvíme cílovou lokalitu, zkušenosti skupiny a preferovaný typ dne.",
-        "Přijedeme pro vás do Prahy nebo na domluvené nástupní místo.",
+        "Přijedeme pro vás do Prahy a okolí nebo na domluvené nástupní místo.",
         "Na místě připravíme vybavení, instruktáž a program podle počasí a skupiny.",
         "Po akci vás odvezeme zpět a případně doplníme fotky nebo navazující doporučení."
       ],
       included: [
-        "dopravu z Prahy a zpět",
+        "dopravu z Prahy a okolí a zpět",
         "výběr vhodné lokality",
         "instruktory a organizaci dne",
         "základní lezecké vybavení",
@@ -126,7 +126,7 @@ const eventyData = {
         price: "od 19 000 Kč / skupina bez DPH",
         note: "Vhodné pro 4–6 osob.",
         items: [
-          "dopravu z Prahy a zpět vlastním autem",
+          "dopravu z Prahy a okolí a zpět vlastním autem",
           "2 osoby zajišťující program",
           "výběr vhodné lokality",
           "základní lezecké vybavení",
@@ -163,7 +163,7 @@ const eventyData = {
       cardImage: "assets/images/sam-leze-jura.jpg",
       cardAlt: "Lezecká skupina pod skalou pro firemní lezecký teambuilding",
       detailText: [
-        "Vezmeme váš tým z kanceláře do přírody a připravíme den, na který se bude vzpomínat. Lezení ve skalách, týmové výzvy, bezpečný program, doprava z Prahy a kompletní organizace v jednom balíčku.",
+        "Vezmeme váš tým z kanceláře do přírody a připravíme den, na který se bude vzpomínat. Lezení ve skalách, týmové výzvy, bezpečný program, doprava z Prahy a okolí a kompletní organizace v jednom balíčku.",
         "Program stavíme tak, aby byl vhodný i pro úplné začátečníky. Účastníci si vyzkouší lezení, práci s důvěrou, komunikaci a společné překonávání výzev. Vy nám řeknete počet lidí a představu o akci, my připravíme vše ostatní."
       ],
       idealFor: [
@@ -181,7 +181,7 @@ const eventyData = {
       ],
       included: [
         "návrh programu",
-        "dopravu z Prahy",
+        "dopravu z Prahy a okolí",
         "instruktory podle počtu účastníků",
         "koordinaci akce",
         "zapůjčení vybavení",
@@ -193,7 +193,7 @@ const eventyData = {
         note: "Doporučeno pro 8–12 osob. 13–16 osob od 79 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
         items: [
           "návrh programu",
-          "dopravu z Prahy minibusem podle velikosti skupiny",
+          "dopravu z Prahy a okolí minibusem podle velikosti skupiny",
           "instruktory podle počtu účastníků",
           "koordinaci akce",
           "zapůjčení vybavení",
@@ -242,12 +242,12 @@ const eventyData = {
       ],
       process: [
         "Upřesníme délku pobytu, rozpočet a požadovaný standard ubytování.",
-        "Navrhneme itinerář s lezením, večerním programem a dopravou z Prahy.",
+        "Navrhneme itinerář s lezením, večerním programem a dopravou z Prahy a okolí.",
         "Na místě koordinujeme celý pobyt, instruktory i logistiku.",
         "Po návratu můžeme dodat fotky, video nebo doporučení pro další akci."
       ],
       included: [
-        "dopravu z Prahy",
+        "dopravu z Prahy a okolí",
         "základní organizaci pobytu",
         "instruktory podle velikosti skupiny",
         "lezecký / outdoor program",
@@ -260,7 +260,7 @@ const eventyData = {
         price: "od 8 900 Kč / osoba bez DPH",
         note: "Minimální cena skupiny od 49 000 Kč bez DPH.",
         items: [
-          "dopravu z Prahy",
+          "dopravu z Prahy a okolí",
           "základní organizaci pobytu",
           "instruktory podle velikosti skupiny",
           "lezecký / outdoor program",
@@ -316,7 +316,7 @@ const eventyData = {
       ],
       included: [
         "přípravu programu",
-        "dopravu z Prahy podle velikosti skupiny",
+        "dopravu z Prahy a okolí podle velikosti skupiny",
         "2 osoby zajišťující program",
         "bezpečnostní vybavení",
         "lezení / slaňování / outdoor výzvy podle lokality",
@@ -329,7 +329,7 @@ const eventyData = {
         note: "Doporučeno pro 3–5 osob. Pro 6 osob od 39 000 Kč bez DPH.",
         items: [
           "přípravu programu",
-          "dopravu z Prahy podle velikosti skupiny",
+          "dopravu z Prahy a okolí podle velikosti skupiny",
           "2 osoby zajišťující program",
           "bezpečnostní vybavení",
           "lezení / slaňování / outdoor výzvy podle lokality",
@@ -396,7 +396,7 @@ const eventyData = {
         "Minibus a autobus řešíme individuální kalkulací."
       ],
       note:
-        "U většiny akcí zajišťujeme dopravu z Prahy a zpět. U menších skupin využíváme vlastní dopravu, u větších skupin smluvní minibus nebo autobus."
+        "U většiny akcí zajišťujeme dopravu z Prahy a okolí a zpět. U menších skupin využíváme vlastní dopravu, u větších skupin smluvní minibus nebo autobus."
     }
   ],
   faq: [
@@ -411,7 +411,7 @@ const eventyData = {
         "Podle typu akce navrhneme úpravu programu, náhradní lokalitu, přesun termínu nebo záložní variantu. Finální řešení domlouváme individuálně."
     },
     {
-      question: "Zajišťujete dopravu z Prahy?",
+      question: "Zajišťujete dopravu z Prahy a okolí?",
       answer:
         "Ano. U menších skupin často využíváme vlastní dopravu, u větších skupin zajišťujeme minibus nebo autobus."
     },
