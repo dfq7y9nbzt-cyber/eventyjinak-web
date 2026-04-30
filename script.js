@@ -323,6 +323,80 @@ function buildCurrentPageUrl() {
   return url.toString();
 }
 
+function parseParticipantCount(value) {
+  const numbers = (value || "")
+    .toString()
+    .match(/\d+/g);
+
+  if (!numbers || !numbers.length) return 0;
+  return Math.max(...numbers.map((item) => Number(item)).filter((item) => Number.isFinite(item)));
+}
+
+function getInclusiveDays(fromValue, toValue, eventType) {
+  if (!fromValue) {
+    return eventType === "Vícedenní pobyt" ? 2 : 1;
+  }
+
+  if (!toValue) {
+    return eventType === "Vícedenní pobyt" ? 2 : 1;
+  }
+
+  const from = new Date(fromValue);
+  const to = new Date(toValue);
+  if (Number.isNaN(from.getTime()) || Number.isNaN(to.getTime()) || to < from) {
+    return eventType === "Vícedenní pobyt" ? 2 : 1;
+  }
+
+  const diffDays = Math.round((to - from) / 86400000) + 1;
+  return Math.max(1, diffDays);
+}
+
+function roundUpPrice(value) {
+  return Math.ceil(value / 500) * 500;
+}
+
+function formatPrice(value) {
+  return `${Math.round(value).toLocaleString("cs-CZ")} Kč`;
+}
+
+function getCustomEventBaseSurcharge(eventType, days) {
+  const multipliers = {
+    "Lezecká pohoda v přírodě": 0,
+    "Vzdělávací / seznamovací kurz": 1500,
+    "Zábavný event pro skupinu": 2500,
+    "Adrenalinový program": 6000,
+    "Firemní teambuilding": 4000,
+    "Vícedenní pobyt": 2500,
+    "Soukromá oslava nebo uzavřená akce": 3000,
+    "Nevím, chci doporučit vhodný formát": 2000
+  };
+
+  return (multipliers[eventType] || 0) * days;
+}
+
+function getTransportCost(participants, travelKm) {
+  const transport = eventyData.customEstimator.transport;
+  const safeKm = travelKm || 180;
+
+  if (participants <= 6) {
+    return (transport.smallCarPer100Km / 100) * safeKm;
+  }
+
+  if (participants <= 8) {
+    return Math.max(safeKm * transport.upTo8PerKm, transport.minimumUpTo8);
+  }
+
+  if (participants <= 16) {
+    return Math.max(safeKm * transport.upTo16PerKm, transport.minimumUpTo16);
+  }
+
+  if (participants <= 20) {
+    return Math.max(safeKm * transport.upTo20PerKm, transport.minimumUpTo20);
+  }
+
+  return Math.max(safeKm * transport.over20PerKm, transport.minimumOver20);
+}
+
 function configureHostedForm(form, endpoint, options) {
   const {
     formNotice,
@@ -517,6 +591,9 @@ function renderCustomExperienceForm() {
   const consentBox = qs("#custom-consent-options", form);
   const formNotice = qs("#custom-form-notice");
   const localityMeta = qs("#custom-locality-meta");
+  const estimatePrice = qs("#custom-estimate-price");
+  const estimateSummary = qs("#custom-estimate-summary");
+  const estimateBreakdown = qs("#custom-estimate-breakdown");
 
   eventyData.customFormOptions.eventTypes.forEach((item) => {
     eventTypeSelect.appendChild(buildOption(item));
@@ -588,10 +665,126 @@ function renderCustomExperienceForm() {
     localityMeta.textContent = `${selected.label} | ${selected.region} | okres ${selected.district} | ${rockTypeLabel} | ${selected.access}`;
   };
 
+  const updateEstimate = () => {
+    const formData = new FormData(form);
+    const participants = parseParticipantCount(formData.get("participants"));
+    const eventType = (formData.get("event-type") || "").toString();
+    const days = getInclusiveDays(formData.get("date-from"), formData.get("date-to"), eventType);
+    const locality = eventyData.customFormOptions.localities.find((item) => item.value === localitySelect.value);
+
+    if (!participants || !eventType) {
+      estimatePrice.textContent = "Začněte vybírat parametry akce";
+      estimateSummary.textContent = "Jakmile doplníte počet osob, termín, lokalitu a služby, zobrazíme orientační cenu od bez DPH.";
+      estimateBreakdown.innerHTML = "";
+      return;
+    }
+
+    const estimator = eventyData.customEstimator;
+    const instructorCount = Math.max(estimator.minInstructors, Math.ceil(participants / estimator.participantsPerInstructor));
+    const selectedServices = new Set(formData.getAll("requested-services"));
+    const nights = Math.max(0, days - 1 || (selectedServices.has("Ubytování") ? 1 : 0));
+
+    const breakdown = [];
+    let totalCost = 0;
+
+    const instructorCost = instructorCount * estimator.instructorCostPerDay * days;
+    totalCost += instructorCost;
+    breakdown.push(`Instruktoři a vedení programu (${instructorCount} × ${days} den/ny): ${formatPrice(instructorCost)}`);
+
+    const organizationCost = participants * estimator.organizationCostPerPersonPerDay * days;
+    totalCost += organizationCost;
+    breakdown.push(`Organizace a administrativa (${participants} osob × ${days} den/ny): ${formatPrice(organizationCost)}`);
+
+    const equipmentCost = participants * estimator.equipmentCostPerPerson;
+    totalCost += equipmentCost;
+    breakdown.push(`Základní vybavení (${participants} osob): ${formatPrice(equipmentCost)}`);
+
+    const eventSurcharge = getCustomEventBaseSurcharge(eventType, days);
+    if (eventSurcharge) {
+      totalCost += eventSurcharge;
+      breakdown.push(`Typ akce a programová náročnost: ${formatPrice(eventSurcharge)}`);
+    }
+
+    if (selectedServices.has("Dopravu z Prahy a okolí")) {
+      const transportCost = getTransportCost(participants, locality?.travelKm);
+      totalCost += transportCost;
+      breakdown.push(`Doprava ${locality ? `do oblasti ${locality.label}` : "na lokalitu"}: ${formatPrice(transportCost)}`);
+    }
+
+    if (selectedServices.has("Ubytování")) {
+      const lodgingCost = participants * Math.max(1, nights) * estimator.lodgingCostPerPersonPerNight;
+      totalCost += lodgingCost;
+      breakdown.push(`Ubytování (${participants} osob × ${Math.max(1, nights)} noc/i): ${formatPrice(lodgingCost)}`);
+    }
+
+    if (selectedServices.has("Snack a pitný režim")) {
+      const snackCost = participants * days * estimator.snackCostPerPersonPerDay;
+      totalCost += snackCost;
+      breakdown.push(`Snack a pitný režim: ${formatPrice(snackCost)}`);
+    }
+
+    if (selectedServices.has("Catering / plnou penzi")) {
+      const cateringCost = participants * days * estimator.standardCateringCostPerPersonPerDay;
+      totalCost += cateringCost;
+      breakdown.push(`Catering / plná penze: ${formatPrice(cateringCost)}`);
+    }
+
+    if (selectedServices.has("Fotografa")) {
+      totalCost += estimator.photographerCostFlat;
+      breakdown.push(`Fotograf: ${formatPrice(estimator.photographerCostFlat)}`);
+    }
+
+    if (selectedServices.has("Video / reels")) {
+      totalCost += estimator.videoCostFlat;
+      breakdown.push(`Video / reels: ${formatPrice(estimator.videoCostFlat)}`);
+    }
+
+    if (selectedServices.has("Večerní program")) {
+      totalCost += estimator.eveningProgramCostFlat;
+      breakdown.push(`Večerní program: ${formatPrice(estimator.eveningProgramCostFlat)}`);
+    }
+
+    if (selectedServices.has("Anglicky mluvícího instruktora")) {
+      const englishInstructorCost = instructorCost * 0.2;
+      totalCost += englishInstructorCost;
+      breakdown.push(`Anglicky mluvící instruktor: ${formatPrice(englishInstructorCost)}`);
+    }
+
+    if (selectedServices.has("Záložní indoor variantu")) {
+      breakdown.push("Záložní indoor varianta: v ceně");
+    }
+
+    if (selectedServices.has("Teambuildingové aktivity navíc")) {
+      totalCost += estimator.extraTeamActivitiesFlat;
+      breakdown.push(`Rozšířené týmové aktivity: ${formatPrice(estimator.extraTeamActivitiesFlat)}`);
+    }
+
+    if (selectedServices.has("Dárkový balíček pro účastníky")) {
+      const giftCost = participants * estimator.giftPackageCostPerPerson;
+      totalCost += giftCost;
+      breakdown.push(`Dárkový balíček pro účastníky: ${formatPrice(giftCost)}`);
+    }
+
+    const priceWithoutVat = roundUpPrice(totalCost * estimator.marginMultiplier);
+    const perPerson = roundUpPrice(priceWithoutVat / participants);
+
+    estimatePrice.textContent = `Orientační cena od ${formatPrice(priceWithoutVat)} bez DPH`;
+    estimateSummary.textContent = `Pro ${participants} osob, ${days} den/ny${locality ? `, lokalita ${locality.label}` : ""}. Orientačně cca ${formatPrice(perPerson)} / osoba bez DPH.`;
+    estimateBreakdown.innerHTML = "";
+    breakdown.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      estimateBreakdown.appendChild(li);
+    });
+  };
+
   renderLocalities();
   rockTypeSelect.addEventListener("change", renderLocalities);
+  rockTypeSelect.addEventListener("change", updateEstimate);
   districtSelect.addEventListener("change", renderLocalities);
+  districtSelect.addEventListener("change", updateEstimate);
   localitySelect.addEventListener("change", syncLocalityMeta);
+  localitySelect.addEventListener("change", updateEstimate);
 
   ["custom-date-from", "custom-date-to"].forEach((id) => {
     const field = qs(`#${id}`, form);
@@ -599,6 +792,13 @@ function renderCustomExperienceForm() {
       field.min = new Date().toISOString().split("T")[0];
     }
   });
+
+  qsa("input, select, textarea", form).forEach((field) => {
+    field.addEventListener("input", updateEstimate);
+    field.addEventListener("change", updateEstimate);
+  });
+
+  updateEstimate();
 
   configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
     formNotice,

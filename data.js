@@ -561,8 +561,10 @@ const eventyData = {
       "Fotografa",
       "Video / reels",
       "Večerní program",
+      "Anglicky mluvícího instruktora",
       "Záložní indoor variantu",
-      "Teambuildingové aktivity navíc"
+      "Teambuildingové aktivity navíc",
+      "Dárkový balíček pro účastníky"
     ],
     localities: [
       {
@@ -571,7 +573,8 @@ const eventyData = {
         district: "Jičín",
         region: "Královéhradecký kraj",
         rockType: "piskovec",
-        access: "středně náročný přístup"
+        access: "středně náročný přístup",
+        travelKm: 190
       },
       {
         value: "hruboskalsko",
@@ -579,7 +582,17 @@ const eventyData = {
         district: "Semily",
         region: "Liberecký kraj",
         rockType: "piskovec",
-        access: "středně náročný přístup"
+        access: "středně náročný přístup",
+        travelKm: 210
+      },
+      {
+        value: "drabske-svetnicky",
+        label: "Drábské světničky",
+        district: "Mladá Boleslav",
+        region: "Středočeský kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup",
+        travelKm: 150
       },
       {
         value: "tiske-steny-ostrov",
@@ -587,7 +600,17 @@ const eventyData = {
         district: "Děčín",
         region: "Ústecký kraj",
         rockType: "piskovec",
-        access: "středně náročný přístup"
+        access: "středně náročný přístup",
+        travelKm: 260
+      },
+      {
+        value: "ostrov-labske-piskovce",
+        label: "Ostrov",
+        district: "Děčín",
+        region: "Ústecký kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup",
+        travelKm: 260
       },
       {
         value: "adrspach-teplice",
@@ -595,7 +618,8 @@ const eventyData = {
         district: "Náchod",
         region: "Královéhradecký kraj",
         rockType: "piskovec",
-        access: "dobrodružnější nástup"
+        access: "dobrodružnější nástup",
+        travelKm: 330
       },
       {
         value: "divoka-sarka",
@@ -603,7 +627,8 @@ const eventyData = {
         district: "Praha",
         region: "Praha",
         rockType: "buliznik",
-        access: "snadný přístup"
+        access: "snadný přístup",
+        travelKm: 40
       },
       {
         value: "srbsko-alkazar",
@@ -611,7 +636,8 @@ const eventyData = {
         district: "Beroun",
         region: "Středočeský kraj",
         rockType: "vapenec",
-        access: "snadný přístup"
+        access: "snadný přístup",
+        travelKm: 90
       },
       {
         value: "pisecke-skaly",
@@ -619,9 +645,66 @@ const eventyData = {
         district: "Písek",
         region: "Jihočeský kraj",
         rockType: "zula",
-        access: "středně náročný přístup"
+        access: "středně náročný přístup",
+        travelKm: 240
+      },
+      {
+        value: "moravsky-kras",
+        label: "Moravský kras",
+        district: "Blansko",
+        region: "Jihomoravský kraj",
+        rockType: "vapenec",
+        access: "středně náročný přístup",
+        travelKm: 460
+      },
+      {
+        value: "roviste",
+        label: "Roviště",
+        district: "Příbram",
+        region: "Středočeský kraj",
+        rockType: "zula",
+        access: "středně náročný přístup",
+        travelKm: 150
+      },
+      {
+        value: "kozelka",
+        label: "Kozelka",
+        district: "Plzeň-sever",
+        region: "Plzeňský kraj",
+        rockType: "zula",
+        access: "dobrodružnější nástup",
+        travelKm: 210
       }
     ]
+  },
+  customEstimator: {
+    instructorCostPerDay: 5000,
+    minInstructors: 2,
+    participantsPerInstructor: 6,
+    equipmentCostPerPerson: 500,
+    organizationCostPerPersonPerDay: 500,
+    snackCostPerPersonPerDay: 150,
+    standardCateringCostPerPersonPerDay: 420,
+    premiumCateringCostPerPersonPerDay: 700,
+    lodgingCostPerPersonPerNight: 750,
+    indoorBackupCostFlat: 0,
+    photographerCostFlat: 5300,
+    videoCostFlat: 5300,
+    eveningProgramCostFlat: 6000,
+    giftPackageCostPerPerson: 200,
+    extraTeamActivitiesFlat: 4000,
+    marginMultiplier: 1.3,
+    transport: {
+      smallCarPer100Km: 1000,
+      upTo8PerKm: 14,
+      upTo16PerKm: 18,
+      upTo20PerKm: 25,
+      over20PerKm: 43,
+      minimumUpTo8: 2500,
+      minimumUpTo16: 4000,
+      minimumUpTo20: 6800,
+      minimumOver20: 8000
+    }
   },
   mailTemplates: {
     customerSubject: "Poptávku jsme přijali – Eventy Jinak",

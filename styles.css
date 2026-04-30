@@ -311,6 +311,7 @@ img {
 
 body[data-page="services"] .page-hero h1,
 body[data-page="inquiry"] .page-hero h1,
+body[data-page="custom-experience"] .page-hero h1,
 body[data-page="contact"] .page-hero h1,
 body[data-page="about"] .page-hero h1 {
   font-size: clamp(1.65rem, 2.8vw, 2.05rem);
@@ -329,6 +330,12 @@ body[data-page="home"] .content-card--accent .cta-question {
 
 .page-hero p {
   max-width: 72ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .eyebrow {
@@ -843,6 +850,23 @@ body[data-page="custom-experience"] .process-grid .info-card p:last-child {
   display: block;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.custom-estimate-card {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.custom-estimate-card h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
+.custom-estimate-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
 }
 
 input,
