@@ -428,7 +428,7 @@ const eventyData = {
     {
       question: "Je poptávka závazná?",
       answer:
-        "Ne. Odesláním formuláře posíláte nezávaznou poptávku. Termín potvrzujeme až po ověření kapacity instruktorů, dopravy a vhodné lokality."
+        "Ne. Odesláním formuláře posíláte nezávaznou poptávku. Závazná objednávka a rezervace termínu vznikají až po doručení návrhu smlouvy a připsání zálohové platby."
     }
   ],
   documents: [
@@ -484,6 +484,7 @@ const eventyData = {
     consents: [
       "Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.",
       "Beru na vědomí, že odesláním formuláře nevzniká závazná rezervace termínu.",
+      "Beru na vědomí, že závazná objednávka vzniká až po doručení návrhu smlouvy a připsání zálohové platby.",
       "Beru na vědomí, že termín a kapacitu potvrdí organizátor individuálně.",
       "Souhlasím se zasláním odpovědi a doplňujících informací k poptávce e-mailem."
     ]

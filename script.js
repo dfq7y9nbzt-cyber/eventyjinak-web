@@ -380,7 +380,7 @@ function renderInquiryForm() {
   eventyData.formOptions.consents.forEach((item, index) => {
     const label = createElement("label", "checkbox-item checkbox-item--full");
     label.innerHTML = `
-      <input type="checkbox" name="consents" value="${item}" ${index < 4 ? "required" : ""}>
+      <input type="checkbox" name="consents" value="${item}" required>
       <span>${item}</span>
     `;
     consentBox.appendChild(label);
