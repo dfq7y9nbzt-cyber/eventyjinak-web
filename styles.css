@@ -395,16 +395,18 @@ body[data-page="home"] .content-card--accent .cta-question {
   color: var(--accent-deep);
 }
 
-.content-card--justified p:not(.eyebrow) {
-  margin: 0;
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.72;
-  max-width: 62ch;
+.content-card--safety h2 {
+  margin-bottom: 16px;
 }
 
-.content-card--justified h2 {
-  margin-bottom: 16px;
+.content-card--safety p:not(.eyebrow) {
+  margin: 0;
+  max-width: 60ch;
+  line-height: 1.72;
+}
+
+.content-card--safety p + p {
+  margin-top: 14px;
 }
 
 .section-card--center {
