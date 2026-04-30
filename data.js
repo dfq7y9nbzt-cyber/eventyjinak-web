@@ -376,13 +376,13 @@ const eventyData = {
     {
       title: "Programové příplatky",
       items: [
+        "Záložní indoor program — v ceně",
         "Extra instruktor — od 4 500 Kč / den bez DPH",
         "Anglicky mluvící instruktor — +20 %",
         "Slaňování jako samostatné stanoviště — od 5 900 Kč bez DPH",
-        "Via ferrata varianta — individuálně",
         "Večerní program — od 5 900 Kč bez DPH",
-        "Záložní indoor program — od 7 900 Kč bez DPH",
-        "Dárkový balíček pro účastníky — od 250 Kč / osoba bez DPH"
+        "Dárkový balíček pro účastníky — od 250 Kč / osoba bez DPH",
+        "Via ferrata varianta — individuálně"
       ]
     },
     {
