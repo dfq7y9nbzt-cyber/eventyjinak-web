@@ -551,6 +551,18 @@ const eventyData = {
       "dobrodružnější nástup",
       "je mi to jedno"
     ],
+    audienceFits: [
+      "je mi to jedno",
+      "vhodné pro děti",
+      "vhodné pro rodiny",
+      "vhodné pro firmu",
+      "vhodné pro partu přátel"
+    ],
+    seasonOptions: [
+      "je mi to jedno",
+      "letní období",
+      "zimní období"
+    ],
     activityChoices: [
       "Skalní lezení",
       "Lezecký den na pohodu",
@@ -722,6 +734,15 @@ const eventyData = {
         rockType: "vapenec",
         access: "středně náročný přístup",
         travelKm: 460
+      },
+      {
+        value: "vir",
+        label: "Vír",
+        district: "Žďár nad Sázavou",
+        region: "Vysočina",
+        rockType: "zula",
+        access: "středně náročný přístup",
+        travelKm: 280
       },
       {
         value: "roviste",

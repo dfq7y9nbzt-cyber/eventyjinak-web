@@ -359,6 +359,16 @@ function formatPrice(value) {
   return `${Math.round(value).toLocaleString("cs-CZ")} Kč`;
 }
 
+function parseBudgetValue(value) {
+  const numbers = (value || "")
+    .toString()
+    .replace(/\s/g, "")
+    .match(/\d+/g);
+
+  if (!numbers || !numbers.length) return 0;
+  return Number(numbers.join(""));
+}
+
 function getCustomEventBaseSurcharge(eventType, days) {
   const multipliers = {
     "Lezecká pohoda v přírodě": 0,
@@ -395,6 +405,61 @@ function getTransportCost(participants, travelKm) {
   }
 
   return Math.max(safeKm * transport.over20PerKm, transport.minimumOver20);
+}
+
+function localitySupportsAudience(locality, audienceFit) {
+  if (!audienceFit || audienceFit === "je mi to jedno") return true;
+
+  const familyFriendly = new Set([
+    "prachovske-skaly",
+    "borecke-skaly",
+    "divoka-sarka",
+    "srbsko-alkazar",
+    "drabske-svetnicky",
+    "pisecke-skaly",
+    "svaty-jan"
+  ]);
+
+  if (audienceFit === "vhodné pro děti" || audienceFit === "vhodné pro rodiny") {
+    return locality.access !== "dobrodružnější nástup" && familyFriendly.has(locality.value);
+  }
+
+  if (audienceFit === "vhodné pro firmu") {
+    return true;
+  }
+
+  if (audienceFit === "vhodné pro partu přátel") {
+    return true;
+  }
+
+  return true;
+}
+
+function localitySupportsActivities(locality, selectedActivities, season) {
+  if (!selectedActivities.size && (!season || season === "je mi to jedno")) return true;
+
+  const drytoolLocalities = new Set(["vir"]);
+  const viaFerrataLocalities = new Set(["vir"]);
+  const bivakLocalities = new Set(["adrspach-teplice", "rabstejn", "tiske-steny-ostrov", "ostrov-labske-piskovce", "kozelka", "moravsky-kras"]);
+  const winterFriendly = new Set(["vir", "divoka-sarka", "srbsko-alkazar", "palava", "moravsky-kras", "svaty-jan"]);
+
+  if (selectedActivities.has("Drytool / zimní techniky")) {
+    return drytoolLocalities.has(locality.value);
+  }
+
+  if (selectedActivities.has("Via ferrata") && !viaFerrataLocalities.has(locality.value)) {
+    return false;
+  }
+
+  if (selectedActivities.has("Přespání / bivakový zážitek") && !bivakLocalities.has(locality.value)) {
+    return false;
+  }
+
+  if (season === "zimní období" && !winterFriendly.has(locality.value)) {
+    return false;
+  }
+
+  return true;
 }
 
 function configureHostedForm(form, endpoint, options) {
@@ -583,6 +648,8 @@ function renderCustomExperienceForm() {
 
   const eventTypeSelect = qs("#custom-event-type", form);
   const experienceSelect = qs("#custom-experience-level", form);
+  const audienceFitSelect = qs("#custom-audience-fit", form);
+  const seasonSelect = qs("#custom-season", form);
   const rockTypeSelect = qs("#custom-rock-type", form);
   const districtSelect = qs("#custom-district", form);
   const localitySelect = qs("#custom-locality", form);
@@ -604,6 +671,14 @@ function renderCustomExperienceForm() {
 
   eventyData.formOptions.experienceLevels.forEach((item) => {
     experienceSelect.appendChild(buildOption(item));
+  });
+
+  eventyData.customFormOptions.audienceFits.forEach((item) => {
+    audienceFitSelect.appendChild(buildOption(item));
+  });
+
+  eventyData.customFormOptions.seasonOptions.forEach((item) => {
+    seasonSelect.appendChild(buildOption(item));
   });
 
   eventyData.customFormOptions.rockTypes.forEach((item) => {
@@ -651,19 +726,27 @@ function renderCustomExperienceForm() {
   const renderLocalities = () => {
     const currentRockType = rockTypeSelect.value;
     const currentDistrict = districtSelect.value;
+    const currentAudienceFit = audienceFitSelect.value;
+    const currentSeason = seasonSelect.value;
+    const selectedActivities = new Set(new FormData(form).getAll("activities"));
     localitySelect.innerHTML = '<option value="">Vyberte lokalitu</option>';
 
-    eventyData.customFormOptions.localities
+    const matchingLocalities = eventyData.customFormOptions.localities
       .filter((item) => (currentRockType ? currentRockType === "any" || item.rockType === currentRockType : true))
       .filter((item) => (currentDistrict ? item.district === currentDistrict : true))
-      .forEach((item) => {
+      .filter((item) => localitySupportsAudience(item, currentAudienceFit))
+      .filter((item) => localitySupportsActivities(item, selectedActivities, currentSeason));
+
+    matchingLocalities.forEach((item) => {
         const option = document.createElement("option");
         option.value = item.value;
         option.textContent = `${item.label} — okres ${item.district}`;
         localitySelect.appendChild(option);
       });
 
-    localityMeta.textContent = "";
+    localityMeta.textContent = matchingLocalities.length
+      ? ""
+      : "Pro tuto kombinaci aktivit, období a cílové skupiny teď nemáme v databázi vhodnou lokalitu. Napište nám dotaz a navrhneme řešení ručně.";
   };
 
   const syncLocalityMeta = () => {
@@ -687,6 +770,7 @@ function renderCustomExperienceForm() {
     const eventType = (formData.get("event-type") || "").toString();
     const days = getInclusiveDays(formData.get("date-from"), formData.get("date-to"), eventType);
     const locality = eventyData.customFormOptions.localities.find((item) => item.value === localitySelect.value);
+    const budget = parseBudgetValue(formData.get("budget-estimate"));
 
     if (!participants || !eventType) {
       estimatePrice.textContent = "Začněte vybírat parametry akce";
@@ -794,7 +878,13 @@ function renderCustomExperienceForm() {
     const perPerson = roundUpPrice(priceWithoutVat / participants);
 
     estimatePrice.textContent = `Orientační cena od ${formatPrice(priceWithoutVat)} bez DPH`;
-    estimateSummary.textContent = `Pro ${participants} osob, ${days} den/ny${locality ? `, lokalita ${locality.label}` : ""}. Orientačně cca ${formatPrice(perPerson)} / osoba bez DPH.`;
+    let summaryText = `Pro ${participants} osob, ${days} den/ny${locality ? `, lokalita ${locality.label}` : ""}. Orientačně cca ${formatPrice(perPerson)} / osoba bez DPH.`;
+    if (budget) {
+      summaryText += budget >= priceWithoutVat
+        ? ` Vámi zadaný rozpočet ${formatPrice(budget)} bez DPH tomuto návrhu orientačně odpovídá.`
+        : ` Vámi zadaný rozpočet ${formatPrice(budget)} bez DPH je pod tímto odhadem, takže budeme hledat úspornější variantu.`;
+    }
+    estimateSummary.textContent = summaryText;
     estimateBreakdown.innerHTML = "";
     breakdown.forEach((item) => {
       const li = document.createElement("li");
@@ -808,6 +898,10 @@ function renderCustomExperienceForm() {
   rockTypeSelect.addEventListener("change", updateEstimate);
   districtSelect.addEventListener("change", renderLocalities);
   districtSelect.addEventListener("change", updateEstimate);
+  audienceFitSelect.addEventListener("change", renderLocalities);
+  audienceFitSelect.addEventListener("change", updateEstimate);
+  seasonSelect.addEventListener("change", renderLocalities);
+  seasonSelect.addEventListener("change", updateEstimate);
   localitySelect.addEventListener("change", syncLocalityMeta);
   localitySelect.addEventListener("change", updateEstimate);
 
@@ -823,6 +917,9 @@ function renderCustomExperienceForm() {
       if (estimateVisible) updateEstimate();
     });
     field.addEventListener("change", () => {
+      if (field.name === "activities") {
+        renderLocalities();
+      }
       if (estimateVisible) updateEstimate();
     });
   });
