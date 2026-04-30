@@ -247,27 +247,26 @@ const eventyData = {
       ],
       included: [
         "dopravu z Prahy a okolí",
-        "základní organizaci pobytu",
+        "organizaci pobytu",
         "instruktory podle velikosti skupiny",
         "lezecký / outdoor program",
         "zapůjčení základního vybavení",
-        "zajištění nebo doporučení ubytování",
+        "zajištění domluveného ubytování",
         "bezpečnostní vedení",
-        "základní večerní program"
+        "večerní program na míru"
       ],
       standard: {
         price: "od 8 900 Kč / osoba bez DPH",
         note: "Minimální cena skupiny od 49 000 Kč bez DPH.",
         items: [
           "dopravu z Prahy a okolí",
-          "základní organizaci pobytu",
+          "organizaci pobytu",
           "instruktory podle velikosti skupiny",
           "lezecký / outdoor program",
           "zapůjčení základního vybavení",
-          "zajištění nebo doporučení ubytování",
+          "zajištění domluveného ubytování",
           "bezpečnostní vedení",
-          "základní večerní program",
-          "pitný režim / drobné občerstvení"
+          "večerní program na míru"
         ]
       },
       premium: {
