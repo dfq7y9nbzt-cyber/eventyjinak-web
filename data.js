@@ -49,7 +49,7 @@ const eventyData = {
     ]
   },
   priceNote:
-    "Ceny jsou orientační a uvedené bez DPH. Finální nabídku připravujeme individuálně podle počtu osob, lokality, dopravy, délky programu a rozsahu služeb.",
+    "Ceny vycházejí z aktuální nákladové kalkulace a jsou uvedené bez DPH. Finální nabídku upřesňujeme podle počtu osob, lokality, dopravy, délky programu a zvolených příplatkových služeb.",
   safetyText:
     "Bezpečnost je pro nás základ každé akce.",
   safetyHighlights: [
@@ -95,7 +95,7 @@ const eventyData = {
       audience: "Pro malé skupiny 4–6 osob",
       teaser:
         "Jednodenní lezecký zážitek s dopravou z Prahy a okolí, instruktory, vybavením a bezpečně vedeným programem.",
-      priceFrom: "od 19 000 Kč / skupina bez DPH",
+      priceFrom: "od 22 900 Kč / skupina bez DPH",
       heroImage: "assets/images/prachov.jpg",
       heroAlt: "Prachovské skály jako placeholder hlavní fotografie služby",
       cardImage: "assets/images/prachov.jpg",
@@ -126,11 +126,11 @@ const eventyData = {
         "pitný režim a drobné občerstvení"
       ],
       standard: {
-        price: "od 19 000 Kč / skupina bez DPH",
-        note: "Vhodné pro 4–6 osob.",
+        price: "od 22 900 Kč / skupina bez DPH",
+        note: "Doporučeno pro 4–6 osob.",
         items: [
           "dopravu z Prahy a okolí a zpět vlastním autem",
-          "2 osoby zajišťující program",
+          "2 instruktoři zajišťující program",
           "výběr vhodné lokality",
           "základní lezecké vybavení",
           "bezpečnostní instruktáž",
@@ -141,12 +141,12 @@ const eventyData = {
         ]
       },
       premium: {
-        price: "od 45 000 Kč / skupina bez DPH",
-        note: "Rozšířená varianta s větší péčí a dokumentací.",
+        price: "od 36 900 Kč / skupina bez DPH",
+        note: "Rozšířená varianta s fotografem, lepším občerstvením a větším programovým rozsahem.",
         items: [
           "vše ze Standardu",
-          "fotografa na část akce",
-          "animační program na vyžádání",
+          "fotografa na 2–3 hodiny",
+          "rozšířený program s doplňkovými aktivitami",
           "lepší občerstvení (teplé jídlo + káva)",
           "výběr a úpravu fotek po akci"
         ]
@@ -158,7 +158,7 @@ const eventyData = {
       audience: "Pro týmy 8–20 osob",
       teaser:
         "Kompletní organizace, doprava, lezení, týmové aktivity a možnost fotografa nebo cateringu.",
-      priceFrom: "od 39 000 Kč / skupina bez DPH",
+      priceFrom: "od 36 900 Kč / skupina bez DPH",
       heroImage: "assets/images/sam-leze-jura.jpg",
       heroAlt: "Lezecká skupina pod skalou pro firemní teambuilding",
       cardImage: "assets/images/sam-leze-jura.jpg",
@@ -190,8 +190,8 @@ const eventyData = {
         "pitný režim a snack"
       ],
       standard: {
-        price: "od 39 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 8–12 osob. 13–16 osob od 49 000 Kč, 17–20 osob od 65 000 Kč bez DPH.",
+        price: "od 36 900 Kč / skupina bez DPH",
+        note: "Doporučeno pro 8–12 osob. 13–16 osob od 52 000 Kč, 17–20 osob od 66 000 Kč bez DPH.",
         items: [
           "návrh programu",
           "dopravu z Prahy a okolí minibusem podle velikosti skupiny",
@@ -205,14 +205,14 @@ const eventyData = {
         ]
       },
       premium: {
-        price: "od 54 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 8–12 osob. 13–16 osob od 72 000 Kč, 17–20 osob od 90 000 Kč bez DPH.",
+        price: "od 64 900 Kč / skupina bez DPH",
+        note: "Doporučeno pro 8–12 osob. 13–16 osob od 82 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "fotografa",
           "lepší občerstvení / outdoor catering",
           "rozšířený týmový program",
-          "zpracovaný fotoalbum po akci",
+          "zpracované fotoalbum po akci",
           "krátké video z akce"
         ]
       }
@@ -223,7 +223,7 @@ const eventyData = {
       audience: "Pro firmy a skupiny 4–20 osob",
       teaser:
         "Víkend nebo vícedenní pobyt v přírodě s lezením, outdoor programem, dopravou, ubytováním a kompletním servisem.",
-      priceFrom: "od 8 900 Kč / osoba bez DPH",
+      priceFrom: "od 5 900 Kč / osoba bez DPH",
       heroImage: "assets/images/ostrov-vez.jpg",
       heroAlt: "Výhled na české skály a přírodu pro vícedenní outdoor pobyt",
       cardImage: "assets/images/ostrov-vez.jpg",
@@ -251,28 +251,28 @@ const eventyData = {
         "instruktory podle velikosti skupiny",
         "lezecký / outdoor program",
         "zapůjčení potřebného vybavení",
-        "zajištění ubytování",
+        "zajištění a rezervaci ubytování",
         "bezpečnostní vedení",
         "večerní program na míru"
       ],
       standard: {
-        price: "od 8 900 Kč / osoba bez DPH",
-        note: "Minimální cena skupiny od 39 000 Kč bez DPH.",
+        price: "od 5 900 Kč / osoba bez DPH",
+        note: "Minimální cena skupiny od 39 000 Kč bez DPH. Ubytování se u balíčku Standard hradí zvlášť podle zvolené varianty.",
         items: [
           "dopravu z Prahy a okolí",
           "organizaci pobytu",
           "instruktory podle velikosti skupiny",
           "lezecký / outdoor program",
           "zapůjčení potřebného vybavení",
-          "zajištění ubytování",
+          "zajištění a rezervaci ubytování",
           "bezpečnostní vedení",
           "večerní program na míru",
           "pitný režim / drobné občerstvení"
         ]
       },
       premium: {
-        price: "od 13 900 Kč / osoba bez DPH",
-        note: "Minimální cena skupiny od 59 000 Kč bez DPH.",
+        price: "od 10 900 Kč / osoba bez DPH",
+        note: "Minimální cena skupiny od 69 000 Kč bez DPH. Ubytování podle dohodnutého standardu je v ceně.",
         items: [
           "vše ze Standardu",
           "ubytování zahrnuté v ceně podle dohodnutého standardu",
@@ -290,7 +290,7 @@ const eventyData = {
       audience: "Pro malé týmy 3–6 osob",
       teaser:
         "Intenzivní program s lezením, slaňováním, výškou a týmovou spoluprací.",
-      priceFrom: "od 18 000 Kč / skupina bez DPH",
+      priceFrom: "od 24 900 Kč / skupina bez DPH",
       heroImage: "assets/images/sam-jisti-na-vezicku.jpg",
       heroAlt: "Lezec na skále při adrenalinovém teambuildingu",
       cardImage: "assets/images/sam-jisti-na-vezicku.jpg",
@@ -315,7 +315,7 @@ const eventyData = {
       included: [
         "přípravu programu",
         "dopravu z Prahy a okolí podle velikosti skupiny",
-        "2 osoby zajišťující program",
+        "2 instruktoři zajišťující program",
         "bezpečnostní vybavení",
         "lezení / slaňování / outdoor výzvy podle lokality",
         "základní pitný režim",
@@ -323,12 +323,12 @@ const eventyData = {
         "organizaci akce"
       ],
       standard: {
-        price: "od 26 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 39 000 Kč bez DPH.",
+        price: "od 24 900 Kč / skupina bez DPH",
+        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 29 900 Kč bez DPH.",
         items: [
           "přípravu programu",
           "dopravu z Prahy a okolí podle velikosti skupiny",
-          "2 osoby zajišťující program",
+          "2 instruktoři zajišťující program",
           "bezpečnostní vybavení",
           "lezení / slaňování / outdoor výzvy podle lokality",
           "základní pitný režim",
@@ -337,17 +337,15 @@ const eventyData = {
         ]
       },
       premium: {
-        price: "od 45 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–5 osob. Pro 6 osob od 59 000 Kč bez DPH.",
+        price: "od 44 900 Kč / skupina bez DPH",
+        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 52 900 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "fotografa",
           "rozšířený adrenalinový program",
           "lepší občerstvení",
-          "více času na místě",
           "možnost kombinace více aktivit",
-          "fotogalerii po akci",
-          "vyšší organizační rezervu"
+          "výběr a úpravu fotek po akci"
         ]
       }
     }
@@ -356,18 +354,18 @@ const eventyData = {
     {
       title: "Fotografie a video",
       items: [
-        "Fotograf na 2–3 hodiny — od 4 900 Kč bez DPH",
-        "Fotograf půlden — od 7 900 Kč bez DPH",
-        "Fotograf celý den — od 11 900 Kč bez DPH",
-        "Krátké reels video — od 5 900 Kč bez DPH",
-        "Video z akce 60–90 sekund — od 11 900 Kč bez DPH",
+        "Fotograf na 2–3 hodiny — od 6 900 Kč bez DPH",
+        "Fotograf půlden — od 10 900 Kč bez DPH",
+        "Fotograf celý den — od 15 900 Kč bez DPH",
+        "Krátké reels video — od 6 900 Kč bez DPH",
+        "Video z akce 60–90 sekund — od 14 900 Kč bez DPH",
       ]
     },
     {
       title: "Jídlo a občerstvení",
       items: [
         "Pitný režim a snack — v ceně většiny balíčků",
-        "Piknik basic — od 350 Kč / osoba bez DPH",
+        "Piknik basic — od 290 Kč / osoba bez DPH",
         "Outdoor catering standard — od 590 Kč / osoba bez DPH",
         "Premium catering — od 990 Kč / osoba bez DPH",
         "Večerní grilování — individuálně"
@@ -377,11 +375,11 @@ const eventyData = {
       title: "Programové příplatky",
       items: [
         "Záložní indoor program — v ceně",
-        "Extra instruktor — od 4 500 Kč / den bez DPH",
+        "Extra instruktor — od 6 500 Kč / den bez DPH",
         "Anglicky mluvící instruktor — +20 %",
-        "Slaňování jako samostatné stanoviště — od 5 900 Kč bez DPH",
-        "Večerní program — od 5 900 Kč bez DPH",
-        "Dárkový balíček pro účastníky — od 250 Kč / osoba bez DPH",
+        "Slaňování jako samostatné stanoviště — od 7 900 Kč bez DPH",
+        "Večerní program — od 7 900 Kč bez DPH",
+        "Dárkový balíček pro účastníky — od 290 Kč / osoba bez DPH",
         "Via ferrata varianta — individuálně"
       ]
     },
