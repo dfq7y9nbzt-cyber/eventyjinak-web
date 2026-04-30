@@ -143,21 +143,9 @@ img {
   background: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-strong);
   transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
-}
-
-.lang-switch a[lang="cs"] {
-  background:
-    linear-gradient(180deg, #ffffff 0 33%, #11457e 33% 66%, #d7141a 66% 100%);
-  color: #ffffff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.26);
-}
-
-.lang-switch a[lang="en"] {
-  background:
-    linear-gradient(90deg, #1f4aa8 0 42%, #ffffff 42% 48%, #c6293f 48% 58%, #ffffff 58% 64%, #1f4aa8 64% 100%);
-  color: #ffffff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.26);
 }
 
 .lang-switch a:hover,

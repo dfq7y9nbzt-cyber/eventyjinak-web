@@ -1,4 +1,4 @@
-const eventyData = {
+﻿const eventyData = {
   recipientEmail: "info@eventyjinak.cz",
   primaryContactLabel: "Kontaktní e-mail pro poptávky",
   primaryPhone: "Telefon doplníme při spuštění",
@@ -40,7 +40,7 @@ const eventyData = {
       },
       {
         src: "assets/images/tatry-padajici-tma.jpg",
-        alt: "Tatry a padajĂ­cĂ­ tma"
+        alt: "Tatry a padající tma"
       }
     ],
     body: [

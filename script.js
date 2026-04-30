@@ -1,4 +1,4 @@
-﻿const locale = document.documentElement.lang?.startsWith("en") ? "en" : "cs";
+const locale = document.documentElement.lang?.startsWith("en") ? "en" : "cs";
 const routeMap = {
   cs: {
     home: "index.html",
@@ -21,36 +21,36 @@ const routeMap = {
 };
 const uiText = {
   cs: {
-    serviceDetail: "Detail sluĹľby",
-    askForDate: "Poptat termĂ­n",
-    serviceDetailEyebrow: "Detail sluĹľby",
-    whoFor: "Pro koho je sluĹľba vhodnĂˇ",
-    howItWorks: "Jak akce probĂ­hĂˇ",
-    whatWeArrange: "Co zaĹ™Ă­dĂ­me",
-    safetyAndOrganisation: "BezpeÄŤnost a organizace",
-    customFormTitle: "PosklĂˇdejte si vlastnĂ­ akci krok za krokem",
-    customFormCopy: "V detailnĂ­m formulĂˇĹ™i si zvolĂ­te poÄŤet osob, termĂ­n nebo rozpÄ›tĂ­ dnĹŻ, typ akce, druh skĂˇly, lokalitu, nĂˇroÄŤnost pĹ™Ă­stupu i sluĹľby, kterĂ© pro vĂˇs mĂˇme zajistit.",
-    customFormNote: "Pokud si nejste jistĂ­ volbou, napiĹˇte nĂˇm rychlĂ˝ dotaz a doporuÄŤĂ­me vhodnou variantu.",
-    documentPlaceholder: "PDF / odkaz doplnĂ­me",
-    emailPreviewEyebrow: "NĂˇvrh e-mailu",
-    inactiveFormTitle: "OdeslĂˇnĂ­ formulĂˇĹ™e zatĂ­m nenĂ­ aktivnĂ­",
-    sendingFormTitle: "OdesĂ­lĂˇme formulĂˇĹ™",
-    sendingFormText: "Po potvrzenĂ­ se vrĂˇtĂ­te zpÄ›t na tuto strĂˇnku.",
-    writeTo: "ProzatĂ­m prosĂ­m napiĹˇte na",
-    writeQuestionTo: "ProzatĂ­m prosĂ­m napiĹˇte svĹŻj dotaz na",
-    estimateStart: "ZaÄŤnÄ›te vybĂ­rat parametry akce",
-    estimateHint: "Jakmile doplnĂ­te poÄŤet osob, termĂ­n, lokalitu a sluĹľby, zobrazĂ­me orientaÄŤnĂ­ cenu od bez DPH.",
-    recommendationMissingTitle: "PotĹ™ebujete individuĂˇlnĂ­ doporuÄŤenĂ­",
-    recommendationMissingCopy: "Pro zvolenou kombinaci aktivit nebo obdobĂ­ nemĂˇme vhodnou lokalitu pĹ™Ă­mo ve formulĂˇĹ™i. NapiĹˇte nĂˇm dotaz a navrhneme ruÄŤnĂ­ variantu.",
-    localityNoMatch: "Pro tuto kombinaci aktivit, obdobĂ­ a cĂ­lovĂ© skupiny teÄŹ nemĂˇme v databĂˇzi vhodnou lokalitu. NapiĹˇte nĂˇm dotaz a navrhneme Ĺ™eĹˇenĂ­ ruÄŤnÄ›.",
-    localityMatchCopySuffix: "Tuhle lokalitu teÄŹ doporuÄŤujeme jako nejbliĹľĹˇĂ­ shodu podle vaĹˇeho vĂ˝bÄ›ru.",
-    localitySelectedCopySuffix: "Tuhle lokalitu mĂˇte vybranou jako aktuĂˇlnĂ­ preferenci.",
-    estimateFrom: "OrientaÄŤnĂ­ cena od",
+    serviceDetail: "Detail služby",
+    askForDate: "Poptat termín",
+    serviceDetailEyebrow: "Detail služby",
+    whoFor: "Pro koho je služba vhodná",
+    howItWorks: "Jak akce probíhá",
+    whatWeArrange: "Co zařídíme",
+    safetyAndOrganisation: "Bezpečnost a organizace",
+    customFormTitle: "Poskládejte si vlastní akci krok za krokem",
+    customFormCopy: "V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, druh skály, lokalitu, náročnost přístupu i služby, které pro vás máme zajistit.",
+    customFormNote: "Pokud si nejste jistí volbou, napište nám rychlý dotaz a doporučíme vhodnou variantu.",
+    documentPlaceholder: "PDF / odkaz doplníme",
+    emailPreviewEyebrow: "Návrh e-mailu",
+    inactiveFormTitle: "Odeslání formuláře zatím není aktivní",
+    sendingFormTitle: "Odesíláme formulář",
+    sendingFormText: "Po potvrzení se vrátíte zpět na tuto stránku.",
+    writeTo: "Prozatím prosím napište na",
+    writeQuestionTo: "Prozatím prosím napište svůj dotaz na",
+    estimateStart: "Začněte vybírat parametry akce",
+    estimateHint: "Jakmile doplníte počet osob, termín, lokalitu a služby, zobrazíme orientační cenu od bez DPH.",
+    recommendationMissingTitle: "Potřebujete individuální doporučení",
+    recommendationMissingCopy: "Pro zvolenou kombinaci aktivit nebo období nemáme vhodnou lokalitu přímo ve formuláři. Napište nám dotaz a navrhneme ruční variantu.",
+    localityNoMatch: "Pro tuto kombinaci aktivit, období a cílové skupiny teď nemáme v databázi vhodnou lokalitu. Napište nám dotaz a navrhneme řešení ručně.",
+    localityMatchCopySuffix: "Tuhle lokalitu teď doporučujeme jako nejbližší shodu podle vašeho výběru.",
+    localitySelectedCopySuffix: "Tuhle lokalitu máte vybranou jako aktuální preferenci.",
+    estimateFrom: "Orientační cena od",
     locationLabel: "lokalita",
-    estimateIntro: "OrientaÄŤnÄ›",
+    estimateIntro: "Orientačně",
     estimatePerPerson: "osoba",
-    budgetFits: "VĂˇmi zadanĂ˝ rozpoÄŤet {budget} bez DPH tomuto nĂˇvrhu orientaÄŤnÄ› odpovĂ­dĂˇ.",
-    budgetBelow: "VĂˇmi zadanĂ˝ rozpoÄŤet {budget} bez DPH je pod tĂ­mto odhadem, takĹľe budeme hledat ĂşspornÄ›jĹˇĂ­ variantu.",
+    budgetFits: "Vámi zadaný rozpočet {budget} bez DPH tomuto návrhu orientačně odpovídá.",
+    budgetBelow: "Vámi zadaný rozpočet {budget} bez DPH je pod tímto odhadem, takže budeme hledat úspornější variantu.",
     packageStandard: "Standard",
     packagePremium: "Premium"
   },
@@ -123,9 +123,9 @@ function createList(items, className = "plain-list") {
 
 function getServiceActions(service) {
   return service.actions || {
-    primaryLabel: "Detail sluĹľby",
+    primaryLabel: "Detail služby",
     primaryHref: `sluzby.html#${service.id}`,
-    secondaryLabel: "Poptat termĂ­n",
+    secondaryLabel: "Poptat termín",
     secondaryHref: `rezervace.html?service=${service.id}`
   };
 }
@@ -183,7 +183,7 @@ function createDocumentCard(documentItem) {
   card.innerHTML = `
     <h3>${documentItem.title}</h3>
     <p>${documentItem.description}</p>
-    <span class="document-placeholder">PDF / odkaz doplnĂ­me</span>
+    <span class="document-placeholder">PDF / odkaz doplníme</span>
   `;
   return card;
 }
@@ -258,7 +258,7 @@ function renderHomePage() {
 
       const content = createElement("article", "content-card content-card--accent custom-home-banner");
       content.innerHTML = `
-        <p class="eyebrow">ZĂˇĹľitek na mĂ­ru</p>
+        <p class="eyebrow">Zážitek na míru</p>
         <h2>${customService.name}</h2>
         <p>${customService.detailText[0]}</p>
         <p>${customService.detailText[1]}</p>
@@ -289,7 +289,7 @@ function renderServicesPage() {
           <img src="${service.heroImage}" alt="${service.heroAlt}">
         </div>
         <div class="service-detail__content">
-          <p class="eyebrow">Detail sluĹľby</p>
+          <p class="eyebrow">Detail služby</p>
           <h2>${service.name}</h2>
           <p class="service-card__audience">${service.audience}</p>
           <p class="price-tag">${service.priceFrom}</p>
@@ -304,20 +304,20 @@ function renderServicesPage() {
       const metaGrid = createElement("div", "detail-grid");
 
       const idealFor = createElement("article", "info-card");
-      idealFor.innerHTML = "<h3>Pro koho je sluĹľba vhodnĂˇ</h3>";
+      idealFor.innerHTML = "<h3>Pro koho je služba vhodná</h3>";
       idealFor.appendChild(createList(service.idealFor));
 
       const process = createElement("article", "info-card");
-      process.innerHTML = "<h3>Jak akce probĂ­hĂˇ</h3>";
+      process.innerHTML = "<h3>Jak akce probíhá</h3>";
       process.appendChild(createList(service.process));
 
       const included = createElement("article", "info-card");
-      included.innerHTML = "<h3>Co zaĹ™Ă­dĂ­me</h3>";
+      included.innerHTML = "<h3>Co zařídíme</h3>";
       included.appendChild(createList(service.included));
 
       const safety = createElement("article", "info-card");
       safety.innerHTML = `
-        <h3>BezpeÄŤnost a organizace</h3>
+        <h3>Bezpečnost a organizace</h3>
         <p>${eventyData.safetyText}</p>
       `;
       if (eventyData.safetyHighlights?.length) {
@@ -330,9 +330,9 @@ function renderServicesPage() {
       if (service.customExperience) {
         packages = createElement("article", "info-card info-card--custom-service");
         packages.innerHTML = `
-          <h3>PosklĂˇdejte si vlastnĂ­ akci krok za krokem</h3>
-          <p>V detailnĂ­m formulĂˇĹ™i si zvolĂ­te poÄŤet osob, termĂ­n nebo rozpÄ›tĂ­ dnĹŻ, typ akce, druh skĂˇly, oblast v ÄŚR, nĂˇroÄŤnost pĹ™Ă­stupu i sluĹľby, kterĂ© pro vĂˇs mĂˇme zajistit.</p>
-          <p class="small-note">Pokud si nejste jistĂ­ volbou, napiĹˇte nĂˇm rychlĂ˝ dotaz a doporuÄŤĂ­me vhodnou variantu.</p>
+          <h3>Poskládejte si vlastní akci krok za krokem</h3>
+          <p>V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, druh skály, oblast v ČR, náročnost přístupu i služby, které pro vás máme zajistit.</p>
+          <p class="small-note">Pokud si nejste jistí volbou, napište nám rychlý dotaz a doporučíme vhodnou variantu.</p>
         `;
       } else {
         packages = createElement("div", "package-grid");
@@ -379,7 +379,7 @@ function buildOption(value) {
 function buildEmailPreview(subject, bodyLines) {
   return `
     <article class="email-preview">
-      <p class="eyebrow">NĂˇvrh e-mailu</p>
+      <p class="eyebrow">Návrh e-mailu</p>
       <h3>${subject}</h3>
       <pre>${bodyLines.join("\n")}</pre>
     </article>
@@ -457,17 +457,17 @@ function parseParticipantCount(value) {
 
 function getInclusiveDays(fromValue, toValue, eventType) {
   if (!fromValue) {
-    return eventType === "VĂ­cedennĂ­ pobyt" ? 2 : 1;
+    return eventType === "Vícedenní pobyt" ? 2 : 1;
   }
 
   if (!toValue) {
-    return eventType === "VĂ­cedennĂ­ pobyt" ? 2 : 1;
+    return eventType === "Vícedenní pobyt" ? 2 : 1;
   }
 
   const from = new Date(fromValue);
   const to = new Date(toValue);
   if (Number.isNaN(from.getTime()) || Number.isNaN(to.getTime()) || to < from) {
-    return eventType === "VĂ­cedennĂ­ pobyt" ? 2 : 1;
+    return eventType === "Vícedenní pobyt" ? 2 : 1;
   }
 
   const diffDays = Math.round((to - from) / 86400000) + 1;
@@ -479,7 +479,7 @@ function roundUpPrice(value) {
 }
 
 function formatPrice(value) {
-  return `${Math.round(value).toLocaleString("cs-CZ")} KÄŤ`;
+  return `${Math.round(value).toLocaleString("cs-CZ")} Kč`;
 }
 
 function parseBudgetValue(value) {
@@ -494,14 +494,14 @@ function parseBudgetValue(value) {
 
 function getCustomEventBaseSurcharge(eventType, days) {
   const multipliers = {
-    "LezeckĂˇ pohoda v pĹ™Ă­rodÄ›": 0,
-    "VzdÄ›lĂˇvacĂ­ / seznamovacĂ­ kurz": 1500,
-    "ZĂˇbavnĂ˝ event pro skupinu": 2500,
-    "AdrenalinovĂ˝ program": 6000,
-    "FiremnĂ­ teambuilding": 4000,
-    "VĂ­cedennĂ­ pobyt": 2500,
-    "SoukromĂˇ oslava nebo uzavĹ™enĂˇ akce": 3000,
-    "NevĂ­m, chci doporuÄŤit vhodnĂ˝ formĂˇt": 2000
+    "Lezecká pohoda v přírodě": 0,
+    "Vzdělávací / seznamovací kurz": 1500,
+    "Zábavný event pro skupinu": 2500,
+    "Adrenalinový program": 6000,
+    "Firemní teambuilding": 4000,
+    "Vícedenní pobyt": 2500,
+    "Soukromá oslava nebo uzavřená akce": 3000,
+    "Nevím, chci doporučit vhodný formát": 2000
   };
 
   return (multipliers[eventType] || 0) * days;
@@ -536,27 +536,27 @@ function getRockTypeCategory(locality) {
 
 function getDetailedRockTypeLabel(rockType) {
   const labels = {
-    piskovec: "pĂ­skovec",
-    zula: "Ĺľula a pevnĂˇ skĂˇla",
-    vapenec: "vĂˇpenec",
-    buliznik: "tvrdĂˇ skĂˇla / buliĹľnĂ­k"
+    piskovec: "pískovec",
+    zula: "žula a pevná skála",
+    vapenec: "vápenec",
+    buliznik: "tvrdá skála / buližník"
   };
   return labels[rockType] || rockType;
 }
 
 function getRecommendedRockType(selectedActivities, season) {
-  if (selectedActivities.has("Drytool / zimnĂ­ techniky") || selectedActivities.has("Via ferrata")) {
+  if (selectedActivities.has("Drytool / zimní techniky") || selectedActivities.has("Via ferrata")) {
     return "skala";
   }
 
-  if (season === "zimnĂ­ obdobĂ­") {
+  if (season === "zimní období") {
     return "skala";
   }
 
   if (
-    selectedActivities.has("PĹ™espĂˇnĂ­ / bivakovĂ˝ zĂˇĹľitek") ||
-    selectedActivities.has("Bushcraft / pobyt v pĹ™Ă­rodÄ›") ||
-    selectedActivities.has("LezeckĂ˝ den na pohodu")
+    selectedActivities.has("Přespání / bivakový zážitek") ||
+    selectedActivities.has("Bushcraft / pobyt v přírodě") ||
+    selectedActivities.has("Lezecký den na pohodu")
   ) {
     return "piskovec";
   }
@@ -577,15 +577,15 @@ function localitySupportsAudience(locality, audienceFit) {
     "svaty-jan"
   ]);
 
-  if (audienceFit === "vhodnĂ© pro dÄ›ti" || audienceFit === "vhodnĂ© pro rodiny") {
-    return locality.access !== "dobrodruĹľnÄ›jĹˇĂ­ nĂˇstup" && familyFriendly.has(locality.value);
+  if (audienceFit === "vhodné pro děti" || audienceFit === "vhodné pro rodiny") {
+    return locality.access !== "dobrodružnější nástup" && familyFriendly.has(locality.value);
   }
 
-  if (audienceFit === "vhodnĂ© pro firmu") {
+  if (audienceFit === "vhodné pro firmu") {
     return true;
   }
 
-  if (audienceFit === "vhodnĂ© pro partu pĹ™Ăˇtel") {
+  if (audienceFit === "vhodné pro partu přátel") {
     return true;
   }
 
@@ -600,7 +600,7 @@ function localitySupportsActivities(locality, selectedActivities, season) {
   const bivakLocalities = new Set(["adrspach-teplice", "rabstejn", "tiske-steny-ostrov", "ostrov-labske-piskovce", "kozelka", "moravsky-kras"]);
   const winterFriendly = new Set(["vir", "divoka-sarka", "srbsko-alkazar", "palava", "moravsky-kras", "svaty-jan"]);
 
-  if (selectedActivities.has("Drytool / zimnĂ­ techniky")) {
+  if (selectedActivities.has("Drytool / zimní techniky")) {
     return drytoolLocalities.has(locality.value);
   }
 
@@ -608,11 +608,11 @@ function localitySupportsActivities(locality, selectedActivities, season) {
     return false;
   }
 
-  if (selectedActivities.has("PĹ™espĂˇnĂ­ / bivakovĂ˝ zĂˇĹľitek") && !bivakLocalities.has(locality.value)) {
+  if (selectedActivities.has("Přespání / bivakový zážitek") && !bivakLocalities.has(locality.value)) {
     return false;
   }
 
-  if (season === "zimnĂ­ obdobĂ­" && !winterFriendly.has(locality.value)) {
+  if (season === "zimní období" && !winterFriendly.has(locality.value)) {
     return false;
   }
 
@@ -660,8 +660,8 @@ function configureHostedForm(form, endpoint, options) {
     upsertHiddenField(form, "_autoresponse", autoresponse);
 
     if (formNotice) {
-      formNotice.innerHTML = renderNoticeMessage("OdesĂ­lĂˇme formulĂˇĹ™", [
-        "Po potvrzenĂ­ se vrĂˇtĂ­te zpÄ›t na tuto strĂˇnku."
+      formNotice.innerHTML = renderNoticeMessage("Odesíláme formulář", [
+        "Po potvrzení se vrátíte zpět na tuto stránku."
       ]);
     }
   });
@@ -720,14 +720,14 @@ function renderInquiryForm() {
   configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
     formNotice,
     submittedKey: "inquiry",
-    inactiveTitle: "OdeslĂˇnĂ­ formulĂˇĹ™e zatĂ­m nenĂ­ aktivnĂ­",
+    inactiveTitle: "Odeslání formuláře zatím není aktivní",
     inactiveLines: [
-      `ProzatĂ­m prosĂ­m napiĹˇte na ${eventyData.recipientEmail}.`
+      `Prozatím prosím napište na ${eventyData.recipientEmail}.`
     ],
     subjectBuilder(formData) {
       const actionType = formData.get("action-type");
       const preferredDate = formData.get("preferred-date");
-      return `${eventyData.mailTemplates.adminSubjectPrefix} â€“ ${actionType} â€“ ${preferredDate || "termĂ­n doplnĂ­me"}`;
+      return `${eventyData.mailTemplates.adminSubjectPrefix} – ${actionType} – ${preferredDate || "termín doplníme"}`;
     },
     autoresponseLines: eventyData.mailTemplates.customerBody
   });
@@ -742,8 +742,8 @@ function renderInquiryForm() {
     if (!endpoint) {
       formNotice.innerHTML = `
         <div class="notice">
-          <h3>OdeslĂˇnĂ­ formulĂˇĹ™e zatĂ­m nenĂ­ aktivnĂ­</h3>
-          <p>FormulĂˇĹ™ je pĹ™ipravenĂ˝ pro externĂ­ formulĂˇĹ™ovou sluĹľbu, ale endpoint jeĹˇtÄ› nenĂ­ doplnÄ›nĂ˝. ProzatĂ­m prosĂ­m napiĹˇte na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+          <h3>Odeslání formuláře zatím není aktivní</h3>
+          <p>Formulář je připravený pro externí formulářovou službu, ale endpoint ještě není doplněný. Prozatím prosím napište na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
         </div>
       `;
       return;
@@ -768,7 +768,7 @@ function renderInquiryForm() {
       notes: formData.get("notes")
     };
 
-    const adminSubject = `${eventyData.mailTemplates.adminSubjectPrefix} â€“ ${summary.actionType} â€“ ${summary.preferredDate || "termĂ­n doplnĂ­me"}`;
+    const adminSubject = `${eventyData.mailTemplates.adminSubjectPrefix} – ${summary.actionType} – ${summary.preferredDate || "termín doplníme"}`;
 
     submitFormToEndpoint(form, endpoint, {
       _subject: adminSubject,
@@ -791,8 +791,8 @@ function renderInquiryForm() {
       .catch(() => {
         formNotice.innerHTML = `
           <div class="notice">
-            <h3>FormulĂˇĹ™ se nepodaĹ™ilo odeslat</h3>
-            <p>Zkuste to prosĂ­m znovu, nebo napiĹˇte pĹ™Ă­mo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+            <h3>Formulář se nepodařilo odeslat</h3>
+            <p>Zkuste to prosím znovu, nebo napište přímo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
           </div>
         `;
       });
@@ -893,23 +893,23 @@ function renderCustomExperienceForm() {
     matchingLocalities.forEach((item) => {
         const option = document.createElement("option");
         option.value = item.value;
-        option.textContent = `${item.label} â€” ${item.region}`;
+        option.textContent = `${item.label} — ${item.region}`;
         localitySelect.appendChild(option);
       });
 
     localityMeta.textContent = matchingLocalities.length
       ? ""
-      : "Pro tuto kombinaci aktivit, obdobĂ­ a cĂ­lovĂ© skupiny teÄŹ nemĂˇme v databĂˇzi vhodnou lokalitu. NapiĹˇte nĂˇm dotaz a navrhneme Ĺ™eĹˇenĂ­ ruÄŤnÄ›.";
+      : "Pro tuto kombinaci aktivit, období a cílové skupiny teď nemáme v databázi vhodnou lokalitu. Napište nám dotaz a navrhneme řešení ručně.";
 
     if (!matchingLocalities.length) {
-      recommendationTitle.textContent = "PotĹ™ebujete individuĂˇlnĂ­ doporuÄŤenĂ­";
-      recommendationCopy.textContent = "Pro zvolenou kombinaci aktivit nebo obdobĂ­ nemĂˇme vhodnou lokalitu pĹ™Ă­mo ve formulĂˇĹ™i. NapiĹˇte nĂˇm dotaz a navrhneme ruÄŤnĂ­ variantu.";
+      recommendationTitle.textContent = "Potřebujete individuální doporučení";
+      recommendationCopy.textContent = "Pro zvolenou kombinaci aktivit nebo období nemáme vhodnou lokalitu přímo ve formuláři. Napište nám dotaz a navrhneme ruční variantu.";
       return;
     }
 
     const recommended = matchingLocalities[0];
     recommendationTitle.textContent = recommended.label;
-    recommendationCopy.textContent = `${recommended.region} | ${getDetailedRockTypeLabel(recommended.rockType)} | ${recommended.access}. Tuhle lokalitu teÄŹ doporuÄŤujeme jako nejbliĹľĹˇĂ­ shodu podle vaĹˇeho vĂ˝bÄ›ru.`;
+    recommendationCopy.textContent = `${recommended.region} | ${getDetailedRockTypeLabel(recommended.rockType)} | ${recommended.access}. Tuhle lokalitu teď doporučujeme jako nejbližší shodu podle vašeho výběru.`;
   };
 
   const syncLocalityMeta = () => {
@@ -921,7 +921,7 @@ function renderCustomExperienceForm() {
 
     localityMeta.textContent = `${selected.label} | ${selected.region} | ${getDetailedRockTypeLabel(selected.rockType)} | ${selected.access}`;
     recommendationTitle.textContent = selected.label;
-    recommendationCopy.textContent = `${selected.region} | ${getDetailedRockTypeLabel(selected.rockType)} | ${selected.access}. Tuhle lokalitu mĂˇte vybranou jako aktuĂˇlnĂ­ preferenci.`;
+    recommendationCopy.textContent = `${selected.region} | ${getDetailedRockTypeLabel(selected.rockType)} | ${selected.access}. Tuhle lokalitu máte vybranou jako aktuální preferenci.`;
   };
 
   const updateEstimate = (forceVisible = false) => {
@@ -937,8 +937,8 @@ function renderCustomExperienceForm() {
     const budget = parseBudgetValue(formData.get("budget-estimate"));
 
     if (!participants || !eventType) {
-      estimatePrice.textContent = "ZaÄŤnÄ›te vybĂ­rat parametry akce";
-      estimateSummary.textContent = "Jakmile doplnĂ­te poÄŤet osob, termĂ­n, lokalitu a sluĹľby, zobrazĂ­me orientaÄŤnĂ­ cenu od bez DPH.";
+      estimatePrice.textContent = "Začněte vybírat parametry akce";
+      estimateSummary.textContent = "Jakmile doplníte počet osob, termín, lokalitu a služby, zobrazíme orientační cenu od bez DPH.";
       estimateBreakdown.innerHTML = "";
       return;
     }
@@ -947,27 +947,27 @@ function renderCustomExperienceForm() {
     const instructorCount = Math.max(estimator.minInstructors, Math.ceil(participants / estimator.participantsPerInstructor));
     const selectedServices = new Set(formData.getAll("requested-services"));
     const selectedActivities = new Set(formData.getAll("activities"));
-    const nights = Math.max(0, days - 1 || (selectedServices.has("UbytovĂˇnĂ­") ? 1 : 0));
+    const nights = Math.max(0, days - 1 || (selectedServices.has("Ubytování") ? 1 : 0));
 
     const breakdown = [];
     let totalCost = 0;
 
     const instructorCost = instructorCount * estimator.instructorCostPerDay * days;
     totalCost += instructorCost;
-    breakdown.push(`InstruktoĹ™i a vedenĂ­ programu (${instructorCount} Ă— ${days} den/ny): ${formatPrice(instructorCost)}`);
+    breakdown.push(`Instruktoři a vedení programu (${instructorCount} × ${days} den/ny): ${formatPrice(instructorCost)}`);
 
     const organizationCost = participants * estimator.organizationCostPerPersonPerDay * days;
     totalCost += organizationCost;
-    breakdown.push(`Organizace a administrativa (${participants} osob Ă— ${days} den/ny): ${formatPrice(organizationCost)}`);
+    breakdown.push(`Organizace a administrativa (${participants} osob × ${days} den/ny): ${formatPrice(organizationCost)}`);
 
     const equipmentCost = participants * estimator.equipmentCostPerPerson;
     totalCost += equipmentCost;
-    breakdown.push(`ZĂˇkladnĂ­ vybavenĂ­ (${participants} osob): ${formatPrice(equipmentCost)}`);
+    breakdown.push(`Základní vybavení (${participants} osob): ${formatPrice(equipmentCost)}`);
 
     const eventSurcharge = getCustomEventBaseSurcharge(eventType, days);
     if (eventSurcharge) {
       totalCost += eventSurcharge;
-      breakdown.push(`Typ akce a programovĂˇ nĂˇroÄŤnost: ${formatPrice(eventSurcharge)}`);
+      breakdown.push(`Typ akce a programová náročnost: ${formatPrice(eventSurcharge)}`);
     }
 
     selectedActivities.forEach((activity) => {
@@ -978,28 +978,28 @@ function renderCustomExperienceForm() {
       }
     });
 
-    if (selectedServices.has("Dopravu z Prahy a okolĂ­")) {
+    if (selectedServices.has("Dopravu z Prahy a okolí")) {
       const transportCost = getTransportCost(participants, locality?.travelKm);
       totalCost += transportCost;
       breakdown.push(`Doprava ${locality ? `do oblasti ${locality.label}` : "na lokalitu"}: ${formatPrice(transportCost)}`);
     }
 
-    if (selectedServices.has("UbytovĂˇnĂ­")) {
+    if (selectedServices.has("Ubytování")) {
       const lodgingCost = participants * Math.max(1, nights) * estimator.lodgingCostPerPersonPerNight;
       totalCost += lodgingCost;
-      breakdown.push(`UbytovĂˇnĂ­ (${participants} osob Ă— ${Math.max(1, nights)} noc/i): ${formatPrice(lodgingCost)}`);
+      breakdown.push(`Ubytování (${participants} osob × ${Math.max(1, nights)} noc/i): ${formatPrice(lodgingCost)}`);
     }
 
-    if (selectedServices.has("Snack a pitnĂ˝ reĹľim")) {
+    if (selectedServices.has("Snack a pitný režim")) {
       const snackCost = participants * days * estimator.snackCostPerPersonPerDay;
       totalCost += snackCost;
-      breakdown.push(`Snack a pitnĂ˝ reĹľim: ${formatPrice(snackCost)}`);
+      breakdown.push(`Snack a pitný režim: ${formatPrice(snackCost)}`);
     }
 
     if (selectedServices.has("Catering / plnou penzi")) {
       const cateringCost = participants * days * estimator.standardCateringCostPerPersonPerDay;
       totalCost += cateringCost;
-      breakdown.push(`Catering / plnĂˇ penze: ${formatPrice(cateringCost)}`);
+      breakdown.push(`Catering / plná penze: ${formatPrice(cateringCost)}`);
     }
 
     if (selectedServices.has("Fotografa")) {
@@ -1012,41 +1012,41 @@ function renderCustomExperienceForm() {
       breakdown.push(`Video / reels: ${formatPrice(estimator.videoCostFlat)}`);
     }
 
-    if (selectedServices.has("VeÄŤernĂ­ program")) {
+    if (selectedServices.has("Večerní program")) {
       totalCost += estimator.eveningProgramCostFlat;
-      breakdown.push(`VeÄŤernĂ­ program: ${formatPrice(estimator.eveningProgramCostFlat)}`);
+      breakdown.push(`Večerní program: ${formatPrice(estimator.eveningProgramCostFlat)}`);
     }
 
-    if (selectedServices.has("Anglicky mluvĂ­cĂ­ho instruktora")) {
+    if (selectedServices.has("Anglicky mluvícího instruktora")) {
       const englishInstructorCost = instructorCost * 0.2;
       totalCost += englishInstructorCost;
-      breakdown.push(`Anglicky mluvĂ­cĂ­ instruktor: ${formatPrice(englishInstructorCost)}`);
+      breakdown.push(`Anglicky mluvící instruktor: ${formatPrice(englishInstructorCost)}`);
     }
 
-    if (selectedServices.has("ZĂˇloĹľnĂ­ indoor variantu")) {
-      breakdown.push("ZĂˇloĹľnĂ­ indoor varianta: v cenÄ›");
+    if (selectedServices.has("Záložní indoor variantu")) {
+      breakdown.push("Záložní indoor varianta: v ceně");
     }
 
-    if (selectedServices.has("TeambuildingovĂ© aktivity navĂ­c")) {
+    if (selectedServices.has("Teambuildingové aktivity navíc")) {
       totalCost += estimator.extraTeamActivitiesFlat;
-      breakdown.push(`RozĹˇĂ­Ĺ™enĂ© tĂ˝movĂ© aktivity: ${formatPrice(estimator.extraTeamActivitiesFlat)}`);
+      breakdown.push(`Rozšířené týmové aktivity: ${formatPrice(estimator.extraTeamActivitiesFlat)}`);
     }
 
-    if (selectedServices.has("DĂˇrkovĂ˝ balĂ­ÄŤek pro ĂşÄŤastnĂ­ky")) {
+    if (selectedServices.has("Dárkový balíček pro účastníky")) {
       const giftCost = participants * estimator.giftPackageCostPerPerson;
       totalCost += giftCost;
-      breakdown.push(`DĂˇrkovĂ˝ balĂ­ÄŤek pro ĂşÄŤastnĂ­ky: ${formatPrice(giftCost)}`);
+      breakdown.push(`Dárkový balíček pro účastníky: ${formatPrice(giftCost)}`);
     }
 
     const priceWithoutVat = roundUpPrice(totalCost * estimator.marginMultiplier);
     const perPerson = roundUpPrice(priceWithoutVat / participants);
 
-    estimatePrice.textContent = `OrientaÄŤnĂ­ cena od ${formatPrice(priceWithoutVat)} bez DPH`;
-    let summaryText = `Pro ${participants} osob, ${days} den/ny${locality ? `, lokalita ${locality.label}` : ""}. OrientaÄŤnÄ› cca ${formatPrice(perPerson)} / osoba bez DPH.`;
+    estimatePrice.textContent = `Orientační cena od ${formatPrice(priceWithoutVat)} bez DPH`;
+    let summaryText = `Pro ${participants} osob, ${days} den/ny${locality ? `, lokalita ${locality.label}` : ""}. Orientačně cca ${formatPrice(perPerson)} / osoba bez DPH.`;
     if (budget) {
       summaryText += budget >= priceWithoutVat
-        ? ` VĂˇmi zadanĂ˝ rozpoÄŤet ${formatPrice(budget)} bez DPH tomuto nĂˇvrhu orientaÄŤnÄ› odpovĂ­dĂˇ.`
-        : ` VĂˇmi zadanĂ˝ rozpoÄŤet ${formatPrice(budget)} bez DPH je pod tĂ­mto odhadem, takĹľe budeme hledat ĂşspornÄ›jĹˇĂ­ variantu.`;
+        ? ` Vámi zadaný rozpočet ${formatPrice(budget)} bez DPH tomuto návrhu orientačně odpovídá.`
+        : ` Vámi zadaný rozpočet ${formatPrice(budget)} bez DPH je pod tímto odhadem, takže budeme hledat úspornější variantu.`;
     }
     estimateSummary.textContent = summaryText;
     estimateBreakdown.innerHTML = "";
@@ -1101,14 +1101,14 @@ function renderCustomExperienceForm() {
   configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
     formNotice,
     submittedKey: "custom-experience",
-    inactiveTitle: "OdeslĂˇnĂ­ formulĂˇĹ™e zatĂ­m nenĂ­ aktivnĂ­",
+    inactiveTitle: "Odeslání formuláře zatím není aktivní",
     inactiveLines: [
-      `ProzatĂ­m prosĂ­m napiĹˇte na ${eventyData.recipientEmail}.`
+      `Prozatím prosím napište na ${eventyData.recipientEmail}.`
     ],
     subjectBuilder(formData) {
       const eventType = (formData.get("event-type") || "").toString().trim();
       const locality = (formData.get("preferred-locality") || "").toString().trim();
-      return `${eventyData.mailTemplates.adminSubjectPrefix} â€“ zĂˇĹľitek na mĂ­ru â€“ ${eventType || "bez typu"}${locality ? ` â€“ ${locality}` : ""}`;
+      return `${eventyData.mailTemplates.adminSubjectPrefix} – zážitek na míru – ${eventType || "bez typu"}${locality ? ` – ${locality}` : ""}`;
     },
     autoresponseLines: eventyData.mailTemplates.customerBody
   });
@@ -1123,15 +1123,15 @@ function renderContactForm() {
   configureHostedForm(form, eventyData.formDelivery.contact.endpoint.trim(), {
     formNotice,
     submittedKey: "contact",
-    inactiveTitle: "OdeslĂˇnĂ­ formulĂˇĹ™e zatĂ­m nenĂ­ aktivnĂ­",
+    inactiveTitle: "Odeslání formuláře zatím není aktivní",
     inactiveLines: [
-      `ProzatĂ­m prosĂ­m napiĹˇte svĹŻj dotaz na ${eventyData.recipientEmail}.`
+      `Prozatím prosím napište svůj dotaz na ${eventyData.recipientEmail}.`
     ],
     subjectBuilder(formData) {
       const firstName = (formData.get("first-name") || "").toString().trim();
       const lastName = (formData.get("last-name") || "").toString().trim();
       const fullName = `${firstName} ${lastName}`.trim();
-      return `${eventyData.mailTemplates.contactSubjectPrefix} â€“ ${fullName || "bez jmĂ©na"}`;
+      return `${eventyData.mailTemplates.contactSubjectPrefix} – ${fullName || "bez jména"}`;
     },
     autoresponseLines: eventyData.mailTemplates.contactCustomerBody
   });
@@ -1146,8 +1146,8 @@ function renderContactForm() {
     if (!endpoint) {
       formNotice.innerHTML = `
         <div class="notice">
-          <h3>OdeslĂˇnĂ­ formulĂˇĹ™e zatĂ­m nenĂ­ aktivnĂ­</h3>
-          <p>ProzatĂ­m prosĂ­m napiĹˇte svĹŻj dotaz na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+          <h3>Odeslání formuláře zatím není aktivní</h3>
+          <p>Prozatím prosím napište svůj dotaz na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
         </div>
       `;
       return;
@@ -1156,7 +1156,7 @@ function renderContactForm() {
     const formData = new FormData(form);
     const email = formData.get("email");
     const fullName = `${formData.get("first-name")} ${formData.get("last-name")}`.trim();
-    const subject = `${eventyData.mailTemplates.contactSubjectPrefix} â€“ ${fullName || "bez jmĂ©na"}`;
+    const subject = `${eventyData.mailTemplates.contactSubjectPrefix} – ${fullName || "bez jména"}`;
 
     submitFormToEndpoint(form, endpoint, {
       _subject: subject,
@@ -1166,8 +1166,8 @@ function renderContactForm() {
       .then(() => {
         formNotice.innerHTML = `
           <div class="notice notice--success">
-            <h3>Dotaz jsme pĹ™ijali</h3>
-            <p>Ozveme se vĂˇm co nejdĹ™Ă­ve na uvedenĂ˝ e-mail.</p>
+            <h3>Dotaz jsme přijali</h3>
+            <p>Ozveme se vám co nejdříve na uvedený e-mail.</p>
           </div>
         `;
         form.reset();
@@ -1175,8 +1175,8 @@ function renderContactForm() {
       .catch(() => {
         formNotice.innerHTML = `
           <div class="notice">
-            <h3>Dotaz se nepodaĹ™ilo odeslat</h3>
-            <p>Zkuste to prosĂ­m znovu, nebo napiĹˇte pĹ™Ă­mo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
+            <h3>Dotaz se nepodařilo odeslat</h3>
+            <p>Zkuste to prosím znovu, nebo napište přímo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
           </div>
         `;
       });
