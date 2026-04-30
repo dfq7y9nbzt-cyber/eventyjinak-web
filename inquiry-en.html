@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry for Team Building, Outdoor Events and Rock Experiences | Eventy Jinak</title>
+  <meta name="description" content="Send a non-binding inquiry for climbing team building, outdoor events, multi-day stays or a tailored rock experience. We confirm the date, team, venue and logistics individually.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.eventyjinak.cz/inquiry-en.html">
+  <link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/rezervace.html">
+  <link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/inquiry-en.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="data-en.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body data-page="inquiry" data-locale="en">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="en.html" aria-label="Eventy Jinak">
+        <img class="brand-logo" src="assets/logo-eventy-jinak.png" alt="Eventy Jinak">
+      </a>
+      <div class="header-tools">
+        <div class="lang-switch" aria-label="Language switcher">
+          <a href="rezervace.html" lang="cs" aria-label="Přepnout do češtiny">🇨🇿</a>
+          <a href="inquiry-en.html" lang="en" aria-current="true" aria-label="Switch to English">🇬🇧</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="en.html">Home</a>
+        <a href="services-en.html">Services</a>
+        <a href="inquiry-en.html" aria-current="page">Inquiry</a>
+        <a href="contact-en.html">Contact</a>
+        <a href="about-en.html">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero reveal">
+        <p class="eyebrow">Non-binding inquiry</p>
+        <h1>Ask for the date and experience that fits you best.</h1>
+        <p>Sending this form creates only a non-binding inquiry. We confirm real availability of instructors, location, transport and capacity individually. A binding reservation is created only after we send the contract draft and the deposit payment is received.</p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">How the inquiry works</p>
+          <h2>Share the key details and we prepare a real event proposal with suitable date options.</h2>
+        </div>
+        <div class="info-grid process-grid">
+          <article class="info-card"><p class="eyebrow">1.</p><p>You choose the event type or describe your own request.</p></article>
+          <article class="info-card"><p class="eyebrow">2.</p><p>You add dates, group size, experience level and specific needs.</p></article>
+          <article class="info-card"><p class="eyebrow">3.</p><p>We check instructors, transport, venue and possible add-ons.</p></article>
+          <article class="info-card"><p class="eyebrow">4.</p><p>Within 3 business days we respond with the next realistic option.</p></article>
+          <article class="info-card"><p class="eyebrow">5.</p><p>We can also suggest a weather backup version of the event.</p></article>
+          <article class="info-card"><p class="eyebrow">6.</p><p>After approval we send a contract draft, terms, a 50% deposit invoice and any follow-up questionnaire if needed.</p></article>
+          <article class="info-card"><p class="eyebrow">7.</p><p>The reservation becomes binding only after the deposit reaches our account. Any later cancellation then follows the cancellation terms.</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Form</p>
+          <h2>Non-binding inquiry for a custom event</h2>
+        </div>
+
+        <form id="inquiry-form" class="inquiry-form" novalidate>
+          <div class="form-grid">
+            <label class="field"><span>Full name</span><input type="text" name="full-name" required></label>
+            <label class="field"><span>Company</span><input type="text" name="company"></label>
+            <label class="field"><span>Email</span><input type="email" name="email" required></label>
+            <label class="field"><span>Phone</span><input type="tel" name="phone" required></label>
+            <label class="field"><span>Event type</span><select id="action-type" name="action-type" required><option value="">Select event type</option></select></label>
+            <label class="field"><span>Approximate number of participants</span><input type="text" name="participants" placeholder="e.g. 12 people" required></label>
+            <label class="field"><span>Age / group profile</span><input type="text" name="group-profile" placeholder="e.g. company team aged 30-45"></label>
+            <label class="field"><span>Climbing experience</span><select id="experience-level" name="experience-level" required><option value="">Select experience level</option></select></label>
+            <label class="field"><span>Preferred date</span><input id="preferred-date" type="date" name="preferred-date" required></label>
+            <label class="field"><span>Backup date 1</span><input id="backup-date-one" type="date" name="backup-date-one"></label>
+            <label class="field"><span>Backup date 2</span><input id="backup-date-two" type="date" name="backup-date-two"></label>
+            <label class="field"><span>Date flexibility</span><select id="time-flexibility" name="time-flexibility" required><option value="">Select flexibility</option></select></label>
+            <label class="field"><span>Package</span><select id="package-choice" name="package-choice" required><option value="">Select package</option></select></label>
+          </div>
+
+          <div class="field field--full">
+            <span>Add-on services</span>
+            <div id="addon-options" class="checkbox-grid"></div>
+          </div>
+
+          <label class="field field--full">
+            <span>Specific requirements</span>
+            <textarea name="notes" rows="7" placeholder="Goals of the event, group specifics, health limitations, transport needs, corporate brief or anything else we should know."></textarea>
+          </label>
+
+          <div class="field field--full">
+            <span>Consents</span>
+            <div id="consent-options" class="checkbox-grid checkbox-grid--single"></div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Send inquiry</button>
+            <a class="button button-secondary" href="contact-en.html">Ask first</a>
+          </div>
+        </form>
+        <div id="form-notice" class="section-space"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">Eventy Jinak</p>
+        <p>Non-binding inquiry | Brand operated by IronBros s.r.o.</p>
+      </div>
+      <div class="footer-nav-stack">
+        <div class="footer-links">
+          <a href="services-en.html">Services</a>
+          <a href="contact-en.html">Contact</a>
+          <a href="dokumenty.html">Documents (CZ)</a>
+        </div>
+        <div class="footer-legal-links">
+          <a href="obchodni-podminky.html">Terms (CZ)</a>
+          <a href="ochrana-osobnich-udaju.html">Privacy (CZ)</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="reklamace-a-adr.html">Complaints & ADR (CZ)</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

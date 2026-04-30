@@ -759,6 +759,33 @@ const eventyData = {
         rockType: "zula",
         access: "dobrodružnější nástup",
         travelKm: 210
+      },
+      {
+        value: "ostas",
+        label: "Ostaš",
+        district: "Náchod",
+        region: "Královéhradecký kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup",
+        travelKm: 290
+      },
+      {
+        value: "krizovy-vrch",
+        label: "Křížový vrch",
+        district: "Náchod",
+        region: "Královéhradecký kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup",
+        travelKm: 290
+      },
+      {
+        value: "strzovy-vrch-jizerky",
+        label: "Stržový vrch a Kopřivník",
+        district: "Liberec",
+        region: "Liberecký kraj",
+        rockType: "zula",
+        access: "středně náročný přístup",
+        travelKm: 230
       }
     ]
   },

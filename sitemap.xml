@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.eventyjinak.cz/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/en.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/sluzby.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/sluzby.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/services-en.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/rezervace.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/rezervace.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/inquiry-en.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/kontakt.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/contact-en.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/o-nas.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/o-nas.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/about-en.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/zazitek-na-miru.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/zazitek-na-miru.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/custom-experience-en.html" />
+  </url>
+  <url><loc>https://www.eventyjinak.cz/en.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/services-en.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/inquiry-en.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/contact-en.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/about-en.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/custom-experience-en.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/dokumenty.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/obchodni-podminky.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/ochrana-osobnich-udaju.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/cookies.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://www.eventyjinak.cz/reklamace-a-adr.html</loc><lastmod>2026-05-01</lastmod></url>
+</urlset>
