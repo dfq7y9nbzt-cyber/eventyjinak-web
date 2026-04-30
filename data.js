@@ -16,7 +16,7 @@ const eventyData = {
   hero: {
     title: "Outdoorové a lezecké eventy jinak",
     subtitle:
-      "Prémiové zážitky pro firmy a skupiny z Prahy. Zajistíme dopravu, instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
+      "Prémiové zážitky pro firmy a skupiny z Prahy a okolí. Zajistíme dopravu, instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
     slides: [
       {
         src: "assets/images/prilepska-skala-bez-lidi.jpg",
