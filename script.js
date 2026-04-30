@@ -151,7 +151,6 @@ function renderServicesPage() {
       section.innerHTML = `
         <div class="service-detail__media">
           <img src="${service.heroImage}" alt="${service.heroAlt}">
-          <p class="small-note">Placeholder fotografie. Později sem jednoduše doplníte vlastní snímky z akcí.</p>
         </div>
         <div class="service-detail__content">
           <p class="eyebrow">Detail služby</p>
