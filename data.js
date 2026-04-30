@@ -366,7 +366,7 @@ const eventyData = {
     {
       title: "Jídlo a občerstvení",
       items: [
-        "Pitný režim a snack — od 150 Kč / osoba bez DPH",
+        "Pitný režim a snack — v ceně většiny balíčků",
         "Piknik basic — od 350 Kč / osoba bez DPH",
         "Outdoor catering standard — od 590 Kč / osoba bez DPH",
         "Premium catering — od 990 Kč / osoba bez DPH",
