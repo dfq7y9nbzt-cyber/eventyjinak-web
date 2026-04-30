@@ -58,7 +58,7 @@
         </div>
         <div class="info-grid process-grid">
           <article class="info-card"><p class="eyebrow">1.</p><p>Zvolíte počet osob, termín nebo rozpětí dnů a typ akce.</p></article>
-          <article class="info-card"><p class="eyebrow">2.</p><p>Vyberete typ skály, oblast v ČR, okres a náročnost přístupu.</p></article>
+          <article class="info-card"><p class="eyebrow">2.</p><p>Vyberete typ skály, preferovanou lokalitu a náročnost přístupu.</p></article>
           <article class="info-card"><p class="eyebrow">3.</p><p>Označíte služby, které pro vás máme zajistit a zahrnout do kalkulace.</p></article>
           <article class="info-card"><p class="eyebrow">4.</p><p>Doplníte vlastní představu a my připravíme konkrétní návrh i rozpočet.</p></article>
         </div>
@@ -142,12 +142,6 @@
               </select>
             </label>
             <label class="field">
-              <span>Okres / oblast v ČR</span>
-              <select id="custom-district" name="district">
-                <option value="">Nechte si doporučit</option>
-              </select>
-            </label>
-            <label class="field">
               <span>Preferovaná lokalita</span>
               <select id="custom-locality" name="preferred-locality" required>
                 <option value="">Vyberte lokalitu</option>
@@ -169,6 +163,12 @@
               <input type="text" name="budget-estimate" placeholder="např. 45 000 Kč nebo 4 500 Kč / osoba">
             </label>
           </div>
+
+          <article class="content-card custom-estimate-card">
+            <p class="eyebrow">Doporučená lokalita</p>
+            <h3 id="custom-recommendation-title">Nejdřív vyberte parametry akce</h3>
+            <p id="custom-recommendation-copy">Jakmile zvolíte typ skály, aktivity nebo období, doporučíme vám vhodnou lokalitu z výběru.</p>
+          </article>
 
           <div class="field field--full">
             <span>Jaké aktivity chcete zažít?</span>

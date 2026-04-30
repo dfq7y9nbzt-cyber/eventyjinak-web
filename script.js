@@ -407,6 +407,40 @@ function getTransportCost(participants, travelKm) {
   return Math.max(safeKm * transport.over20PerKm, transport.minimumOver20);
 }
 
+function getRockTypeCategory(locality) {
+  return locality.rockType === "piskovec" ? "piskovec" : "skala";
+}
+
+function getDetailedRockTypeLabel(rockType) {
+  const labels = {
+    piskovec: "pískovec",
+    zula: "žula a pevná skála",
+    vapenec: "vápenec",
+    buliznik: "tvrdá skála / buližník"
+  };
+  return labels[rockType] || rockType;
+}
+
+function getRecommendedRockType(selectedActivities, season) {
+  if (selectedActivities.has("Drytool / zimní techniky") || selectedActivities.has("Via ferrata")) {
+    return "skala";
+  }
+
+  if (season === "zimní období") {
+    return "skala";
+  }
+
+  if (
+    selectedActivities.has("Přespání / bivakový zážitek") ||
+    selectedActivities.has("Bushcraft / pobyt v přírodě") ||
+    selectedActivities.has("Lezecký den na pohodu")
+  ) {
+    return "piskovec";
+  }
+
+  return "";
+}
+
 function localitySupportsAudience(locality, audienceFit) {
   if (!audienceFit || audienceFit === "je mi to jedno") return true;
 
@@ -651,7 +685,6 @@ function renderCustomExperienceForm() {
   const audienceFitSelect = qs("#custom-audience-fit", form);
   const seasonSelect = qs("#custom-season", form);
   const rockTypeSelect = qs("#custom-rock-type", form);
-  const districtSelect = qs("#custom-district", form);
   const localitySelect = qs("#custom-locality", form);
   const accessSelect = qs("#custom-access", form);
   const activityBox = qs("#custom-activity-options", form);
@@ -659,11 +692,14 @@ function renderCustomExperienceForm() {
   const consentBox = qs("#custom-consent-options", form);
   const formNotice = qs("#custom-form-notice");
   const localityMeta = qs("#custom-locality-meta");
+  const recommendationTitle = qs("#custom-recommendation-title");
+  const recommendationCopy = qs("#custom-recommendation-copy");
   const estimatePrice = qs("#custom-estimate-price");
   const estimateSummary = qs("#custom-estimate-summary");
   const estimateBreakdown = qs("#custom-estimate-breakdown");
   const estimateTrigger = qs("#custom-estimate-trigger", form.parentElement);
   let estimateVisible = false;
+  let rockTypeManuallyChanged = false;
 
   eventyData.customFormOptions.eventTypes.forEach((item) => {
     eventTypeSelect.appendChild(buildOption(item));
@@ -687,10 +723,6 @@ function renderCustomExperienceForm() {
     option.textContent = item.label;
     rockTypeSelect.appendChild(option);
   });
-
-  const districts = [...new Set(eventyData.customFormOptions.localities.map((item) => item.district))];
-  districts.sort((a, b) => a.localeCompare(b, "cs"));
-  districts.forEach((district) => districtSelect.appendChild(buildOption(district)));
 
   eventyData.customFormOptions.accessLevels.forEach((item) => {
     accessSelect.appendChild(buildOption(item));
@@ -725,28 +757,36 @@ function renderCustomExperienceForm() {
 
   const renderLocalities = () => {
     const currentRockType = rockTypeSelect.value;
-    const currentDistrict = districtSelect.value;
     const currentAudienceFit = audienceFitSelect.value;
     const currentSeason = seasonSelect.value;
     const selectedActivities = new Set(new FormData(form).getAll("activities"));
     localitySelect.innerHTML = '<option value="">Vyberte lokalitu</option>';
 
     const matchingLocalities = eventyData.customFormOptions.localities
-      .filter((item) => (currentRockType ? currentRockType === "any" || item.rockType === currentRockType : true))
-      .filter((item) => (currentDistrict ? item.district === currentDistrict : true))
+      .filter((item) => (currentRockType ? currentRockType === "any" || getRockTypeCategory(item) === currentRockType : true))
       .filter((item) => localitySupportsAudience(item, currentAudienceFit))
       .filter((item) => localitySupportsActivities(item, selectedActivities, currentSeason));
 
     matchingLocalities.forEach((item) => {
         const option = document.createElement("option");
         option.value = item.value;
-        option.textContent = `${item.label} — okres ${item.district}`;
+        option.textContent = `${item.label} — ${item.region}`;
         localitySelect.appendChild(option);
       });
 
     localityMeta.textContent = matchingLocalities.length
       ? ""
       : "Pro tuto kombinaci aktivit, období a cílové skupiny teď nemáme v databázi vhodnou lokalitu. Napište nám dotaz a navrhneme řešení ručně.";
+
+    if (!matchingLocalities.length) {
+      recommendationTitle.textContent = "Potřebujete individuální doporučení";
+      recommendationCopy.textContent = "Pro zvolenou kombinaci aktivit nebo období nemáme vhodnou lokalitu přímo ve formuláři. Napište nám dotaz a navrhneme ruční variantu.";
+      return;
+    }
+
+    const recommended = matchingLocalities[0];
+    recommendationTitle.textContent = recommended.label;
+    recommendationCopy.textContent = `${recommended.region} | ${getDetailedRockTypeLabel(recommended.rockType)} | ${recommended.access}. Tuhle lokalitu teď doporučujeme jako nejbližší shodu podle vašeho výběru.`;
   };
 
   const syncLocalityMeta = () => {
@@ -756,8 +796,9 @@ function renderCustomExperienceForm() {
       return;
     }
 
-    const rockTypeLabel = eventyData.customFormOptions.rockTypes.find((item) => item.value === selected.rockType)?.label || selected.rockType;
-    localityMeta.textContent = `${selected.label} | ${selected.region} | okres ${selected.district} | ${rockTypeLabel} | ${selected.access}`;
+    localityMeta.textContent = `${selected.label} | ${selected.region} | ${getDetailedRockTypeLabel(selected.rockType)} | ${selected.access}`;
+    recommendationTitle.textContent = selected.label;
+    recommendationCopy.textContent = `${selected.region} | ${getDetailedRockTypeLabel(selected.rockType)} | ${selected.access}. Tuhle lokalitu máte vybranou jako aktuální preferenci.`;
   };
 
   const updateEstimate = (forceVisible = false) => {
@@ -896,14 +937,15 @@ function renderCustomExperienceForm() {
   renderLocalities();
   rockTypeSelect.addEventListener("change", renderLocalities);
   rockTypeSelect.addEventListener("change", updateEstimate);
-  districtSelect.addEventListener("change", renderLocalities);
-  districtSelect.addEventListener("change", updateEstimate);
   audienceFitSelect.addEventListener("change", renderLocalities);
   audienceFitSelect.addEventListener("change", updateEstimate);
   seasonSelect.addEventListener("change", renderLocalities);
   seasonSelect.addEventListener("change", updateEstimate);
   localitySelect.addEventListener("change", syncLocalityMeta);
   localitySelect.addEventListener("change", updateEstimate);
+  rockTypeSelect.addEventListener("change", () => {
+    rockTypeManuallyChanged = true;
+  });
 
   ["custom-date-from", "custom-date-to"].forEach((id) => {
     const field = qs(`#${id}`, form);
@@ -918,6 +960,11 @@ function renderCustomExperienceForm() {
     });
     field.addEventListener("change", () => {
       if (field.name === "activities") {
+        const selectedActivities = new Set(new FormData(form).getAll("activities"));
+        const recommendedRockType = getRecommendedRockType(selectedActivities, seasonSelect.value);
+        if (!rockTypeManuallyChanged && recommendedRockType) {
+          rockTypeSelect.value = recommendedRockType;
+        }
         renderLocalities();
       }
       if (estimateVisible) updateEstimate();

@@ -540,10 +540,8 @@ const eventyData = {
     ],
     rockTypes: [
       { value: "any", label: "Je mi to jedno" },
-      { value: "piskovec", label: "Pískovec" },
-      { value: "zula", label: "Žula a pevná krystalická skála" },
-      { value: "vapenec", label: "Vápenec" },
-      { value: "buliznik", label: "Buližník / křemen / tvrdé městské skály" }
+      { value: "piskovec", label: "Písek" },
+      { value: "skala", label: "Skála (vápno, žula a další)" }
     ],
     accessLevels: [
       "snadný přístup",
