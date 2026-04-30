@@ -272,14 +272,13 @@ const eventyData = {
       },
       premium: {
         price: "od 13 900 Kč / osoba bez DPH",
-        note: "Minimální cena skupiny od 79 000 Kč bez DPH.",
+        note: "Minimální cena skupiny od 59 000 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "ubytování zahrnuté v ceně podle dohodnutého standardu",
           "fotografa",
           "lepší stravování",
           "rozšířený program",
-          "větší časovou rezervu",
           "možnost večerního speciálního programu",
           "individuální přípravu itineráře"
         ]
