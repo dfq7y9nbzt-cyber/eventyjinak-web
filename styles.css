@@ -397,12 +397,14 @@ body[data-page="home"] .content-card--accent .cta-question {
 
 .content-card--safety h2 {
   margin-bottom: 16px;
+  max-width: 18ch;
 }
 
 .content-card--safety p:not(.eyebrow) {
   margin: 0;
-  max-width: 60ch;
+  max-width: 52ch;
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .content-card--safety p + p {
