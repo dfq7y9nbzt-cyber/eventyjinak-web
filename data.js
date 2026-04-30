@@ -361,7 +361,6 @@ const eventyData = {
         "Fotograf celý den — od 11 900 Kč bez DPH",
         "Krátké reels video — od 5 900 Kč bez DPH",
         "Video z akce 60–90 sekund — od 11 900 Kč bez DPH",
-        "Employer branding balíček — od 14 900 Kč bez DPH"
       ]
     },
     {
