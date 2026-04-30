@@ -253,7 +253,7 @@ const eventyData = {
         "zapůjčení potřebného vybavení",
         "zajištění a rezervaci ubytování",
         "bezpečnostní vedení",
-        "večerní program na míru"
+        "pitný režim / drobné občerstvení"
       ],
       standard: {
         price: "od 5 900 Kč / osoba bez DPH",
@@ -266,7 +266,6 @@ const eventyData = {
           "zapůjčení potřebného vybavení",
           "zajištění a rezervaci ubytování",
           "bezpečnostní vedení",
-          "večerní program na míru",
           "pitný režim / drobné občerstvení"
         ]
       },
@@ -279,7 +278,7 @@ const eventyData = {
           "fotografa",
           "lepší stravování",
           "rozšířený program",
-          "možnost večerního speciálního programu",
+          "možnost večerního programu na míru",
           "individuální přípravu itineráře"
         ]
       }
