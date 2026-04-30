@@ -618,6 +618,97 @@ body[data-page="services"] .reveal {
   font-weight: 700;
 }
 
+.button-download {
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--accent-deep);
+  border-color: rgba(47, 138, 59, 0.18);
+}
+
+.document-card {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.document-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.document-card__meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.legal-hero {
+  display: grid;
+  gap: 14px;
+  padding: 18px 0 6px;
+}
+
+.legal-hero h1 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.8vw, 3rem);
+  line-height: 1.08;
+  max-width: 18ch;
+}
+
+.legal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.legal-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.legal-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.legal-card {
+  display: grid;
+  gap: 16px;
+}
+
+.legal-card h2,
+.legal-card h3 {
+  margin: 0;
+}
+
+.legal-card p,
+.legal-card li {
+  line-height: 1.72;
+}
+
+.legal-card .plain-list {
+  display: grid;
+  gap: 8px;
+}
+
+.legal-note {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
 .inquiry-form {
   display: grid;
   gap: 22px;
@@ -803,6 +894,25 @@ textarea:focus {
   text-decoration: none;
 }
 
+.footer-nav-stack {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 14px;
+}
+
+.footer-legal-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -890,6 +1000,12 @@ textarea:focus {
   .site-footer {
     flex-direction: column;
     align-items: start;
+  }
+
+  .footer-nav-stack,
+  .footer-legal-links {
+    justify-items: start;
+    justify-content: flex-start;
   }
 }
 
