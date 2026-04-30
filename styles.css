@@ -401,17 +401,12 @@ body[data-page="home"] .content-card--accent .cta-question {
 
 .content-card--safety p:not(.eyebrow) {
   margin: 0;
-  max-width: 62ch;
-  line-height: 1.72;
+  max-width: 56ch;
+  line-height: 1.68;
 }
 
 .content-card--safety p + p {
-  margin-top: 14px;
-}
-
-.desktop-break {
-  display: block;
-  content: "";
+  margin-top: 12px;
 }
 
 .section-card--center {
@@ -1027,9 +1022,6 @@ textarea:focus {
     justify-content: flex-start;
   }
 
-  .desktop-break {
-    display: none;
-  }
 }
 
 @media (max-width: 560px) {
