@@ -191,7 +191,7 @@ const eventyData = {
       ],
       standard: {
         price: "od 39 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 8–12 osob. 13–16 osob od 79 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
+        note: "Doporučeno pro 8–12 osob. 13–16 osob od 49 000 Kč, 17–20 osob od 65 000 Kč bez DPH.",
         items: [
           "návrh programu",
           "dopravu z Prahy a okolí minibusem podle velikosti skupiny",
@@ -205,17 +205,15 @@ const eventyData = {
         ]
       },
       premium: {
-        price: "od 89 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 8–12 osob. 13–16 osob od 119 000 Kč, 17–20 osob od 149 000 Kč bez DPH.",
+        price: "od 54 000 Kč / skupina bez DPH",
+        note: "Doporučeno pro 8–12 osob. 13–16 osob od 72 000 Kč, 17–20 osob od 90 000 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "fotografa",
           "lepší občerstvení / outdoor catering",
           "rozšířený týmový program",
-          "více instruktorů nebo delší program podle potřeby",
-          "větší rezervu na počasí a změny",
-          "fotogalerii po akci",
-          "možnost krátkého shrnutí pro interní komunikaci firmy"
+          "zpracovaný fotoalbum po akci",
+          "krátké video z akce"
         ]
       }
     },
