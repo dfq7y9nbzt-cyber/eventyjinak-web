@@ -72,6 +72,9 @@
 
         <article class="content-card custom-estimate-card">
           <p class="eyebrow">Orientační rozpočet</p>
+          <div class="custom-estimate-actions">
+            <button id="custom-estimate-trigger" class="button button-primary" type="button">Zobrazit orientační cenu</button>
+          </div>
           <h3 id="custom-estimate-price">Začněte vybírat parametry akce</h3>
           <p id="custom-estimate-summary">Jakmile doplníte počet osob, termín, lokalitu a služby, zobrazíme orientační cenu od bez DPH.</p>
           <ul id="custom-estimate-breakdown" class="plain-list custom-estimate-list"></ul>
@@ -149,6 +152,11 @@
               <span>Pro koho akci připravujeme?</span>
               <input type="text" name="group-profile" placeholder="např. firemní tým, parta přátel, manažerský tým, smíšená skupina">
             </label>
+          </div>
+
+          <div class="field field--full">
+            <span>Jaké aktivity chcete zažít?</span>
+            <div id="custom-activity-options" class="checkbox-grid"></div>
           </div>
 
           <div class="field field--full">

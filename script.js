@@ -587,6 +587,7 @@ function renderCustomExperienceForm() {
   const districtSelect = qs("#custom-district", form);
   const localitySelect = qs("#custom-locality", form);
   const accessSelect = qs("#custom-access", form);
+  const activityBox = qs("#custom-activity-options", form);
   const serviceBox = qs("#custom-service-options", form);
   const consentBox = qs("#custom-consent-options", form);
   const formNotice = qs("#custom-form-notice");
@@ -594,6 +595,8 @@ function renderCustomExperienceForm() {
   const estimatePrice = qs("#custom-estimate-price");
   const estimateSummary = qs("#custom-estimate-summary");
   const estimateBreakdown = qs("#custom-estimate-breakdown");
+  const estimateTrigger = qs("#custom-estimate-trigger", form.parentElement);
+  let estimateVisible = false;
 
   eventyData.customFormOptions.eventTypes.forEach((item) => {
     eventTypeSelect.appendChild(buildOption(item));
@@ -616,6 +619,15 @@ function renderCustomExperienceForm() {
 
   eventyData.customFormOptions.accessLevels.forEach((item) => {
     accessSelect.appendChild(buildOption(item));
+  });
+
+  eventyData.customFormOptions.activityChoices.forEach((item) => {
+    const label = createElement("label", "checkbox-item");
+    label.innerHTML = `
+      <input type="checkbox" name="activities" value="${item}">
+      <span>${item}</span>
+    `;
+    activityBox.appendChild(label);
   });
 
   eventyData.customFormOptions.serviceChoices.forEach((item) => {
@@ -665,7 +677,11 @@ function renderCustomExperienceForm() {
     localityMeta.textContent = `${selected.label} | ${selected.region} | okres ${selected.district} | ${rockTypeLabel} | ${selected.access}`;
   };
 
-  const updateEstimate = () => {
+  const updateEstimate = (forceVisible = false) => {
+    if (forceVisible) {
+      estimateVisible = true;
+    }
+
     const formData = new FormData(form);
     const participants = parseParticipantCount(formData.get("participants"));
     const eventType = (formData.get("event-type") || "").toString();
@@ -682,6 +698,7 @@ function renderCustomExperienceForm() {
     const estimator = eventyData.customEstimator;
     const instructorCount = Math.max(estimator.minInstructors, Math.ceil(participants / estimator.participantsPerInstructor));
     const selectedServices = new Set(formData.getAll("requested-services"));
+    const selectedActivities = new Set(formData.getAll("activities"));
     const nights = Math.max(0, days - 1 || (selectedServices.has("Ubytování") ? 1 : 0));
 
     const breakdown = [];
@@ -704,6 +721,14 @@ function renderCustomExperienceForm() {
       totalCost += eventSurcharge;
       breakdown.push(`Typ akce a programová náročnost: ${formatPrice(eventSurcharge)}`);
     }
+
+    selectedActivities.forEach((activity) => {
+      const surcharge = estimator.activitySurcharges[activity] || 0;
+      if (surcharge) {
+        totalCost += surcharge;
+        breakdown.push(`${activity}: ${formatPrice(surcharge)}`);
+      }
+    });
 
     if (selectedServices.has("Dopravu z Prahy a okolí")) {
       const transportCost = getTransportCost(participants, locality?.travelKm);
@@ -794,11 +819,17 @@ function renderCustomExperienceForm() {
   });
 
   qsa("input, select, textarea", form).forEach((field) => {
-    field.addEventListener("input", updateEstimate);
-    field.addEventListener("change", updateEstimate);
+    field.addEventListener("input", () => {
+      if (estimateVisible) updateEstimate();
+    });
+    field.addEventListener("change", () => {
+      if (estimateVisible) updateEstimate();
+    });
   });
 
-  updateEstimate();
+  if (estimateTrigger) {
+    estimateTrigger.addEventListener("click", () => updateEstimate(true));
+  }
 
   configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
     formNotice,

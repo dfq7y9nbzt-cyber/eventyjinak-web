@@ -858,6 +858,12 @@ body[data-page="custom-experience"] .process-grid .info-card p:last-child {
   margin-bottom: 22px;
 }
 
+.custom-estimate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .custom-estimate-card h3 {
   margin: 0;
   font-size: clamp(1.25rem, 2vw, 1.65rem);

@@ -551,6 +551,18 @@ const eventyData = {
       "dobrodružnější nástup",
       "je mi to jedno"
     ],
+    activityChoices: [
+      "Skalní lezení",
+      "Lezecký den na pohodu",
+      "Kurz a nácvik základů",
+      "Slaňování",
+      "Via ferrata",
+      "Bushcraft / pobyt v přírodě",
+      "Turistika / hřebenový program",
+      "Drytool / zimní techniky",
+      "Večerní program",
+      "Přespání / bivakový zážitek"
+    ],
     serviceChoices: [
       "Dopravu z Prahy a okolí",
       "Instruktory a vedení programu",
@@ -649,6 +661,60 @@ const eventyData = {
         travelKm: 240
       },
       {
+        value: "boren",
+        label: "Bořeň",
+        district: "Teplice",
+        region: "Ústecký kraj",
+        rockType: "zula",
+        access: "dobrodružnější nástup",
+        travelKm: 210
+      },
+      {
+        value: "palava",
+        label: "Pálava / Pavlovské vrchy",
+        district: "Břeclav",
+        region: "Jihomoravský kraj",
+        rockType: "vapenec",
+        access: "středně náročný přístup",
+        travelKm: 520
+      },
+      {
+        value: "rabstejn",
+        label: "Rabštejn",
+        district: "Bruntál",
+        region: "Moravskoslezský kraj",
+        rockType: "zula",
+        access: "dobrodružnější nástup",
+        travelKm: 520
+      },
+      {
+        value: "borecke-skaly",
+        label: "Borecké skály",
+        district: "Jičín",
+        region: "Královéhradecký kraj",
+        rockType: "piskovec",
+        access: "snadný přístup",
+        travelKm: 180
+      },
+      {
+        value: "susky",
+        label: "Sušky",
+        district: "Žďár nad Sázavou",
+        region: "Vysočina",
+        rockType: "zula",
+        access: "středně náročný přístup",
+        travelKm: 260
+      },
+      {
+        value: "svaty-jan",
+        label: "Svatý Jan pod Skalou",
+        district: "Beroun",
+        region: "Středočeský kraj",
+        rockType: "vapenec",
+        access: "středně náročný přístup",
+        travelKm: 95
+      },
+      {
         value: "moravsky-kras",
         label: "Moravský kras",
         district: "Blansko",
@@ -693,6 +759,18 @@ const eventyData = {
     eveningProgramCostFlat: 6000,
     giftPackageCostPerPerson: 200,
     extraTeamActivitiesFlat: 4000,
+    activitySurcharges: {
+      "Skalní lezení": 0,
+      "Lezecký den na pohodu": 0,
+      "Kurz a nácvik základů": 2500,
+      "Slaňování": 3500,
+      "Via ferrata": 5500,
+      "Bushcraft / pobyt v přírodě": 4500,
+      "Turistika / hřebenový program": 1500,
+      "Drytool / zimní techniky": 6500,
+      "Večerní program": 5000,
+      "Přespání / bivakový zážitek": 7000
+    },
     marginMultiplier: 1.3,
     transport: {
       smallCarPer100Km: 1000,
