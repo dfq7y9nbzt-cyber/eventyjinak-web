@@ -149,6 +149,33 @@ function renderHomePage() {
       .forEach((service) => featuredGrid.appendChild(createServiceCard(service)));
   }
 
+  const customExperienceHome = qs("#custom-experience-home");
+  if (customExperienceHome) {
+    const customService = eventyData.services.find((service) => service.id === "zazitek-na-miru-presne-podle-vas");
+    if (customService) {
+      const actions = getServiceActions(customService);
+
+      const media = createElement("article", "content-card custom-home-banner custom-home-banner--media");
+      media.innerHTML = `
+        <img src="${customService.heroImage}" alt="${customService.heroAlt}" class="custom-home-banner__image">
+      `;
+
+      const content = createElement("article", "content-card content-card--accent custom-home-banner");
+      content.innerHTML = `
+        <p class="eyebrow">Zážitek na míru</p>
+        <h2>${customService.name}</h2>
+        <p>${customService.detailText[0]}</p>
+        <p>${customService.detailText[1]}</p>
+        <div class="card-actions">
+          <a class="button button-primary" href="${actions.primaryHref}">${actions.primaryLabel}</a>
+          <a class="button button-cta-green" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
+        </div>
+      `;
+
+      customExperienceHome.append(media, content);
+    }
+  }
+
   qsa("[data-price-note]").forEach((node) => {
     node.textContent = eventyData.priceNote;
   });
