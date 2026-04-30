@@ -397,18 +397,21 @@ body[data-page="home"] .content-card--accent .cta-question {
 
 .content-card--safety h2 {
   margin-bottom: 16px;
-  max-width: 18ch;
 }
 
 .content-card--safety p:not(.eyebrow) {
   margin: 0;
-  max-width: 52ch;
+  max-width: 62ch;
   line-height: 1.72;
-  text-wrap: pretty;
 }
 
 .content-card--safety p + p {
   margin-top: 14px;
+}
+
+.desktop-break {
+  display: block;
+  content: "";
 }
 
 .section-card--center {
@@ -1022,6 +1025,10 @@ textarea:focus {
   .footer-legal-links {
     justify-items: start;
     justify-content: flex-start;
+  }
+
+  .desktop-break {
+    display: none;
   }
 }
 
