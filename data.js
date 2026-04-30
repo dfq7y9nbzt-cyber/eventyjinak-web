@@ -323,8 +323,8 @@ const eventyData = {
         "organizaci akce"
       ],
       standard: {
-        price: "od 18 000 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–5 osob. Pro 6 osob od 39 000 Kč bez DPH.",
+        price: "od 26 000 Kč / skupina bez DPH",
+        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 39 000 Kč bez DPH.",
         items: [
           "přípravu programu",
           "dopravu z Prahy a okolí podle velikosti skupiny",
