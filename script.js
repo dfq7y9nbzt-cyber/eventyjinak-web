@@ -183,8 +183,10 @@ function renderServicesPage() {
       safety.innerHTML = `
         <h3>Bezpečnost a organizace</h3>
         <p>${eventyData.safetyText}</p>
-        <p>${eventyData.safetyTextExtended}</p>
       `;
+      if (eventyData.safetyHighlights?.length) {
+        safety.appendChild(createList(eventyData.safetyHighlights));
+      }
 
       metaGrid.append(idealFor, process, included, safety);
 

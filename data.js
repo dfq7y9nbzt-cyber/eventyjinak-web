@@ -51,9 +51,12 @@ const eventyData = {
   priceNote:
     "Ceny jsou orientační a uvedené bez DPH. Finální nabídku připravujeme individuálně podle počtu osob, lokality, dopravy, délky programu a rozsahu služeb.",
   safetyText:
-    "Bezpečnost je pro nás základ každé akce. Program přizpůsobujeme zkušenostem účastníků, počasí, lokalitě i aktuálním podmínkám. Lezení a outdoorové aktivity probíhají pod dohledem zkušených instruktorů, s vhodným vybavením a jasnou bezpečnostní instruktáží.",
-  safetyTextExtended:
-    "Každá akce je připravena individuálně tak, aby byla zážitková, ale zároveň rozumně vedená a přístupná i lidem bez předchozích zkušeností.",
+    "Bezpečnost je pro nás základ každé akce.",
+  safetyHighlights: [
+    "Program přizpůsobujeme zkušenostem účastníků, počasí, lokalitě i aktuálním podmínkám.",
+    "Lezení a outdoorové aktivity vedou zkušení instruktoři s vhodným vybavením a jasnou bezpečnostní instruktáží.",
+    "Každá akce je připravena individuálně tak, aby byla zážitková, rozumně vedená a přístupná i lidem bez předchozích zkušeností."
+  ],
   operator: {
     brand: "Eventy Jinak",
     company: "IronBros s.r.o.",
@@ -131,7 +134,7 @@ const eventyData = {
           "výběr vhodné lokality",
           "základní lezecké vybavení",
           "bezpečnostní instruktáž",
-          "lezení na horním laně",
+          "lezení na top rope (horní lano)",
           "základní týmové aktivity",
           "drobné občerstvení a pitný režim",
           "organizaci celé akce"
@@ -143,10 +146,8 @@ const eventyData = {
         items: [
           "vše ze Standardu",
           "fotografa na část akce",
-          "rozšířený program",
-          "lepší občerstvení / piknik",
-          "větší časovou rezervu",
-          "více individuální přípravy",
+          "animační program na vyžádání",
+          "lepší občerstvení (teplé jídlo + káva)",
           "výběr a úpravu fotek po akci"
         ]
       }
