@@ -25,7 +25,17 @@ function createList(items, className = "plain-list") {
   return list;
 }
 
+function getServiceActions(service) {
+  return service.actions || {
+    primaryLabel: "Detail služby",
+    primaryHref: `sluzby.html#${service.id}`,
+    secondaryLabel: "Poptat termín",
+    secondaryHref: `rezervace.html?service=${service.id}`
+  };
+}
+
 function createServiceCard(service) {
+  const actions = getServiceActions(service);
   const card = createElement("article", "service-card service-card--featured");
   card.innerHTML = `
     <img src="${service.cardImage}" alt="${service.cardAlt}" class="service-card__image">
@@ -35,8 +45,8 @@ function createServiceCard(service) {
       <p>${service.teaser}</p>
       <p class="price-tag">${service.priceFrom}</p>
       <div class="card-actions">
-        <a class="button button-primary" href="sluzby.html#${service.id}">Detail služby</a>
-        <a class="button button-cta-green" href="rezervace.html?service=${service.id}">Poptat termín</a>
+        <a class="button button-primary" href="${actions.primaryHref}">${actions.primaryLabel}</a>
+        <a class="button button-cta-green" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
       </div>
     </div>
   `;
@@ -134,7 +144,9 @@ function renderHomePage() {
 
   const featuredGrid = qs("#featured-services");
   if (featuredGrid) {
-    eventyData.services.forEach((service) => featuredGrid.appendChild(createServiceCard(service)));
+    eventyData.services
+      .filter((service) => service.showOnHome !== false)
+      .forEach((service) => featuredGrid.appendChild(createServiceCard(service)));
   }
 
   qsa("[data-price-note]").forEach((node) => {
@@ -146,6 +158,7 @@ function renderServicesPage() {
   const detailSections = qs("#service-details");
   if (detailSections) {
     eventyData.services.forEach((service) => {
+      const actions = getServiceActions(service);
       const section = createElement("section", "service-detail");
       section.id = service.id;
       section.innerHTML = `
@@ -190,16 +203,26 @@ function renderServicesPage() {
 
       metaGrid.append(idealFor, process, included, safety);
 
-      const packages = createElement("div", "package-grid");
-      packages.append(
-        createPackageCard("Standard", service.standard),
-        createPackageCard("Premium", service.premium)
-      );
+      let packages;
+      if (service.customExperience) {
+        packages = createElement("article", "info-card info-card--custom-service");
+        packages.innerHTML = `
+          <h3>Poskládejte si vlastní akci krok za krokem</h3>
+          <p>V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, druh skály, oblast v ČR, náročnost přístupu i služby, které pro vás máme zajistit.</p>
+          <p class="small-note">Pokud si nejste jistí volbou, napište nám rychlý dotaz a doporučíme vhodnou variantu.</p>
+        `;
+      } else {
+        packages = createElement("div", "package-grid");
+        packages.append(
+          createPackageCard("Standard", service.standard),
+          createPackageCard("Premium", service.premium)
+        );
+      }
 
       const ctaBar = createElement("div", "detail-actions");
       ctaBar.innerHTML = `
-        <a class="button button-primary" href="rezervace.html?service=${service.id}">Poptat termín</a>
-        <a class="button button-secondary" href="kontakt.html">Nejdřív se poradit</a>
+        <a class="button button-primary" href="${actions.primaryHref}">${actions.primaryLabel}</a>
+        <a class="button button-secondary" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
       `;
 
       detailSections.append(section, textBlock, metaGrid, packages, ctaBar);
@@ -480,6 +503,119 @@ function renderInquiryForm() {
   });
 }
 
+function renderCustomExperienceForm() {
+  const form = qs("#custom-experience-form");
+  if (!form) return;
+
+  const eventTypeSelect = qs("#custom-event-type", form);
+  const experienceSelect = qs("#custom-experience-level", form);
+  const rockTypeSelect = qs("#custom-rock-type", form);
+  const districtSelect = qs("#custom-district", form);
+  const localitySelect = qs("#custom-locality", form);
+  const accessSelect = qs("#custom-access", form);
+  const serviceBox = qs("#custom-service-options", form);
+  const consentBox = qs("#custom-consent-options", form);
+  const formNotice = qs("#custom-form-notice");
+  const localityMeta = qs("#custom-locality-meta");
+
+  eventyData.customFormOptions.eventTypes.forEach((item) => {
+    eventTypeSelect.appendChild(buildOption(item));
+  });
+
+  eventyData.formOptions.experienceLevels.forEach((item) => {
+    experienceSelect.appendChild(buildOption(item));
+  });
+
+  eventyData.customFormOptions.rockTypes.forEach((item) => {
+    const option = document.createElement("option");
+    option.value = item.value;
+    option.textContent = item.label;
+    rockTypeSelect.appendChild(option);
+  });
+
+  const districts = [...new Set(eventyData.customFormOptions.localities.map((item) => item.district))];
+  districts.sort((a, b) => a.localeCompare(b, "cs"));
+  districts.forEach((district) => districtSelect.appendChild(buildOption(district)));
+
+  eventyData.customFormOptions.accessLevels.forEach((item) => {
+    accessSelect.appendChild(buildOption(item));
+  });
+
+  eventyData.customFormOptions.serviceChoices.forEach((item) => {
+    const label = createElement("label", "checkbox-item");
+    label.innerHTML = `
+      <input type="checkbox" name="requested-services" value="${item}">
+      <span>${item}</span>
+    `;
+    serviceBox.appendChild(label);
+  });
+
+  eventyData.formOptions.consents.forEach((item) => {
+    const label = createElement("label", "checkbox-item checkbox-item--full");
+    label.innerHTML = `
+      <input type="checkbox" name="consents" value="${item}" required>
+      <span>${item}</span>
+    `;
+    consentBox.appendChild(label);
+  });
+
+  const renderLocalities = () => {
+    const currentRockType = rockTypeSelect.value;
+    const currentDistrict = districtSelect.value;
+    localitySelect.innerHTML = '<option value="">Vyberte lokalitu</option>';
+
+    eventyData.customFormOptions.localities
+      .filter((item) => (currentRockType ? currentRockType === "any" || item.rockType === currentRockType : true))
+      .filter((item) => (currentDistrict ? item.district === currentDistrict : true))
+      .forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item.value;
+        option.textContent = `${item.label} — okres ${item.district}`;
+        localitySelect.appendChild(option);
+      });
+
+    localityMeta.textContent = "";
+  };
+
+  const syncLocalityMeta = () => {
+    const selected = eventyData.customFormOptions.localities.find((item) => item.value === localitySelect.value);
+    if (!selected) {
+      localityMeta.textContent = "";
+      return;
+    }
+
+    const rockTypeLabel = eventyData.customFormOptions.rockTypes.find((item) => item.value === selected.rockType)?.label || selected.rockType;
+    localityMeta.textContent = `${selected.label} | ${selected.region} | okres ${selected.district} | ${rockTypeLabel} | ${selected.access}`;
+  };
+
+  renderLocalities();
+  rockTypeSelect.addEventListener("change", renderLocalities);
+  districtSelect.addEventListener("change", renderLocalities);
+  localitySelect.addEventListener("change", syncLocalityMeta);
+
+  ["custom-date-from", "custom-date-to"].forEach((id) => {
+    const field = qs(`#${id}`, form);
+    if (field) {
+      field.min = new Date().toISOString().split("T")[0];
+    }
+  });
+
+  configureHostedForm(form, eventyData.formDelivery.inquiry.endpoint.trim(), {
+    formNotice,
+    submittedKey: "custom-experience",
+    inactiveTitle: "Odeslání formuláře zatím není aktivní",
+    inactiveLines: [
+      `Prozatím prosím napište na ${eventyData.recipientEmail}.`
+    ],
+    subjectBuilder(formData) {
+      const eventType = (formData.get("event-type") || "").toString().trim();
+      const locality = (formData.get("preferred-locality") || "").toString().trim();
+      return `${eventyData.mailTemplates.adminSubjectPrefix} – zážitek na míru – ${eventType || "bez typu"}${locality ? ` – ${locality}` : ""}`;
+    },
+    autoresponseLines: eventyData.mailTemplates.customerBody
+  });
+}
+
 function renderContactForm() {
   const form = qs("#contact-form");
   if (!form) return;
@@ -603,5 +739,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderServicesPage();
   renderDocumentsPage();
   renderInquiryForm();
+  renderCustomExperienceForm();
   renderContactForm();
 });

@@ -347,6 +347,49 @@ const eventyData = {
           "výběr a úpravu fotek po akci"
         ]
       }
+    },
+    {
+      id: "zazitek-na-miru-presne-podle-vas",
+      name: "Zážitek na míru přesně podle vás",
+      audience: "Pro firmy, uzavřené skupiny i jednotlivé speciální poptávky",
+      teaser:
+        "Nenašli jste v nabídce přesně to, co hledáte? Poskládejte si vlastní lezecký nebo outdoorový zážitek krok za krokem.",
+      priceFrom: "Individuální kalkulace podle zadání",
+      heroImage: "assets/images/tatry-scenerie.jpg",
+      heroAlt: "Horská a outdoorová scenérie pro službu zážitek na míru",
+      cardImage: "assets/images/tatry-scenerie.jpg",
+      cardAlt: "Outdoorová krajina pro službu zážitek na míru",
+      showOnHome: false,
+      customExperience: true,
+      actions: {
+        primaryLabel: "Interaktivní formulář",
+        primaryHref: "zazitek-na-miru.html",
+        secondaryLabel: "Rychlý dotaz",
+        secondaryHref: "kontakt.html"
+      },
+      detailText: [
+        "Nenašli jste v naší nabídce přesně to, co jste hledali? Máte jasnou představu o lokalitě, typu skály, úrovni dobrodružství nebo službách okolo celé akce? Přesně pro tyto poptávky jsme připravili variantu zážitku na míru.",
+        "V interaktivním formuláři si poskládáte vlastní lezecký nebo outdoorový den krok za krokem. Pokud si naopak nejste jistí a potřebujete poradit, napište nám rychlý dotaz a návrh připravíme společně."
+      ],
+      idealFor: [
+        "specifická firemní zadání",
+        "skupiny s jasnou představou o lokalitě nebo typu skály",
+        "kombinace lezení, outdooru, dopravy, ubytování a doplňků",
+        "klienty, kteří chtějí sestavit akci od základů"
+      ],
+      process: [
+        "Vyberete počet osob, termín, typ akce a preferovaný styl programu.",
+        "Zvolíte typ skály, oblast nebo lokalitu a náročnost přístupu.",
+        "Označíte služby, které chcete zahrnout do ceny a organizace.",
+        "Na základě formuláře připravíme konkrétní návrh akce a cenovou kalkulaci."
+      ],
+      included: [
+        "volbu typu akce a úrovně zážitku",
+        "výběr lokality podle typu skály a regionu",
+        "možnost kombinace dopravy, instruktorů, vybavení a ubytování",
+        "výběr doplňkových služeb podle rozpočtu",
+        "místo pro detailní zadání a vlastní představu"
+      ]
     }
   ],
   addOns: [
@@ -453,6 +496,7 @@ const eventyData = {
       "Firemní lezecký teambuilding",
       "Vícedenní outdoor pobyt",
       "Adrenalinový teambuilding",
+      "Zážitek na míru přesně podle vás",
       "Nevím, chci poradit"
     ],
     experienceLevels: [
@@ -481,6 +525,102 @@ const eventyData = {
       "Beru na vědomí, že závazná objednávka vzniká až po doručení návrhu smlouvy a připsání zálohové platby.",
       "Beru na vědomí, že termín a kapacitu potvrdí organizátor individuálně.",
       "Souhlasím se zasláním odpovědi a doplňujících informací k poptávce e-mailem."
+    ]
+  },
+  customFormOptions: {
+    eventTypes: [
+      "Lezecká pohoda v přírodě",
+      "Vzdělávací / seznamovací kurz",
+      "Zábavný event pro skupinu",
+      "Adrenalinový program",
+      "Firemní teambuilding",
+      "Vícedenní pobyt",
+      "Soukromá oslava nebo uzavřená akce",
+      "Nevím, chci doporučit vhodný formát"
+    ],
+    rockTypes: [
+      { value: "any", label: "Je mi to jedno" },
+      { value: "piskovec", label: "Pískovec" },
+      { value: "zula", label: "Žula a pevná krystalická skála" },
+      { value: "vapenec", label: "Vápenec" },
+      { value: "buliznik", label: "Buližník / křemen / tvrdé městské skály" }
+    ],
+    accessLevels: [
+      "snadný přístup",
+      "středně náročný přístup",
+      "dobrodružnější nástup",
+      "je mi to jedno"
+    ],
+    serviceChoices: [
+      "Dopravu z Prahy a okolí",
+      "Instruktory a vedení programu",
+      "Lezecké / bezpečnostní vybavení",
+      "Ubytování",
+      "Snack a pitný režim",
+      "Catering / plnou penzi",
+      "Fotografa",
+      "Video / reels",
+      "Večerní program",
+      "Záložní indoor variantu",
+      "Teambuildingové aktivity navíc"
+    ],
+    localities: [
+      {
+        value: "prachovske-skaly",
+        label: "Prachovské skály",
+        district: "Jičín",
+        region: "Královéhradecký kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup"
+      },
+      {
+        value: "hruboskalsko",
+        label: "Hruboskalsko",
+        district: "Semily",
+        region: "Liberecký kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup"
+      },
+      {
+        value: "tiske-steny-ostrov",
+        label: "Tiské stěny / Ostrov",
+        district: "Děčín",
+        region: "Ústecký kraj",
+        rockType: "piskovec",
+        access: "středně náročný přístup"
+      },
+      {
+        value: "adrspach-teplice",
+        label: "Adršpach / Teplické skály",
+        district: "Náchod",
+        region: "Královéhradecký kraj",
+        rockType: "piskovec",
+        access: "dobrodružnější nástup"
+      },
+      {
+        value: "divoka-sarka",
+        label: "Divoká Šárka",
+        district: "Praha",
+        region: "Praha",
+        rockType: "buliznik",
+        access: "snadný přístup"
+      },
+      {
+        value: "srbsko-alkazar",
+        label: "Srbsko / Alkazar",
+        district: "Beroun",
+        region: "Středočeský kraj",
+        rockType: "vapenec",
+        access: "snadný přístup"
+      },
+      {
+        value: "pisecke-skaly",
+        label: "Písecké skály",
+        district: "Písek",
+        region: "Jihočeský kraj",
+        rockType: "zula",
+        access: "středně náročný přístup"
+      }
     ]
   },
   mailTemplates: {

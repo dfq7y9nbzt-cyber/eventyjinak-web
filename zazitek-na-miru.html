@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zážitek na míru | Eventy Jinak</title>
+  <meta
+    name="description"
+    content="Poskládejte si vlastní lezecký nebo outdoorový zážitek na míru. Vyberte typ akce, lokalitu, typ skály, služby a pošlete detailní poptávku."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body data-page="custom-experience">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Eventy Jinak">
+        <img class="brand-logo" src="assets/logo-eventy-jinak.png" alt="Eventy Jinak">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Hlavní navigace">
+        <a href="index.html">Domů</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="rezervace.html" aria-current="page">Poptávka</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="o-nas.html">O nás</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero reveal">
+        <p class="eyebrow">Zážitek na míru</p>
+        <h1>Poskládejte si vlastní lezecký nebo outdoorový zážitek přesně podle sebe.</h1>
+        <p>
+          Nenašli jste v naší nabídce to, co jste hledali? Máte jasnou představu? Pokud ano, využijte náš interaktivní formulář a poskládejte si svůj dokonalý lezecký či outdoorový zážitek. Pokud potřebujete poradit nebo se jen zeptat, napište nám rychlý dotaz.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#custom-experience-form">Začít skládat akci</a>
+          <a class="button button-secondary" href="kontakt.html">Rychlý dotaz</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Jak to funguje</p>
+          <h2>Vyberete základní parametry a my z nich připravíme konkrétní návrh akce.</h2>
+        </div>
+        <div class="info-grid process-grid">
+          <article class="info-card"><p class="eyebrow">1.</p><p>Zvolíte počet osob, termín nebo rozpětí dnů a typ akce.</p></article>
+          <article class="info-card"><p class="eyebrow">2.</p><p>Vyberete typ skály, oblast v ČR, okres a náročnost přístupu.</p></article>
+          <article class="info-card"><p class="eyebrow">3.</p><p>Označíte služby, které pro vás máme zajistit a zahrnout do kalkulace.</p></article>
+          <article class="info-card"><p class="eyebrow">4.</p><p>Doplníte vlastní představu a my připravíme konkrétní návrh i rozpočet.</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Interaktivní formulář</p>
+          <h2>Čím přesnější zadání nám pošlete, tím rychleji připravíme návrh akce na míru.</h2>
+        </div>
+
+        <form id="custom-experience-form" class="inquiry-form" novalidate>
+          <div class="form-grid">
+            <label class="field">
+              <span>Jméno a příjmení</span>
+              <input type="text" name="full-name" required>
+            </label>
+            <label class="field">
+              <span>Firma / skupina</span>
+              <input type="text" name="company">
+            </label>
+            <label class="field">
+              <span>E-mail</span>
+              <input type="email" name="email" required>
+            </label>
+            <label class="field">
+              <span>Telefon</span>
+              <input type="tel" name="phone" required>
+            </label>
+            <label class="field">
+              <span>Kolik osob?</span>
+              <input type="text" name="participants" placeholder="např. 10 osob" required>
+            </label>
+            <label class="field">
+              <span>Termín od</span>
+              <input id="custom-date-from" type="date" name="date-from" required>
+            </label>
+            <label class="field">
+              <span>Termín do / rozpětí</span>
+              <input id="custom-date-to" type="date" name="date-to">
+            </label>
+            <label class="field">
+              <span>Typ akce</span>
+              <select id="custom-event-type" name="event-type" required>
+                <option value="">Vyberte typ akce</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Zkušenosti skupiny s lezením</span>
+              <select id="custom-experience-level" name="experience-level" required>
+                <option value="">Vyberte zkušenosti skupiny</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Typ skály</span>
+              <select id="custom-rock-type" name="rock-type" required>
+                <option value="">Vyberte typ skály</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Okres / oblast v ČR</span>
+              <select id="custom-district" name="district">
+                <option value="">Nechte si doporučit</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Preferovaná lokalita</span>
+              <select id="custom-locality" name="preferred-locality" required>
+                <option value="">Vyberte lokalitu</option>
+              </select>
+              <small id="custom-locality-meta" class="field-hint"></small>
+            </label>
+            <label class="field">
+              <span>Složitost přístupu</span>
+              <select id="custom-access" name="access-level" required>
+                <option value="">Vyberte náročnost přístupu</option>
+              </select>
+            </label>
+            <label class="field field--full">
+              <span>Pro koho akci připravujeme?</span>
+              <input type="text" name="group-profile" placeholder="např. firemní tým, parta přátel, manažerský tým, smíšená skupina">
+            </label>
+          </div>
+
+          <div class="field field--full">
+            <span>Co pro vás máme zajistit?</span>
+            <div id="custom-service-options" class="checkbox-grid"></div>
+          </div>
+
+          <label class="field field--full">
+            <span>Upřesnění vaší představy</span>
+            <textarea
+              name="notes"
+              rows="8"
+              placeholder="Napište, jakou atmosféru akce chcete, co je pro vás důležité, jaký máte rozpočet, jestli chcete více lezení, večerní program, konkrétní lokalitu nebo cokoli dalšího."
+            ></textarea>
+          </label>
+
+          <div class="field field--full">
+            <span>Souhlasy</span>
+            <div id="custom-consent-options" class="checkbox-grid checkbox-grid--single"></div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Odeslat detailní poptávku</button>
+            <a class="button button-secondary" href="kontakt.html">Nejdřív se poradit</a>
+          </div>
+        </form>
+        <div id="custom-form-notice" class="section-space"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">Eventy Jinak</p>
+        <p>Zážitek na míru | Provozovatel značky: IronBros s.r.o.</p>
+      </div>
+      <div class="footer-nav-stack">
+        <div class="footer-links">
+          <a href="sluzby.html">Služby</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="dokumenty.html">Dokumenty</a>
+        </div>
+        <div class="footer-legal-links">
+          <a href="obchodni-podminky.html">VOP</a>
+          <a href="ochrana-osobnich-udaju.html">GDPR</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="reklamace-a-adr.html">Reklamace a ADR</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

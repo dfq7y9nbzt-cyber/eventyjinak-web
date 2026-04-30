@@ -589,6 +589,10 @@ body[data-page="services"] .reveal {
   margin-top: -4px;
 }
 
+.info-card--custom-service {
+  gap: 12px;
+}
+
 .detail-copy {
   display: grid;
   gap: 12px;
@@ -761,7 +765,22 @@ body[data-page="inquiry"] .process-grid {
   align-items: stretch;
 }
 
+body[data-page="custom-experience"] .process-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
 body[data-page="inquiry"] .process-grid .info-card {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 14px 16px;
+  min-height: 100%;
+}
+
+body[data-page="custom-experience"] .process-grid .info-card {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
   align-items: start;
@@ -781,7 +800,25 @@ body[data-page="inquiry"] .process-grid .eyebrow {
   background: var(--accent-soft);
 }
 
+body[data-page="custom-experience"] .process-grid .eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin: 0;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+
 body[data-page="inquiry"] .process-grid .info-card p:last-child {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  align-self: center;
+}
+
+body[data-page="custom-experience"] .process-grid .info-card p:last-child {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.45;
@@ -792,10 +829,20 @@ body[data-page="inquiry"] .process-grid .info-card p:last-child {
   body[data-page="inquiry"] .process-grid {
     grid-template-columns: 1fr;
   }
+
+  body[data-page="custom-experience"] .process-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .field span {
   font-weight: 700;
+}
+
+.field-hint {
+  display: block;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 input,
