@@ -282,8 +282,10 @@ function renderServicesPage() {
   if (detailSections) {
     eventyData.services.forEach((service) => {
       const actions = getServiceActions(service);
+      const block = createElement("article", "service-detail-block");
+      block.id = service.id;
+
       const section = createElement("section", "service-detail");
-      section.id = service.id;
       section.innerHTML = `
         <div class="service-detail__media">
           <img src="${service.heroImage}" alt="${service.heroAlt}">
@@ -296,42 +298,24 @@ function renderServicesPage() {
         </div>
       `;
 
-      const textBlock = createElement("div", "detail-copy");
+      const textBlock = createElement("div", "detail-copy detail-copy--highlight");
       service.detailText.forEach((paragraph) => {
         textBlock.appendChild(createElement("p", "", paragraph));
       });
 
-      const metaGrid = createElement("div", "detail-grid");
+      const supportGrid = createElement("div", "service-detail__support");
 
       const idealFor = createElement("article", "info-card");
       idealFor.innerHTML = "<h3>Pro koho je služba vhodná</h3>";
       idealFor.appendChild(createList(service.idealFor));
-
-      const process = createElement("article", "info-card");
-      process.innerHTML = "<h3>Jak akce probíhá</h3>";
-      process.appendChild(createList(service.process));
-
-      const included = createElement("article", "info-card");
-      included.innerHTML = "<h3>Co zařídíme</h3>";
-      included.appendChild(createList(service.included));
-
-      const safety = createElement("article", "info-card");
-      safety.innerHTML = `
-        <h3>Bezpečnost a organizace</h3>
-        <p>${eventyData.safetyText}</p>
-      `;
-      if (eventyData.safetyHighlights?.length) {
-        safety.appendChild(createList(eventyData.safetyHighlights));
-      }
-
-      metaGrid.append(idealFor, process, included, safety);
+      supportGrid.appendChild(idealFor);
 
       let packages;
       if (service.customExperience) {
         packages = createElement("article", "info-card info-card--custom-service");
         packages.innerHTML = `
           <h3>Poskládejte si vlastní akci krok za krokem</h3>
-          <p>V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, druh skály, oblast v ČR, náročnost přístupu i služby, které pro vás máme zajistit.</p>
+          <p>V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, druh skály, lokalitu, náročnost přístupu i služby, které pro vás máme zajistit.</p>
           <p class="small-note">Pokud si nejste jistí volbou, napište nám rychlý dotaz a doporučíme vhodnou variantu.</p>
         `;
       } else {
@@ -348,7 +332,8 @@ function renderServicesPage() {
         <a class="button button-secondary" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
       `;
 
-      detailSections.append(section, textBlock, metaGrid, packages, ctaBar);
+      block.append(section, textBlock, supportGrid, packages, ctaBar);
+      detailSections.appendChild(block);
     });
   }
 
@@ -360,6 +345,14 @@ function renderServicesPage() {
   const faqOverview = qs("#services-faq");
   if (faqOverview) {
     eventyData.faq.forEach((faq) => faqOverview.appendChild(createFaqItem(faq)));
+  }
+
+  const safetyCard = qs("#services-safety");
+  if (safetyCard) {
+    safetyCard.appendChild(createElement("p", "", eventyData.safetyText));
+    if (eventyData.safetyHighlights?.length) {
+      safetyCard.appendChild(createList(eventyData.safetyHighlights));
+    }
   }
 }
 
