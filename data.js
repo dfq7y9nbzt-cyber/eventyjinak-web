@@ -526,9 +526,7 @@
     ],
     consents: [
       "Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.",
-      "Beru na vědomí, že odesláním formuláře nevzniká závazná rezervace termínu.",
       "Beru na vědomí, že závazná objednávka vzniká až po doručení návrhu smlouvy a připsání zálohové platby.",
-      "Beru na vědomí, že termín a kapacitu potvrdí organizátor individuálně.",
       "Souhlasím se zasláním odpovědi a doplňujících informací k poptávce e-mailem."
     ]
   },
