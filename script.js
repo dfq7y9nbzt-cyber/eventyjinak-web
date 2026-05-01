@@ -433,6 +433,106 @@ function buildCurrentPageUrl() {
   return url.toString();
 }
 
+function getFieldWrappers(form) {
+  return qsa(".field", form);
+}
+
+function getRequiredFieldWrappers(form) {
+  return getFieldWrappers(form).filter((field) => qsa("[required]", field).length);
+}
+
+function isCheckboxField(field) {
+  const requiredControls = qsa("[required]", field);
+  return requiredControls.length > 0 && requiredControls.every((control) => control.type === "checkbox");
+}
+
+function isFieldComplete(field) {
+  const requiredControls = qsa("[required]", field);
+  if (!requiredControls.length) return true;
+
+  if (isCheckboxField(field)) {
+    return requiredControls.every((control) => control.checked);
+  }
+
+  return requiredControls.every((control) => {
+    if (control.tagName === "SELECT") {
+      return Boolean(control.value);
+    }
+    return Boolean((control.value || "").toString().trim());
+  });
+}
+
+function getPrimaryFieldControl(field) {
+  return qs("input, select, textarea", field);
+}
+
+function setupGuidedForm(form, formNotice) {
+  const requiredFields = getRequiredFieldWrappers(form);
+  requiredFields.forEach((field, index) => {
+    field.classList.add("field--required");
+    const label = qs("span", field);
+    if (label) {
+      label.dataset.step = String(index + 1);
+    }
+  });
+
+  const syncState = (showErrors = false) => {
+    let currentAssigned = false;
+
+    requiredFields.forEach((field) => {
+      const complete = isFieldComplete(field);
+      field.classList.toggle("field--complete", complete);
+      field.classList.toggle("field--pending", !complete);
+      field.classList.toggle("field--error", showErrors && !complete);
+      field.classList.remove("field--current");
+
+      if (!currentAssigned && !complete) {
+        field.classList.add("field--current");
+        currentAssigned = true;
+      }
+    });
+  };
+
+  syncState();
+
+  qsa("input, select, textarea", form).forEach((field) => {
+    const refresh = () => {
+      syncState(false);
+      if (formNotice && form.checkValidity()) {
+        formNotice.innerHTML = "";
+      }
+    };
+
+    field.addEventListener("input", refresh);
+    field.addEventListener("change", refresh);
+  });
+
+  form.addEventListener("submit", (event) => {
+    if (form.checkValidity()) {
+      syncState(false);
+      return;
+    }
+
+    event.preventDefault();
+    syncState(true);
+
+    const firstInvalid = requiredFields.find((field) => !isFieldComplete(field));
+    if (firstInvalid) {
+      const control = getPrimaryFieldControl(firstInvalid);
+      firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (control) {
+        setTimeout(() => control.focus(), 120);
+      }
+    }
+
+    if (formNotice) {
+      formNotice.innerHTML = renderNoticeMessage("Je potřeba doplnit formulář", [
+        "Prosím vyplňte zvýrazněná povinná pole. Přesunuli jsme vás na první místo, které ještě chybí."
+      ]);
+    }
+  });
+}
+
 function parseParticipantCount(value) {
   const numbers = (value || "")
     .toString()
@@ -744,6 +844,7 @@ function renderCustomExperienceForm() {
   const estimateTrigger = qs("#custom-estimate-trigger", form.parentElement);
   let estimateVisible = false;
   let rockTypeManuallyChanged = false;
+  setupGuidedForm(form, formNotice);
 
   eventyData.customFormOptions.eventTypes.forEach((item) => {
     eventTypeSelect.appendChild(buildOption(item));
@@ -871,92 +972,105 @@ function renderCustomExperienceForm() {
     const nights = Math.max(0, days - 1 || (selectedServices.has("Ubytování") ? 1 : 0));
 
     const breakdown = [];
+    const sellingMultiplier = estimator.marginMultiplier;
+    const addPricedLine = (label, cost) => {
+      breakdown.push({
+        label,
+        price: roundUpPrice(cost * sellingMultiplier)
+      });
+    };
+    const addIncludedLine = (label) => {
+      breakdown.push({
+        label,
+        note: "v ceně"
+      });
+    };
     let totalCost = 0;
 
     const instructorCost = instructorCount * estimator.instructorCostPerDay * days;
     totalCost += instructorCost;
-    breakdown.push(`Instruktoři a vedení programu (${instructorCount} × ${days} den/ny): ${formatPrice(instructorCost)}`);
+    addPricedLine(`Instruktoři a vedení programu (${instructorCount} × ${days} den/ny)`, instructorCost);
 
     const organizationCost = participants * estimator.organizationCostPerPersonPerDay * days;
     totalCost += organizationCost;
-    breakdown.push(`Organizace a administrativa (${participants} osob × ${days} den/ny): ${formatPrice(organizationCost)}`);
+    addPricedLine(`Organizace a administrativa (${participants} osob × ${days} den/ny)`, organizationCost);
 
     const equipmentCost = participants * estimator.equipmentCostPerPerson;
     totalCost += equipmentCost;
-    breakdown.push(`Základní vybavení (${participants} osob): ${formatPrice(equipmentCost)}`);
+    addPricedLine(`Základní vybavení (${participants} osob)`, equipmentCost);
 
     const eventSurcharge = getCustomEventBaseSurcharge(eventType, days);
     if (eventSurcharge) {
       totalCost += eventSurcharge;
-      breakdown.push(`Typ akce a programová náročnost: ${formatPrice(eventSurcharge)}`);
+      addPricedLine("Typ akce a programová náročnost", eventSurcharge);
     }
 
     selectedActivities.forEach((activity) => {
       const surcharge = estimator.activitySurcharges[activity] || 0;
       if (surcharge) {
         totalCost += surcharge;
-        breakdown.push(`${activity}: ${formatPrice(surcharge)}`);
+        addPricedLine(activity, surcharge);
       }
     });
 
     if (selectedServices.has("Dopravu z Prahy a okolí")) {
       const transportCost = getTransportCost(participants, locality?.travelKm);
       totalCost += transportCost;
-      breakdown.push(`Doprava ${locality ? `do oblasti ${locality.label}` : "na lokalitu"}: ${formatPrice(transportCost)}`);
+      addPricedLine(`Doprava ${locality ? `do oblasti ${locality.label}` : "na lokalitu"}`, transportCost);
     }
 
     if (selectedServices.has("Ubytování")) {
       const lodgingCost = participants * Math.max(1, nights) * estimator.lodgingCostPerPersonPerNight;
       totalCost += lodgingCost;
-      breakdown.push(`Ubytování (${participants} osob × ${Math.max(1, nights)} noc/i): ${formatPrice(lodgingCost)}`);
+      addPricedLine(`Ubytování (${participants} osob × ${Math.max(1, nights)} noc/i)`, lodgingCost);
     }
 
     if (selectedServices.has("Snack a pitný režim")) {
       const snackCost = participants * days * estimator.snackCostPerPersonPerDay;
       totalCost += snackCost;
-      breakdown.push(`Snack a pitný režim: ${formatPrice(snackCost)}`);
+      addPricedLine("Snack a pitný režim", snackCost);
     }
 
     if (selectedServices.has("Catering / plnou penzi")) {
       const cateringCost = participants * days * estimator.standardCateringCostPerPersonPerDay;
       totalCost += cateringCost;
-      breakdown.push(`Catering / plná penze: ${formatPrice(cateringCost)}`);
+      addPricedLine("Catering / plná penze", cateringCost);
     }
 
     if (selectedServices.has("Fotografa")) {
       totalCost += estimator.photographerCostFlat;
-      breakdown.push(`Fotograf: ${formatPrice(estimator.photographerCostFlat)}`);
+      addPricedLine("Fotograf", estimator.photographerCostFlat);
     }
 
     if (selectedServices.has("Video / reels")) {
       totalCost += estimator.videoCostFlat;
-      breakdown.push(`Video / reels: ${formatPrice(estimator.videoCostFlat)}`);
+      addPricedLine("Video / reels", estimator.videoCostFlat);
     }
 
     if (selectedServices.has("Večerní program")) {
       totalCost += estimator.eveningProgramCostFlat;
-      breakdown.push(`Večerní program: ${formatPrice(estimator.eveningProgramCostFlat)}`);
+      addPricedLine("Večerní program", estimator.eveningProgramCostFlat);
     }
 
     if (selectedServices.has("Anglicky mluvícího instruktora")) {
       const englishInstructorCost = instructorCost * 0.2;
       totalCost += englishInstructorCost;
-      breakdown.push(`Anglicky mluvící instruktor: ${formatPrice(englishInstructorCost)}`);
+      addPricedLine("Anglicky mluvící instruktor", englishInstructorCost);
     }
 
     if (selectedServices.has("Záložní indoor variantu")) {
-      breakdown.push("Záložní indoor varianta: v ceně");
+      addIncludedLine("Záložní indoor varianta");
     }
 
     if (selectedServices.has("Teambuildingové aktivity navíc")) {
       totalCost += estimator.extraTeamActivitiesFlat;
-      breakdown.push(`Rozšířené týmové aktivity: ${formatPrice(estimator.extraTeamActivitiesFlat)}`);
+      addPricedLine("Rozšířené týmové aktivity", estimator.extraTeamActivitiesFlat);
     }
 
     if (selectedServices.has("Dárkový balíček pro účastníky")) {
       const giftCost = participants * estimator.giftPackageCostPerPerson;
       totalCost += giftCost;
-      breakdown.push(`Dárkový balíček pro účastníky: ${formatPrice(giftCost)}`);
+      addPricedLine("Dárkový balíček pro účastníky", giftCost);
     }
 
     const priceWithoutVat = roundUpPrice(totalCost * estimator.marginMultiplier);
@@ -973,7 +1087,10 @@ function renderCustomExperienceForm() {
     estimateBreakdown.innerHTML = "";
     breakdown.forEach((item) => {
       const li = document.createElement("li");
-      li.textContent = item;
+      li.className = "custom-estimate-list__item";
+      li.innerHTML = item.note
+        ? `<span>${item.label}</span><strong>${item.note}</strong>`
+        : `<span>${item.label}</span><strong>${formatPrice(item.price)}</strong>`;
       estimateBreakdown.appendChild(li);
     });
   };

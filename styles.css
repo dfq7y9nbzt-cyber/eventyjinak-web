@@ -922,10 +922,41 @@ body[data-page="services"] .service-detail__support .info-card--audience .plain-
 .field {
   display: grid;
   gap: 8px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(40, 87, 47, 0.08);
+  background: rgba(247, 249, 245, 0.72);
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
 .field--full {
   grid-column: 1 / -1;
+}
+
+.field--required {
+  background: rgba(244, 247, 241, 0.92);
+}
+
+.field--pending {
+  border-color: rgba(83, 97, 81, 0.14);
+  background: rgba(240, 243, 238, 0.88);
+}
+
+.field--current {
+  border-color: rgba(47, 138, 59, 0.28);
+  box-shadow: 0 10px 24px rgba(47, 138, 59, 0.08);
+  background: rgba(247, 251, 245, 0.98);
+}
+
+.field--complete {
+  border-color: rgba(47, 138, 59, 0.18);
+  background: rgba(245, 251, 243, 0.96);
+}
+
+.field--error {
+  border-color: rgba(190, 74, 74, 0.34);
+  background: rgba(255, 244, 244, 0.96);
+  box-shadow: 0 10px 22px rgba(190, 74, 74, 0.1);
 }
 
 .inquiry-form--compact {
@@ -1012,7 +1043,35 @@ body[data-page="custom-experience"] .process-grid .info-card p:last-child {
 }
 
 .field span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
+}
+
+.field--required > span::before {
+  content: attr(data-step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(209, 217, 206, 0.96);
+  color: #42513f;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.field--current > span::before,
+.field--complete > span::before {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+}
+
+.field--error > span::before {
+  background: rgba(190, 74, 74, 0.14);
+  color: #aa3030;
 }
 
 .field-hint {
@@ -1042,6 +1101,26 @@ body[data-page="custom-experience"] .process-grid .info-card p:last-child {
   display: grid;
   gap: 8px;
   margin: 0;
+}
+
+.custom-estimate-list__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(40, 87, 47, 0.08);
+}
+
+.custom-estimate-list__item span {
+  line-height: 1.55;
+}
+
+.custom-estimate-list__item strong {
+  white-space: nowrap;
+  color: var(--accent-deep);
 }
 
 input,
@@ -1152,6 +1231,13 @@ textarea:focus {
   color: var(--accent-deep);
   font-weight: 700;
   text-decoration: none;
+}
+
+.field--error input,
+.field--error select,
+.field--error textarea {
+  border-color: rgba(190, 74, 74, 0.36);
+  background: rgba(255, 252, 252, 0.98);
 }
 
 .footer-nav-stack {
