@@ -413,7 +413,6 @@
       title: "Jídlo a občerstvení",
       items: [
         "Pitný režim a snack — v ceně většiny balíčků",
-        "Piknik basic — od 290 Kč / osoba bez DPH",
         "Outdoor catering standard — od 590 Kč / osoba bez DPH",
         "Premium catering — od 990 Kč / osoba bez DPH",
         "Večerní grilování — individuálně"
