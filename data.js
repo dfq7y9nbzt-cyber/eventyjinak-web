@@ -109,7 +109,8 @@
         "skupiny přátel",
         "rodiny",
         "uzavřené skupiny 4–6 osob",
-        "začátečníci i mírně pokročilí"
+        "začátečníci i mírně pokročilí",
+        "první lezení venku bez stresu"
       ],
       process: [
         "Domluvíme cílovou lokalitu, zkušenosti skupiny a preferovaný typ dne.",
@@ -172,7 +173,8 @@
         "HR týmy",
         "office manažery",
         "menší a střední firemní týmy",
-        "skupiny 8–20 osob"
+        "skupiny 8–20 osob",
+        "klientské i interní firemní akce"
       ],
       process: [
         "Projdeme cíle akce, počet lidí a požadovanou míru zážitku.",
@@ -237,7 +239,8 @@
         "menší týmy",
         "skupiny přátel",
         "uzavřené kolektivy",
-        "skupiny 4–20 osob"
+        "skupiny 4–20 osob",
+        "víkendové a delší pobyty v přírodě"
       ],
       process: [
         "Upřesníme délku pobytu, rozpočet a požadovaný standard ubytování.",
@@ -303,7 +306,8 @@
         "management",
         "obchodní týmy",
         "skupiny přátel",
-        "skupiny 3–6 osob"
+        "skupiny 3–6 osob",
+        "lidi, kteří chtějí silnější zážitek"
       ],
       process: [
         "Sladíme očekávání skupiny a úroveň intenzity programu.",
@@ -375,7 +379,9 @@
         "specifická firemní zadání",
         "skupiny s jasnou představou o lokalitě nebo typu skály",
         "kombinace lezení, outdooru, dopravy, ubytování a doplňků",
-        "klienty, kteří chtějí sestavit akci od základů"
+        "klienty, kteří chtějí sestavit akci od základů",
+        "eventové agentury a cestovní kanceláře",
+        "zahraniční skupiny s individuálním zadáním"
       ],
       process: [
         "Vyberete počet osob, termín, typ akce a preferovaný styl programu.",

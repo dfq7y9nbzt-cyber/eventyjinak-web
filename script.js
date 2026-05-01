@@ -305,7 +305,7 @@ function renderServicesPage() {
 
       const supportGrid = createElement("div", "service-detail__support");
 
-      const idealFor = createElement("article", "info-card");
+      const idealFor = createElement("article", "info-card info-card--audience");
       idealFor.innerHTML = "<h3>Pro koho je služba vhodná</h3>";
       idealFor.appendChild(createList(service.idealFor));
       supportGrid.appendChild(idealFor);
