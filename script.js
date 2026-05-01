@@ -426,12 +426,6 @@ function upsertHiddenField(form, name, value) {
   field.value = value;
 }
 
-function buildReturnUrl(submittedKey) {
-  const url = new URL("odeslano.html", window.location.href);
-  url.searchParams.set("from", submittedKey);
-  return url.toString();
-}
-
 function buildCurrentPageUrl() {
   const url = new URL(window.location.href);
   url.search = "";
@@ -654,7 +648,7 @@ function configureHostedForm(form, endpoint, options) {
 
     if (formNotice) {
       formNotice.innerHTML = renderNoticeMessage("Odesíláme formulář", [
-        "Po potvrzení se vrátíte zpět na tuto stránku."
+        "Po potvrzení budete přesměrováni na potvrzovací stránku."
       ]);
     }
   });
@@ -723,72 +717,6 @@ function renderInquiryForm() {
       return `${eventyData.mailTemplates.adminSubjectPrefix} – ${actionType} – ${preferredDate || "termín doplníme"}`;
     },
     autoresponseLines: eventyData.mailTemplates.customerBody
-  });
-  return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    const endpoint = eventyData.formDelivery.inquiry.endpoint.trim();
-    if (!endpoint) {
-      formNotice.innerHTML = `
-        <div class="notice">
-          <h3>Odeslání formuláře zatím není aktivní</h3>
-          <p>Formulář je připravený pro externí formulářovou službu, ale endpoint ještě není doplněný. Prozatím prosím napište na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
-        </div>
-      `;
-      return;
-    }
-
-    const formData = new FormData(form);
-    const summary = {
-      name: formData.get("full-name"),
-      company: formData.get("company"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      actionType: formData.get("action-type"),
-      participants: formData.get("participants"),
-      groupProfile: formData.get("group-profile"),
-      experience: formData.get("experience-level"),
-      preferredDate: formData.get("preferred-date"),
-      backupOne: formData.get("backup-date-one"),
-      backupTwo: formData.get("backup-date-two"),
-      flexibility: formData.get("time-flexibility"),
-      packageChoice: formData.get("package-choice"),
-      addOns: formData.getAll("addons"),
-      notes: formData.get("notes")
-    };
-
-    const adminSubject = `${eventyData.mailTemplates.adminSubjectPrefix} – ${summary.actionType} – ${summary.preferredDate || "termín doplníme"}`;
-
-    submitFormToEndpoint(form, endpoint, {
-      _subject: adminSubject,
-      _replyto: summary.email,
-      recipient: eventyData.formDelivery.inquiry.recipient
-    })
-      .then(() => {
-        const customerMessage = eventyData.mailTemplates.customerBody
-          .filter(Boolean)
-          .map((line) => `<p>${line}</p>`)
-          .join("");
-        formNotice.innerHTML = `
-          <div class="notice notice--success">
-            <h3>${eventyData.mailTemplates.customerSubject}</h3>
-            ${customerMessage}
-          </div>
-        `;
-        form.reset();
-      })
-      .catch(() => {
-        formNotice.innerHTML = `
-          <div class="notice">
-            <h3>Formulář se nepodařilo odeslat</h3>
-            <p>Zkuste to prosím znovu, nebo napište přímo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
-          </div>
-        `;
-      });
   });
 }
 
@@ -1127,52 +1055,6 @@ function renderContactForm() {
       return `${eventyData.mailTemplates.contactSubjectPrefix} – ${fullName || "bez jména"}`;
     },
     autoresponseLines: eventyData.mailTemplates.contactCustomerBody
-  });
-  return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    const endpoint = eventyData.formDelivery.contact.endpoint.trim();
-    if (!endpoint) {
-      formNotice.innerHTML = `
-        <div class="notice">
-          <h3>Odeslání formuláře zatím není aktivní</h3>
-          <p>Prozatím prosím napište svůj dotaz na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
-        </div>
-      `;
-      return;
-    }
-
-    const formData = new FormData(form);
-    const email = formData.get("email");
-    const fullName = `${formData.get("first-name")} ${formData.get("last-name")}`.trim();
-    const subject = `${eventyData.mailTemplates.contactSubjectPrefix} – ${fullName || "bez jména"}`;
-
-    submitFormToEndpoint(form, endpoint, {
-      _subject: subject,
-      _replyto: email,
-      recipient: eventyData.formDelivery.contact.recipient
-    })
-      .then(() => {
-        formNotice.innerHTML = `
-          <div class="notice notice--success">
-            <h3>Dotaz jsme přijali</h3>
-            <p>Ozveme se vám co nejdříve na uvedený e-mail.</p>
-          </div>
-        `;
-        form.reset();
-      })
-      .catch(() => {
-        formNotice.innerHTML = `
-          <div class="notice">
-            <h3>Dotaz se nepodařilo odeslat</h3>
-            <p>Zkuste to prosím znovu, nebo napište přímo na <a href="mailto:${eventyData.recipientEmail}">${eventyData.recipientEmail}</a>.</p>
-          </div>
-        `;
-      });
   });
 }
 

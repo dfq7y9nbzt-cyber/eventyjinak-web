@@ -502,7 +502,6 @@
       "Firemní lezecký teambuilding",
       "Vícedenní outdoor pobyt",
       "Adrenalinový teambuilding",
-      "Zážitek na míru přesně podle vás",
       "Nevím, chci poradit"
     ],
     experienceLevels: [
@@ -576,7 +575,6 @@
       "Bushcraft / pobyt v přírodě",
       "Turistika / hřebenový program",
       "Drytool / zimní techniky",
-      "Večerní program",
       "Přespání / bivakový zážitek"
     ],
     serviceChoices: [
