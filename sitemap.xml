@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.eventyjinak.cz/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/" />
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/sluzby.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/sluzby.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/services-en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/sluzby.html" />
@@ -30,10 +30,17 @@
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/o-nas.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/o-nas.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/about-en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/o-nas.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/pro-firmy.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/pro-firmy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/for-companies-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/pro-firmy.html" />
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/zazitek-na-miru.html</loc>
@@ -44,14 +51,14 @@
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/en.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/" />
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/services-en.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/sluzby.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/services-en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/sluzby.html" />
@@ -72,10 +79,17 @@
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/about-en.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/o-nas.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/about-en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/o-nas.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/for-companies-en.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/pro-firmy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/for-companies-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/pro-firmy.html" />
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/custom-experience-en.html</loc>

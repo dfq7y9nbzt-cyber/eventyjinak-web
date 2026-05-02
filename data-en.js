@@ -325,11 +325,11 @@ eventyData.addOns = [
   {
     title: "Photography and video",
     items: [
-      "Photographer for 2-3 hours - from CZK 4,900 excl. VAT",
-      "Half-day photographer - from CZK 7,900 excl. VAT",
-      "Full-day photographer - from CZK 11,900 excl. VAT",
-      "Short reels video - from CZK 5,900 excl. VAT",
-      "Event video 60-90 seconds - from CZK 11,900 excl. VAT"
+      "Photographer for 2-3 hours - from CZK 6,900 excl. VAT",
+      "Half-day photographer - from CZK 10,900 excl. VAT",
+      "Full-day photographer - from CZK 15,900 excl. VAT",
+      "Short reels video - from CZK 6,900 excl. VAT",
+      "Event video 60-90 seconds - from CZK 14,900 excl. VAT"
     ]
   },
   {
@@ -345,11 +345,11 @@ eventyData.addOns = [
     title: "Programme add-ons",
     items: [
       "Indoor backup programme - included",
-      "Extra instructor - from CZK 4,500 / day excl. VAT",
+      "Extra instructor - from CZK 6,500 / day excl. VAT",
       "English-speaking instructor - +20%",
-      "Rappelling as a stand-alone station - from CZK 5,900 excl. VAT",
-      "Evening programme - from CZK 5,900 excl. VAT",
-      "Gift pack for participants - from CZK 250 / person excl. VAT",
+      "Rappelling as a stand-alone station - from CZK 7,900 excl. VAT",
+      "Evening programme - from CZK 7,900 excl. VAT",
+      "Gift pack for participants - from CZK 290 / person excl. VAT",
       "Via ferrata variant - individually quoted"
     ]
   }
@@ -379,7 +379,6 @@ eventyData.formOptions.actionTypes = [
   "Corporate climbing team building",
   "Multi-day outdoor stay",
   "Adrenaline team experience",
-  "Tailored experience built around you",
   "I am not sure yet, please recommend"
 ];
 eventyData.formOptions.experienceLevels = [
@@ -404,9 +403,7 @@ eventyData.formOptions.addOnChoices = [
 ];
 eventyData.formOptions.consents = [
   "I agree to the processing of personal data for the purpose of handling this inquiry.",
-  "I understand that submitting this form does not create a binding reservation.",
   "I understand that a binding order is created only after the contract draft is delivered and the deposit payment is received.",
-  "I understand that the organiser confirms the date and capacity individually.",
   "I agree to receive a response and follow-up information related to this inquiry by email."
 ];
 
