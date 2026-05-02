@@ -613,6 +613,8 @@ body[data-page="home"] .content-card--accent .cta-question {
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.6;
+  text-wrap: pretty;
+  overflow-wrap: normal;
 }
 
 .price-tag {

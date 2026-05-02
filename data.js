@@ -138,7 +138,7 @@
           "lezení na top rope (horní lano)",
           "základní týmové aktivity",
           "drobné občerstvení a pitný režim",
-          "organizaci celé akce"
+          "organizace celé akce"
         ]
       },
       premium: {
@@ -186,29 +186,29 @@
         "návrh programu",
         "doprava z Prahy a okolí",
         "instruktoři podle počtu účastníků",
-        "koordinace akce",
+        "organizace celé akce",
         "zapůjčení vybavení",
         "bezpečnostní instruktáž",
         "pitný režim a snack"
       ],
       standard: {
         price: "od 36 900 Kč / skupina bez DPH",
-        note: "Doporučeno pro 8–12 osob. 13–16 osob od 52 000 Kč, 17–20 osob od 66 000 Kč bez DPH.",
+        note: "Doporučeno pro 8–12 osob. 13–16 osob od 52 000 Kč, 17–20 osob od 66 000 Kč bez DPH.",
         items: [
           "návrh programu",
           "doprava z Prahy a okolí minibusem podle velikosti skupiny",
           "instruktoři podle počtu účastníků",
-          "koordinace akce",
+          "organizace celé akce",
           "zapůjčení vybavení",
           "bezpečnostní instruktáž",
           "lezení a týmové aktivity",
           "základní pitný režim a snack",
-          "organizační zajištění před akcí"
+          "organizace celé akce"
         ]
       },
       premium: {
         price: "od 64 900 Kč / skupina bez DPH",
-        note: "Doporučeno pro 8–12 osob. 13–16 osob od 82 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
+        note: "Doporučeno pro 8–12 osob. 13–16 osob od 82 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "fotograf",
@@ -260,7 +260,7 @@
       ],
       standard: {
         price: "od 5 900 Kč / osoba bez DPH",
-        note: "Minimální cena skupiny od 39 000 Kč bez DPH. Ubytování se u balíčku Standard hradí zvlášť podle zvolené varianty.",
+        note: "Minimální cena skupiny od 39 000 Kč bez DPH. Ubytování se u balíčku Standard hradí zvlášť podle zvolené varianty.",
         items: [
           "doprava z Prahy a okolí",
           "organizace pobytu",
@@ -274,7 +274,7 @@
       },
       premium: {
         price: "od 10 900 Kč / osoba bez DPH",
-        note: "Minimální cena skupiny od 69 000 Kč bez DPH. Ubytování podle dohodnutého standardu je v ceně.",
+        note: "Minimální cena skupiny od 69 000 Kč bez DPH. Ubytování podle dohodnutého standardu je v ceně.",
         items: [
           "vše ze Standardu",
           "ubytování zahrnuté v ceně podle dohodnutého standardu",
@@ -323,11 +323,11 @@
         "lezení / slaňování / outdoor výzvy podle lokality",
         "základní pitný režim",
         "bezpečnostní instruktáž",
-        "organizace akce"
+        "organizace celé akce"
       ],
       standard: {
         price: "od 24 900 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 29 900 Kč bez DPH.",
+        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 29 900 Kč bez DPH.",
         items: [
           "příprava programu",
           "doprava z Prahy a okolí podle velikosti skupiny",
@@ -336,12 +336,12 @@
           "lezení / slaňování / outdoor výzvy podle lokality",
           "základní pitný režim",
           "bezpečnostní instruktáž",
-          "organizace akce"
+          "organizace celé akce"
         ]
       },
       premium: {
         price: "od 44 900 Kč / skupina bez DPH",
-        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 52 900 Kč bez DPH.",
+        note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 52 900 Kč bez DPH.",
         items: [
           "vše ze Standardu",
           "fotograf",
