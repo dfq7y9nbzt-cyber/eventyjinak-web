@@ -119,9 +119,9 @@
         "Po akci vás odvezeme zpět a případně doplníme fotky nebo navazující doporučení."
       ],
       included: [
-        "dopravu z Prahy a okolí a zpět",
+        "doprava z Prahy a okolí a zpět",
         "výběr vhodné lokality",
-        "instruktory a organizaci dne",
+        "instruktoři a organizace dne",
         "základní lezecké vybavení",
         "bezpečnostní instruktáž",
         "pitný režim a drobné občerstvení"
@@ -130,7 +130,7 @@
         price: "od 22 900 Kč / skupina bez DPH",
         note: "Doporučeno pro 4–6 osob.",
         items: [
-          "dopravu z Prahy a okolí a zpět vlastním autem",
+          "doprava z Prahy a okolí a zpět vlastním autem",
           "2 instruktoři zajišťující program",
           "výběr vhodné lokality",
           "základní lezecké vybavení",
@@ -146,10 +146,10 @@
         note: "Rozšířená varianta s fotografem, lepším občerstvením a větším programovým rozsahem.",
         items: [
           "vše ze Standardu",
-          "fotografa na 2–3 hodiny",
+          "fotograf na 2–3 hodiny",
           "rozšířený program s doplňkovými aktivitami",
           "lepší občerstvení (teplé jídlo + káva)",
-          "výběr a úpravu fotek po akci"
+          "výběr a úprava fotek po akci"
         ]
       }
     },
@@ -184,9 +184,9 @@
       ],
       included: [
         "návrh programu",
-        "dopravu z Prahy a okolí",
-        "instruktory podle počtu účastníků",
-        "koordinaci akce",
+        "doprava z Prahy a okolí",
+        "instruktoři podle počtu účastníků",
+        "koordinace akce",
         "zapůjčení vybavení",
         "bezpečnostní instruktáž",
         "pitný režim a snack"
@@ -196,9 +196,9 @@
         note: "Doporučeno pro 8–12 osob. 13–16 osob od 52 000 Kč, 17–20 osob od 66 000 Kč bez DPH.",
         items: [
           "návrh programu",
-          "dopravu z Prahy a okolí minibusem podle velikosti skupiny",
-          "instruktory podle počtu účastníků",
-          "koordinaci akce",
+          "doprava z Prahy a okolí minibusem podle velikosti skupiny",
+          "instruktoři podle počtu účastníků",
+          "koordinace akce",
           "zapůjčení vybavení",
           "bezpečnostní instruktáž",
           "lezení a týmové aktivity",
@@ -211,7 +211,7 @@
         note: "Doporučeno pro 8–12 osob. 13–16 osob od 82 000 Kč, 17–20 osob od 99 000 Kč bez DPH.",
         items: [
           "vše ze Standardu",
-          "fotografa",
+          "fotograf",
           "lepší občerstvení / outdoor catering",
           "rozšířený týmový program",
           "zpracované fotoalbum po akci",
@@ -249,9 +249,9 @@
         "Po návratu můžeme dodat fotky, video nebo doporučení pro další akci."
       ],
       included: [
-        "dopravu z Prahy a okolí",
-        "organizaci pobytu",
-        "instruktory podle velikosti skupiny",
+        "doprava z Prahy a okolí",
+        "organizace pobytu",
+        "instruktoři podle velikosti skupiny",
         "lezecký / outdoor program",
         "zapůjčení potřebného vybavení",
         "zajištění a rezervaci ubytování",
@@ -262,9 +262,9 @@
         price: "od 5 900 Kč / osoba bez DPH",
         note: "Minimální cena skupiny od 39 000 Kč bez DPH. Ubytování se u balíčku Standard hradí zvlášť podle zvolené varianty.",
         items: [
-          "dopravu z Prahy a okolí",
-          "organizaci pobytu",
-          "instruktory podle velikosti skupiny",
+          "doprava z Prahy a okolí",
+          "organizace pobytu",
+          "instruktoři podle velikosti skupiny",
           "lezecký / outdoor program",
           "zapůjčení potřebného vybavení",
           "zajištění a rezervaci ubytování",
@@ -278,11 +278,11 @@
         items: [
           "vše ze Standardu",
           "ubytování zahrnuté v ceně podle dohodnutého standardu",
-          "fotografa",
+          "fotograf",
           "lepší stravování",
           "rozšířený program",
           "možnost večerního programu na míru",
-          "individuální přípravu itineráře"
+          "individuální příprava itineráře"
         ]
       }
     },
@@ -316,27 +316,27 @@
         "Po akci dodáme doporučení, fotky nebo navazující rozšíření programu."
       ],
       included: [
-        "přípravu programu",
-        "dopravu z Prahy a okolí podle velikosti skupiny",
+        "příprava programu",
+        "doprava z Prahy a okolí podle velikosti skupiny",
         "2 instruktoři zajišťující program",
         "bezpečnostní vybavení",
         "lezení / slaňování / outdoor výzvy podle lokality",
         "základní pitný režim",
         "bezpečnostní instruktáž",
-        "organizaci akce"
+        "organizace akce"
       ],
       standard: {
         price: "od 24 900 Kč / skupina bez DPH",
         note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 29 900 Kč bez DPH.",
         items: [
-          "přípravu programu",
-          "dopravu z Prahy a okolí podle velikosti skupiny",
+          "příprava programu",
+          "doprava z Prahy a okolí podle velikosti skupiny",
           "2 instruktoři zajišťující program",
           "bezpečnostní vybavení",
           "lezení / slaňování / outdoor výzvy podle lokality",
           "základní pitný režim",
           "bezpečnostní instruktáž",
-          "organizaci akce"
+          "organizace akce"
         ]
       },
       premium: {
@@ -344,11 +344,11 @@
         note: "Doporučeno pro 3–4 osoby. Pro 5–6 osob od 52 900 Kč bez DPH.",
         items: [
           "vše ze Standardu",
-          "fotografa",
+          "fotograf",
           "rozšířený adrenalinový program",
           "lepší občerstvení",
           "možnost kombinace více aktivit",
-          "výběr a úpravu fotek po akci"
+          "výběr a úprava fotek po akci"
         ]
       }
     },
