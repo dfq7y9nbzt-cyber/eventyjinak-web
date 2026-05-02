@@ -544,6 +544,11 @@ body[data-page="home"] .content-card--accent .cta-question {
   gap: 20px;
 }
 
+.photo-showcase--natural {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
 .photo-showcase__item {
   width: 100%;
   height: 280px;
@@ -560,6 +565,13 @@ body[data-page="home"] .content-card--accent .cta-question {
 
 .photo-showcase__item--wide {
   height: 280px;
+}
+
+.photo-showcase__item--natural {
+  height: auto;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 10px;
 }
 
 .about-banner-card {
@@ -1422,5 +1434,10 @@ textarea:focus {
   .photo-showcase__item--tall,
   .photo-showcase__item--wide {
     height: 220px;
+  }
+
+  .photo-showcase__item--natural {
+    height: auto;
+    padding: 8px;
   }
 }
