@@ -169,7 +169,8 @@
         },
         {
           src: "assets/images/vezicka-2.jpg",
-          alt: "Skupina lezců na skalní věži při firemním teambuildingu"
+          alt: "Skupina lezců na skalní věži při firemním teambuildingu",
+          position: "center 18%"
         }
       ],
       cardImage: "assets/images/sam-leze-jura.jpg",
@@ -181,7 +182,8 @@
         },
         {
           src: "assets/images/vezicka-2.jpg",
-          alt: "Skupina lezců na skalní věži při firemním lezeckém teambuildingu"
+          alt: "Skupina lezců na skalní věži při firemním lezeckém teambuildingu",
+          position: "center 18%"
         }
       ],
       detailText: [

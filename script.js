@@ -130,6 +130,7 @@ function createServiceMedia(service, variant = "hero") {
     const image = createElement("img", "service-slideshow__image");
     image.src = slide.src;
     image.alt = slide.alt || service.name;
+    if (slide.position) image.style.objectPosition = slide.position;
     image.loading = index === 0 ? "eager" : "lazy";
     if (index === 0) image.classList.add("is-active");
     wrapper.appendChild(image);

@@ -121,7 +121,8 @@ Object.assign(teamService, {
     },
     {
       src: "assets/images/vezicka-2.jpg",
-      alt: "Climbing group on a sandstone tower during a corporate team building day"
+      alt: "Climbing group on a sandstone tower during a corporate team building day",
+      position: "center 18%"
     }
   ],
   cardSlides: [
@@ -131,7 +132,8 @@ Object.assign(teamService, {
     },
     {
       src: "assets/images/vezicka-2.jpg",
-      alt: "Climbing group on a sandstone tower during a corporate team building day"
+      alt: "Climbing group on a sandstone tower during a corporate team building day",
+      position: "center 18%"
     }
   ],
   detailText: [
