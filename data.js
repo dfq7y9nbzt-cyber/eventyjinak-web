@@ -293,10 +293,10 @@
       teaser:
         "Intenzivní program s lezením, slaňováním, výškou a týmovou spoluprací.",
       priceFrom: "od 24 900 Kč / skupina bez DPH",
-      heroImage: "assets/images/sam-jisti-na-vezicku.jpg",
-      heroAlt: "Lezec na skále při adrenalinovém teambuildingu",
-      cardImage: "assets/images/sam-jisti-na-vezicku.jpg",
-      cardAlt: "Autentická lezecká fotografie pro adrenalinový teambuilding",
+      heroImage: "assets/images/sam-pada.jpg",
+      heroAlt: "Lezec při adrenalinovém programu na pískovcové skále",
+      cardImage: "assets/images/sam-pada.jpg",
+      cardAlt: "Autentická fotografie lezení pro adrenalinový teambuilding",
       detailText: [
         "Intenzivní outdoorový program pro malé týmy, které chtějí zažít něco silnějšího než běžný teambuilding. Lezení, slaňování, výška, týmová spolupráce a bezpečně vedené dobrodružství v přírodě.",
         "Program připravujeme individuálně podle zkušeností a odvahy skupiny. Může být sportovnější, zážitkovější nebo více týmový. Po celou dobu dbáme na bezpečnost, vhodné tempo a profesionální vedení."
