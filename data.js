@@ -270,8 +270,28 @@
       priceFrom: "od 5 900 Kč / osoba bez DPH",
       heroImage: "assets/images/ostrov-vez.jpg",
       heroAlt: "Výhled na české skály a přírodu pro vícedenní outdoor pobyt",
+      heroSlides: [
+        {
+          src: "assets/images/ostrov-vez.jpg",
+          alt: "Výhled na české skály a přírodu pro vícedenní outdoor pobyt"
+        },
+        {
+          src: "assets/images/kobyla-z-dalky.jpg",
+          alt: "Skalní oblast v přírodě pro vícedenní outdoor pobyt"
+        }
+      ],
       cardImage: "assets/images/ostrov-vez.jpg",
       cardAlt: "Skalní krajina a příroda pro vícedenní outdoor pobyt",
+      cardSlides: [
+        {
+          src: "assets/images/ostrov-vez.jpg",
+          alt: "Skalní krajina a příroda pro vícedenní outdoor pobyt"
+        },
+        {
+          src: "assets/images/kobyla-z-dalky.jpg",
+          alt: "Skalní oblast v přírodě pro vícedenní outdoor pobyt"
+        }
+      ],
       detailText: [
         "Víkend nebo vícedenní pobyt v přírodě pro firmy a skupiny, které chtějí zažít víc než jednodenní akci. Připravíme dopravu, ubytování, program, instruktory, lezení, outdoorové aktivity, večerní část i bezpečný průběh.",
         "Pobyt může být komfortní a zážitkový, sportovní a aktivní, nebo dobrodružnější podle složení skupiny. Vše připravíme na míru tak, aby účastníci nemuseli řešit organizaci a mohli si naplno užít společný čas venku."

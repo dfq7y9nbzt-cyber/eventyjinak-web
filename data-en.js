@@ -215,6 +215,26 @@ Object.assign(multiDayService, {
   priceFrom: "from CZK 5,900 / person excl. VAT",
   heroAlt: "Czech sandstone landscape for a multi-day outdoor stay",
   cardAlt: "Outdoor landscape for a multi-day climbing and outdoor stay",
+  heroSlides: [
+    {
+      src: "assets/images/ostrov-vez.jpg",
+      alt: "Czech sandstone landscape for a multi-day outdoor stay"
+    },
+    {
+      src: "assets/images/kobyla-z-dalky.jpg",
+      alt: "Rock area in nature for a multi-day outdoor stay"
+    }
+  ],
+  cardSlides: [
+    {
+      src: "assets/images/ostrov-vez.jpg",
+      alt: "Outdoor landscape for a multi-day climbing and outdoor stay"
+    },
+    {
+      src: "assets/images/kobyla-z-dalky.jpg",
+      alt: "Rock area in nature for a multi-day outdoor stay"
+    }
+  ],
   detailText: [
     "A weekend or multi-day stay in nature for companies and groups that want more than a single-day event. We arrange transport, accommodation, programme, instructors, climbing, outdoor activities, the evening part and safe delivery.",
     "The stay can be comfortable and experiential, more athletic and active, or more adventurous depending on the group. We tailor everything so participants can focus on the shared time outdoors rather than on organisation."
