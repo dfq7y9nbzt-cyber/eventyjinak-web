@@ -57,6 +57,26 @@ Object.assign(dayService, {
   priceFrom: "from CZK 22,900 / group excl. VAT",
   heroAlt: "Sandstone towers in the Czech Republic for a one-day climbing experience",
   cardAlt: "Sandstone climbing area for a one-day climbing experience",
+  heroSlides: [
+    {
+      src: "assets/images/prachov.jpg",
+      alt: "Sandstone towers in the Czech Republic for a one-day climbing experience"
+    },
+    {
+      src: "assets/images/lezecky.jpg",
+      alt: "Climbing shoes on a rock during a one-day climbing experience"
+    }
+  ],
+  cardSlides: [
+    {
+      src: "assets/images/prachov.jpg",
+      alt: "Sandstone climbing area for a one-day climbing experience"
+    },
+    {
+      src: "assets/images/lezecky.jpg",
+      alt: "Climbing shoes on a rock during a one-day climbing experience"
+    }
+  ],
   detailText: [
     "Take your team or private group out into the rocks without planning stress or heavy logistics. We prepare a one-day climbing experience with transport from Prague and the surrounding area, instructors, equipment and a safely guided programme.",
     "We pick you up in the morning, take you to a suitable climbing area, adapt the programme to the group's experience level and take care of the full day. You simply enjoy climbing, nature and the shared experience."

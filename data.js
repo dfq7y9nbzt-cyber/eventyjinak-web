@@ -98,8 +98,28 @@
       priceFrom: "od 22 900 Kč / skupina bez DPH",
       heroImage: "assets/images/prachov.jpg",
       heroAlt: "Prachovské skály jako placeholder hlavní fotografie služby",
+      heroSlides: [
+        {
+          src: "assets/images/prachov.jpg",
+          alt: "Prachovské skály jako hlavní fotografie služby"
+        },
+        {
+          src: "assets/images/lezecky.jpg",
+          alt: "Lezečky na skále při jednodenním lezeckém zážitku"
+        }
+      ],
       cardImage: "assets/images/prachov.jpg",
       cardAlt: "Prachovské skály jako placeholder karty služby",
+      cardSlides: [
+        {
+          src: "assets/images/prachov.jpg",
+          alt: "Prachovské skály jako fotografie karty služby"
+        },
+        {
+          src: "assets/images/lezecky.jpg",
+          alt: "Lezečky na skále při jednodenním lezeckém zážitku"
+        }
+      ],
       detailText: [
         "Vyrazte s malým týmem nebo skupinou ven do skal bez plánování, stresu a složité organizace. Připravíme pro vás jednodenní lezecký zážitek s dopravou z Prahy a okolí, instruktory, vybavením a bezpečně vedeným programem.",
         "Ráno vás vyzvedneme, odvezeme do vhodné lezecké oblasti, připravíme program podle zkušeností skupiny a po celý den se postaráme o bezpečný a plynulý průběh. Vy si jen užijete lezení, přírodu a společný zážitek."
