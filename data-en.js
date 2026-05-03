@@ -295,6 +295,26 @@ Object.assign(adrenalineService, {
   priceFrom: "from CZK 24,900 / group excl. VAT",
   heroAlt: "Small adrenaline climbing team on Czech rocks",
   cardAlt: "Adrenaline climbing team experience",
+  heroSlides: [
+    {
+      src: "assets/images/sam-pada.jpg",
+      alt: "Small adrenaline climbing team on Czech rocks"
+    },
+    {
+      src: "assets/images/pavel-leze.jpg",
+      alt: "Climber on a rock during a guided adrenaline programme"
+    }
+  ],
+  cardSlides: [
+    {
+      src: "assets/images/sam-pada.jpg",
+      alt: "Adrenaline climbing team experience"
+    },
+    {
+      src: "assets/images/pavel-leze.jpg",
+      alt: "Climber on a rock during a guided adrenaline programme"
+    }
+  ],
   detailText: [
     "A stronger version of an outdoor event for a small group that wants a more intense climbing and adrenaline-driven experience. We combine movement in the rocks, rope techniques, trust and shared pressure in a controlled and safely led format.",
     "Ideal for small management teams, founders, close private groups or clients who want something more than a standard outdoor day. The whole event is still built on guidance, organisation and a safe structure."

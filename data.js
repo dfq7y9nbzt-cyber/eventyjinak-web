@@ -357,8 +357,28 @@
       priceFrom: "od 24 900 Kč / skupina bez DPH",
       heroImage: "assets/images/sam-pada.jpg",
       heroAlt: "Lezec při adrenalinovém programu na pískovcové skále",
+      heroSlides: [
+        {
+          src: "assets/images/sam-pada.jpg",
+          alt: "Lezec při adrenalinovém programu na pískovcové skále"
+        },
+        {
+          src: "assets/images/pavel-leze.jpg",
+          alt: "Lezec na skále při jištěném adrenalinovém programu"
+        }
+      ],
       cardImage: "assets/images/sam-pada.jpg",
       cardAlt: "Autentická fotografie lezení pro adrenalinový teambuilding",
+      cardSlides: [
+        {
+          src: "assets/images/sam-pada.jpg",
+          alt: "Autentická fotografie lezení pro adrenalinový teambuilding"
+        },
+        {
+          src: "assets/images/pavel-leze.jpg",
+          alt: "Lezec na skále při jištěném adrenalinovém programu"
+        }
+      ],
       detailText: [
         "Intenzivní outdoorový program pro malé týmy, které chtějí zažít něco silnějšího než běžný teambuilding. Lezení, slaňování, výška, týmová spolupráce a bezpečně vedené dobrodružství v přírodě.",
         "Program připravujeme individuálně podle zkušeností a odvahy skupiny. Může být sportovnější, zážitkovější nebo více týmový. Po celou dobu dbáme na bezpečnost, vhodné tempo a profesionální vedení."
