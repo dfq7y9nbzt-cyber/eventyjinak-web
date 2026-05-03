@@ -114,6 +114,26 @@ Object.assign(teamService, {
   priceFrom: "from CZK 36,900 / group excl. VAT",
   heroAlt: "Corporate climbing team building in Czech rocks",
   cardAlt: "Corporate climbing team building in Czech rocks",
+  heroSlides: [
+    {
+      src: "assets/images/sam-leze-jura.jpg",
+      alt: "Corporate climbing team building in Czech rocks"
+    },
+    {
+      src: "assets/images/vezicka-2.jpg",
+      alt: "Climbing group on a sandstone tower during a corporate team building day"
+    }
+  ],
+  cardSlides: [
+    {
+      src: "assets/images/sam-leze-jura.jpg",
+      alt: "Corporate climbing team building in Czech rocks"
+    },
+    {
+      src: "assets/images/vezicka-2.jpg",
+      alt: "Climbing group on a sandstone tower during a corporate team building day"
+    }
+  ],
   detailText: [
     "We take your team out of the office and into nature for a day people will remember. Rock climbing, team challenges, safe facilitation, transport from Prague and the surrounding area and complete organisation in one package.",
     "We design the programme so it also works for complete beginners. Participants experience climbing, trust, communication and shared challenges. You tell us the group size and your goal, and we prepare the rest."

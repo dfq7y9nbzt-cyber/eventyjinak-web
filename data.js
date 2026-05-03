@@ -162,8 +162,28 @@
       priceFrom: "od 36 900 Kč / skupina bez DPH",
       heroImage: "assets/images/sam-leze-jura.jpg",
       heroAlt: "Lezecká skupina pod skalou pro firemní teambuilding",
+      heroSlides: [
+        {
+          src: "assets/images/sam-leze-jura.jpg",
+          alt: "Lezecká skupina pod skalou pro firemní teambuilding"
+        },
+        {
+          src: "assets/images/vezicka-2.jpg",
+          alt: "Skupina lezců na skalní věži při firemním teambuildingu"
+        }
+      ],
       cardImage: "assets/images/sam-leze-jura.jpg",
       cardAlt: "Lezecká skupina pod skalou pro firemní lezecký teambuilding",
+      cardSlides: [
+        {
+          src: "assets/images/sam-leze-jura.jpg",
+          alt: "Lezecká skupina pod skalou pro firemní lezecký teambuilding"
+        },
+        {
+          src: "assets/images/vezicka-2.jpg",
+          alt: "Skupina lezců na skalní věži při firemním lezeckém teambuildingu"
+        }
+      ],
       detailText: [
         "Vezmeme váš tým z kanceláře do přírody a připravíme den, na který se bude vzpomínat. Lezení ve skalách, týmové výzvy, bezpečný program, doprava z Prahy a okolí a kompletní organizace v jednom balíčku.",
         "Program stavíme tak, aby byl vhodný i pro úplné začátečníky. Účastníci si vyzkouší lezení, práci s důvěrou, komunikaci a společné překonávání výzev. Vy nám řeknete počet lidí a představu o akci, my připravíme vše ostatní."

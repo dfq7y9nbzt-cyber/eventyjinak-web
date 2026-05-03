@@ -111,6 +111,66 @@ function createElement(tag, className, text) {
   return element;
 }
 
+function getServiceSlides(service, variant = "hero") {
+  const slides = variant === "card" ? service.cardSlides : service.heroSlides;
+  if (Array.isArray(slides) && slides.length) return slides;
+
+  const fallbackSrc = variant === "card" ? service.cardImage : service.heroImage;
+  const fallbackAlt = variant === "card" ? service.cardAlt : service.heroAlt;
+  return fallbackSrc ? [{ src: fallbackSrc, alt: fallbackAlt || service.name }] : [];
+}
+
+function createServiceMedia(service, variant = "hero") {
+  const slides = getServiceSlides(service, variant);
+  const mediaClass = variant === "card" ? "service-card__media" : "service-detail__media";
+  const wrapper = createElement("div", `${mediaClass} service-slideshow`);
+  wrapper.dataset.slideCount = String(slides.length);
+
+  slides.forEach((slide, index) => {
+    const image = createElement("img", "service-slideshow__image");
+    image.src = slide.src;
+    image.alt = slide.alt || service.name;
+    image.loading = index === 0 ? "eager" : "lazy";
+    if (index === 0) image.classList.add("is-active");
+    wrapper.appendChild(image);
+  });
+
+  if (slides.length > 1) {
+    const dots = createElement("div", "service-slideshow__dots");
+    slides.forEach((slide, index) => {
+      const dot = createElement("span", `service-slideshow__dot${index === 0 ? " is-active" : ""}`);
+      dot.setAttribute("aria-hidden", "true");
+      dots.appendChild(dot);
+    });
+    wrapper.appendChild(dots);
+  }
+
+  return wrapper;
+}
+
+function initServiceSlideshows() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  qsa(".service-slideshow[data-slide-count]").forEach((slideshow) => {
+    const slideCount = Number(slideshow.dataset.slideCount || 0);
+    if (slideCount < 2 || slideshow.dataset.initialized === "true") return;
+
+    const images = qsa(".service-slideshow__image", slideshow);
+    const dots = qsa(".service-slideshow__dot", slideshow);
+    let activeIndex = 0;
+
+    window.setInterval(() => {
+      images[activeIndex]?.classList.remove("is-active");
+      dots[activeIndex]?.classList.remove("is-active");
+      activeIndex = (activeIndex + 1) % slideCount;
+      images[activeIndex]?.classList.add("is-active");
+      dots[activeIndex]?.classList.add("is-active");
+    }, 4200);
+
+    slideshow.dataset.initialized = "true";
+  });
+}
+
 function createList(items, className = "plain-list") {
   const list = createElement("ul", className);
   items.forEach((item) => {
@@ -133,19 +193,37 @@ function getServiceActions(service) {
 function createServiceCard(service) {
   const actions = getServiceActions(service);
   const card = createElement("article", "service-card service-card--featured");
-  card.innerHTML = `
-    <img src="${service.cardImage}" alt="${service.cardAlt}" class="service-card__image">
-    <div class="service-card__body">
-      <h3>${service.name}</h3>
-      <p class="service-card__audience">${service.audience}</p>
-      <p>${service.teaser}</p>
-      <p class="price-tag">${service.priceFrom}</p>
-      <div class="card-actions">
-        <a class="button button-primary" href="${actions.primaryHref}">${actions.primaryLabel}</a>
-        <a class="button button-cta-green" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
-      </div>
+  card.appendChild(createServiceMedia(service, "card"));
+
+  const body = createElement("div", "service-card__body");
+  body.innerHTML = `
+    <h3>${service.name}</h3>
+    <p class="service-card__audience">${service.audience}</p>
+    <p>${service.teaser}</p>
+    <p class="price-tag">${service.priceFrom}</p>
+    <div class="card-actions">
+      <a class="button button-primary" href="${actions.primaryHref}">${actions.primaryLabel}</a>
+      <a class="button button-cta-green" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
     </div>
   `;
+  card.appendChild(body);
+
+  if (!Array.isArray(service.cardSlides) || service.cardSlides.length < 2) {
+    card.innerHTML = `
+      <img src="${service.cardImage}" alt="${service.cardAlt}" class="service-card__image">
+      <div class="service-card__body">
+        <h3>${service.name}</h3>
+        <p class="service-card__audience">${service.audience}</p>
+        <p>${service.teaser}</p>
+        <p class="price-tag">${service.priceFrom}</p>
+        <div class="card-actions">
+          <a class="button button-primary" href="${actions.primaryHref}">${actions.primaryLabel}</a>
+          <a class="button button-cta-green" href="${actions.secondaryHref}">${actions.secondaryLabel}</a>
+        </div>
+      </div>
+    `;
+  }
+
   return card;
 }
 
@@ -297,6 +375,19 @@ function renderServicesPage() {
           <p class="price-tag">${service.priceFrom}</p>
         </div>
       `;
+
+      if (Array.isArray(service.heroSlides) && service.heroSlides.length > 1) {
+        section.innerHTML = "";
+        section.appendChild(createServiceMedia(service, "hero"));
+        const content = createElement("div", "service-detail__content");
+        content.innerHTML = `
+          <p class="eyebrow">Detail sluĹľby</p>
+          <h2>${service.name}</h2>
+          <p class="service-card__audience">${service.audience}</p>
+          <p class="price-tag">${service.priceFrom}</p>
+        `;
+        section.appendChild(content);
+      }
 
       const textBlock = createElement("div", "detail-copy detail-copy--highlight");
       service.detailText.forEach((paragraph) => {
@@ -1305,5 +1396,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCustomExperienceForm();
   renderContactForm();
   localizeDynamicUi();
+  initServiceSlideshows();
 });
 
