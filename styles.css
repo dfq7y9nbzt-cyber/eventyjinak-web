@@ -491,13 +491,46 @@ body[data-page="home"] .content-card--accent .cta-question {
 
 .plain-list--about-points {
   display: grid;
-  gap: 10px;
+  gap: 14px;
   margin-top: 18px;
 }
 
 .plain-list--about-points li {
-  font-weight: 600;
+  display: grid;
+  gap: 4px;
   color: var(--text-strong);
+}
+
+.plain-list--about-points li strong {
+  font-size: 1rem;
+}
+
+.plain-list--about-points li span {
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.content-card--about-side {
+  height: 100%;
+  display: grid;
+  align-content: start;
+}
+
+.about-side-note {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(47, 138, 59, 0.12);
+}
+
+.about-side-note h3 {
+  margin: 0 0 8px;
+}
+
+.about-side-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .content-card--safety h2 {
