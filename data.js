@@ -14,7 +14,7 @@
   },
   baseLocation: "Praha / Středočeský kraj",
   hero: {
-    title: "Outdoorové a lezecké eventy jinak",
+    title: "Lezecké a outdoorové eventy jinak",
     subtitle:
       "Prémiové zážitky pro firmy a skupiny z Prahy a okolí. Zajistíme dopravu, instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
     slides: [
@@ -27,8 +27,8 @@
         alt: "Tatry scenerie"
       },
       {
-        src: "assets/images/tatry-zima-a-slunicko.jpg",
-        alt: "Tatry zima a sluníčko"
+        src: "assets/images/ostrov-vez.jpg",
+        alt: "Ostrov a pískovcová věž"
       },
       {
         src: "assets/images/img-0381.jpg",
