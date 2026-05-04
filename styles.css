@@ -396,6 +396,21 @@ body[data-page="home"] .content-card--accent .cta-question {
   max-width: 72ch;
 }
 
+.page-hero__lead {
+  margin: 0;
+  padding: 18px 22px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(47, 138, 59, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(88, 152, 76, 0.1), transparent 36%),
+    linear-gradient(180deg, rgba(249, 252, 247, 0.98), rgba(241, 247, 238, 0.98));
+  font-size: 1.05rem;
+  line-height: 1.72;
+  font-weight: 600;
+  color: var(--text-strong);
+  box-shadow: 0 16px 36px rgba(22, 33, 21, 0.08);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
