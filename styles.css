@@ -1140,17 +1140,36 @@ body[data-page="services"] .service-detail__support .info-card--audience .plain-
 .faq-item summary {
   cursor: pointer;
   list-style: none;
-  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 26px;
   font-weight: 700;
+  font-size: 1.04rem;
+  line-height: 1.45;
+  color: var(--text-strong);
 }
 
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
 
+.faq-item summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
 .faq-item p {
   margin: 0;
-  padding: 0 22px 18px;
+  padding: 0 26px 20px;
   color: var(--muted);
   line-height: 1.7;
 }
