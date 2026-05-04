@@ -1537,6 +1537,21 @@ textarea:focus {
   text-decoration: none;
 }
 
+html[lang="cs"] .footer-nav-stack {
+  gap: 0;
+  padding-top: 12px;
+}
+
+html[lang="cs"] .footer-links {
+  grid-template-columns: repeat(2, max-content);
+  gap: 8px 28px;
+}
+
+html[lang="cs"] .footer-links a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .footer-legal-links {
   display: grid;
   grid-template-columns: repeat(4, max-content);
@@ -1662,6 +1677,10 @@ textarea:focus {
 
   .footer-legal-links {
     grid-template-columns: repeat(2, minmax(0, max-content));
+  }
+
+  html[lang="cs"] .footer-nav-stack {
+    padding-top: 0;
   }
 
 }
