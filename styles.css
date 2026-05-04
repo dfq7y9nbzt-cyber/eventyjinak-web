@@ -481,6 +481,14 @@ body[data-page="home"] .content-card--accent .cta-question {
   color: var(--accent-deep);
 }
 
+.content-card--wide-text {
+  max-width: none;
+}
+
+.content-card--wide-text p:not(.eyebrow) {
+  max-width: 78ch;
+}
+
 .content-card--safety h2 {
   margin-bottom: 16px;
 }
