@@ -331,11 +331,9 @@ function renderHomePage() {
       const actions = getServiceActions(customService);
 
       const media = createElement("article", "content-card custom-home-banner custom-home-banner--media");
-      media.innerHTML = `
-        <img src="${customService.heroImage}" alt="${customService.heroAlt}" class="custom-home-banner__image">
-      `;
+      media.appendChild(createServiceMedia(customService, "hero"));
 
-      const content = createElement("article", "content-card content-card--accent custom-home-banner");
+      const content = createElement("article", "content-card content-card--accent custom-home-banner custom-home-banner--content");
       content.innerHTML = `
         <p class="eyebrow">Zážitek na míru</p>
         <h2>${customService.name}</h2>

@@ -443,6 +443,16 @@
       priceFrom: "Individuální kalkulace podle zadání",
       heroImage: "assets/images/tatry-scenerie.jpg",
       heroAlt: "Horská a outdoorová scenérie pro službu zážitek na míru",
+      heroSlides: [
+        {
+          src: "assets/images/tatry-scenerie.jpg",
+          alt: "Horská a outdoorová scenérie pro službu zážitek na míru"
+        },
+        {
+          src: "assets/images/tatry-inverze.jpg",
+          alt: "Tatry inverze jako atmosféra pro zážitek na míru"
+        }
+      ],
       cardImage: "assets/images/tatry-scenerie.jpg",
       cardAlt: "Outdoorová krajina pro službu zážitek na míru",
       showOnHome: false,

@@ -486,16 +486,40 @@ body[data-page="home"] .content-card--accent .cta-question {
   align-content: start;
 }
 
+.split-layout#custom-experience-home,
+#custom-experience-home.split-layout {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
 .custom-home-banner--media {
   padding: 0;
   overflow: hidden;
+  min-height: 360px;
+  background: rgba(255, 255, 255, 0.94);
 }
 
-.custom-home-banner__image {
-  width: 100%;
+.custom-home-banner--media .service-detail__media,
+.custom-home-banner--media .service-slideshow {
   height: 100%;
-  min-height: 320px;
-  object-fit: cover;
+  min-height: 360px;
+  border-radius: inherit;
+}
+
+.custom-home-banner--content {
+  height: 100%;
+  padding: 30px 30px 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 246, 0.98));
+}
+
+.custom-home-banner--content p:not(.eyebrow) {
+  margin: 0;
+}
+
+.custom-home-banner--content .card-actions {
+  margin-top: auto;
 }
 
 .section-card--center {
