@@ -517,6 +517,22 @@ body[data-page="home"] .content-card--accent .cta-question {
   align-content: start;
 }
 
+.content-card--about-main {
+  height: 100%;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.content-card--about-main p:not(.eyebrow) {
+  margin: 0;
+  line-height: 1.78;
+}
+
+.content-card--about-main h2 + p:not(.eyebrow) {
+  margin-top: 2px;
+}
+
 .content-card--safety h2 {
   margin-bottom: 16px;
 }
