@@ -577,6 +577,19 @@ body[data-page="home"] .content-card--accent .cta-question {
   align-content: start;
 }
 
+body[data-page="contact"] .split-layout--wide {
+  align-items: stretch;
+}
+
+body[data-page="contact"] .contact-info-stack {
+  height: 100%;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+body[data-page="contact"] .contact-info-stack .content-card {
+  height: 100%;
+}
+
 .services-grid,
 .info-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
