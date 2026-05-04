@@ -584,6 +584,10 @@ body[data-page="home"] .content-card--accent .cta-question {
   align-items: start;
 }
 
+.split-layout--equal {
+  align-items: stretch;
+}
+
 .about-banner-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
