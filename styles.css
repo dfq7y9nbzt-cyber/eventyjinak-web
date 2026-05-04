@@ -517,22 +517,6 @@ body[data-page="home"] .content-card--accent .cta-question {
   align-content: start;
 }
 
-.about-side-note {
-  margin-top: 20px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(47, 138, 59, 0.12);
-}
-
-.about-side-note h3 {
-  margin: 0 0 8px;
-}
-
-.about-side-note p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 .content-card--safety h2 {
   margin-bottom: 16px;
 }
