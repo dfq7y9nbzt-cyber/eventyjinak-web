@@ -560,6 +560,63 @@ body[data-page="home"] .content-card--accent .cta-question {
   gap: 20px;
 }
 
+.team-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.46fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.team-card__image {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.team-card__content {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.team-card__content h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.team-card__content p {
+  margin: 0;
+}
+
+.team-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-tags li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
 .photo-showcase {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -1407,6 +1464,7 @@ textarea:focus {
   .photo-showcase,
   .about-banner-grid,
   .split-layout,
+  .team-card,
   .service-detail,
   .email-preview-grid {
     grid-template-columns: 1fr;

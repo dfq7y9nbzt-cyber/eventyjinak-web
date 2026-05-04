@@ -382,7 +382,7 @@ function renderServicesPage() {
         section.appendChild(createServiceMedia(service, "hero"));
         const content = createElement("div", "service-detail__content");
         content.innerHTML = `
-          <p class="eyebrow">Detail sluĹľby</p>
+          <p class="eyebrow">Detail služby</p>
           <h2>${service.name}</h2>
           <p class="service-card__audience">${service.audience}</p>
           <p class="price-tag">${service.priceFrom}</p>
