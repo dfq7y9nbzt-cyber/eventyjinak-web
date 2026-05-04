@@ -27,8 +27,8 @@
         alt: "Tatry scenerie"
       },
       {
-        src: "assets/images/ostrov-vez.jpg",
-        alt: "Ostrov a pískovcová věž"
+        src: "assets/images/ostrov-home.jpeg",
+        alt: "Ostrov a pískovcové věže"
       },
       {
         src: "assets/images/img-0381.jpg",
