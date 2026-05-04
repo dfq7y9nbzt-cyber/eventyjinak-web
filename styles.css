@@ -1559,8 +1559,8 @@ html[lang="cs"] .footer-nav-stack {
 }
 
 html[lang="cs"] .footer-links {
-  grid-template-columns: repeat(2, max-content);
-  gap: 8px 28px;
+  grid-template-columns: repeat(3, max-content);
+  gap: 10px 34px;
 }
 
 html[lang="cs"] .footer-links a {
