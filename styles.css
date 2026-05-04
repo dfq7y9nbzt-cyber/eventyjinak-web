@@ -467,6 +467,10 @@ body[data-page="home"] .content-card--accent .cta-question {
   box-shadow: 0 18px 42px rgba(22, 33, 21, 0.1);
 }
 
+.content-card--companies-note {
+  padding-top: 24px;
+}
+
 .content-card--intro p {
   margin: 0;
   font-size: 1.02rem;
