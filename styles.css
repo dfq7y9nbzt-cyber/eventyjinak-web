@@ -489,6 +489,17 @@ body[data-page="home"] .content-card--accent .cta-question {
   max-width: 78ch;
 }
 
+.plain-list--about-points {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.plain-list--about-points li {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
 .content-card--safety h2 {
   margin-bottom: 16px;
 }
