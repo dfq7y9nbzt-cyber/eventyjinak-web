@@ -1707,6 +1707,11 @@ html[lang="cs"] .footer-links a {
   .email-preview-grid {
     grid-template-columns: 1fr;
   }
+
+  #custom-experience-home.split-layout,
+  .split-layout#custom-experience-home {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 780px) {
