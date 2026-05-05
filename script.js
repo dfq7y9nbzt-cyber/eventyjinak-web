@@ -131,7 +131,8 @@ function createServiceMedia(service, variant = "hero") {
     image.src = slide.src;
     image.alt = slide.alt || service.name;
     if (slide.position) image.style.objectPosition = slide.position;
-    image.loading = index === 0 ? "eager" : "lazy";
+    image.loading = "lazy";
+    image.decoding = "async";
     if (index === 0) image.classList.add("is-active");
     wrapper.appendChild(image);
   });
@@ -211,7 +212,7 @@ function createServiceCard(service) {
 
   if (!Array.isArray(service.cardSlides) || service.cardSlides.length < 2) {
     card.innerHTML = `
-      <img src="${service.cardImage}" alt="${service.cardAlt}" class="service-card__image">
+      <img src="${service.cardImage}" alt="${service.cardAlt}" class="service-card__image" loading="lazy" decoding="async">
       <div class="service-card__body">
         <h3>${service.name}</h3>
         <p class="service-card__audience">${service.audience}</p>
@@ -226,6 +227,21 @@ function createServiceCard(service) {
   }
 
   return card;
+}
+
+function applyImageLoadingHints() {
+  qsa("img").forEach((image) => {
+    image.decoding = "async";
+
+    if (image.classList.contains("brand-logo")) {
+      image.loading = "eager";
+      return;
+    }
+
+    if (!image.hasAttribute("loading")) {
+      image.loading = "lazy";
+    }
+  });
 }
 
 function createBenefitCard(benefit) {
@@ -1395,6 +1411,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCustomExperienceForm();
   renderContactForm();
   localizeDynamicUi();
+  applyImageLoadingHints();
   initServiceSlideshows();
 });
 
