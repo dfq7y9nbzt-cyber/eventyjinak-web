@@ -126,4 +126,102 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/custom-experience-en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/zazitek-na-miru.html" />
   </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/dokumenty.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/dokumenty.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/documents-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/dokumenty.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/documents-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/dokumenty.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/documents-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/dokumenty.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/obchodni-podminky.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/obchodni-podminky.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/terms-and-conditions-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/obchodni-podminky.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/terms-and-conditions-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/obchodni-podminky.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/terms-and-conditions-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/obchodni-podminky.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/ochrana-osobnich-udaju.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/ochrana-osobnich-udaju.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/privacy-policy-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/ochrana-osobnich-udaju.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/privacy-policy-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/ochrana-osobnich-udaju.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/privacy-policy-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/ochrana-osobnich-udaju.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/cookies.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/cookies-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/cookies.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/cookies-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/cookies-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/cookies.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/reklamace-a-adr.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/reklamace-a-adr.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/complaints-and-adr-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/reklamace-a-adr.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/complaints-and-adr-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/reklamace-a-adr.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/complaints-and-adr-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/reklamace-a-adr.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/bezpecnostni-pravidla.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/bezpecnostni-pravidla.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/safety-rules-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/bezpecnostni-pravidla.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/safety-rules-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/bezpecnostni-pravidla.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/safety-rules-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/bezpecnostni-pravidla.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/souhlas-foto-video.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/souhlas-foto-video.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/photo-video-consent-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/souhlas-foto-video.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/photo-video-consent-en.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/souhlas-foto-video.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/photo-video-consent-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/souhlas-foto-video.html" />
+  </url>
 </urlset>
