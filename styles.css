@@ -1073,6 +1073,7 @@ body[data-page="indoor-services"] .service-details-stack {
 }
 
 body[data-page="indoor-services"] .service-detail {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
 }
 
@@ -1081,6 +1082,7 @@ body[data-page="indoor-services"] .service-detail__media.service-slideshow {
 }
 
 body[data-page="indoor-services"] .package-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
 }
 
