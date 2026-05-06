@@ -365,6 +365,40 @@ adrenalineService.premium.items = [
   "selection and editing of photos after the event"
 ];
 
+Object.assign(eventyData.indoorFeaturedService, {
+  id: "relaxed-climbing-team-building-prague",
+  name: "Relaxed climbing team building in Prague",
+  audience: "For companies, organisations and groups in Prague",
+  teaser:
+    "Indoor climbing programme at a suitable Prague climbing gym with instructors, entry, equipment and a simple animation programme.",
+  priceFrom: "from CZK 14,900 / group excl. VAT",
+  heroAlt: "Group indoor climbing programme in Prague",
+  cardAlt: "Group indoor climbing programme in Prague",
+  cardSlides: [
+    {
+      src: "assets/images/indoor-group-wall.jpg",
+      alt: "Group indoor climbing programme in Prague"
+    },
+    {
+      src: "assets/images/indoor-climbing-team.jpg",
+      alt: "Team after an indoor bouldering programme"
+    }
+  ],
+  actions: {
+    primaryLabel: "Service detail",
+    primaryHref: "indoor-services-en.html#indoor-team-building",
+    secondaryLabel: "Ask about a date",
+    secondaryHref: "inquiry-en.html?service=relaxed-climbing-team-building-prague"
+  }
+});
+
+eventyData.homeFeaturedServices = [
+  dayService,
+  teamService,
+  multiDayService,
+  eventyData.indoorFeaturedService
+].filter(Boolean);
+
 Object.assign(customService, {
   name: "Tailored experience built around you",
   audience: "For companies, private groups and special one-off requests",
@@ -459,6 +493,9 @@ eventyData.faq = [
 eventyData.formOptions.actionTypes = [
   "Climbing day without the hassle",
   "Corporate climbing team building",
+  "Relaxed climbing team building in Prague",
+  "Indoor celebrations or group events",
+  "Tailor-made indoor event",
   "Multi-day outdoor stay",
   "Adrenaline team experience",
   "I am not sure yet, please recommend"
@@ -480,6 +517,8 @@ eventyData.formOptions.addOnChoices = [
   "Video / reels",
   "Full board (3 meals)",
   "Evening programme",
+  "Cake / celebration",
+  "Animation programme",
   "English-speaking instructor",
   "Gift packs"
 ];
@@ -495,6 +534,9 @@ eventyData.customFormOptions.eventTypes = [
   "Fun group event",
   "Adrenaline programme",
   "Corporate team building",
+  "Indoor team building in Prague",
+  "Indoor celebration or group event",
+  "Tailor-made indoor event",
   "Multi-day stay",
   "Private celebration or closed event",
   "I am not sure, please recommend the right format"
@@ -502,7 +544,8 @@ eventyData.customFormOptions.eventTypes = [
 eventyData.customFormOptions.rockTypes = [
   { value: "any", label: "No preference" },
   { value: "piskovec", label: "Sandstone" },
-  { value: "skala", label: "Rock (limestone, granite and more)" }
+  { value: "skala", label: "Rock (limestone, granite and more)" },
+  { value: "indoor", label: "Indoor climbing gym / bouldering gym in Prague" }
 ];
 eventyData.customFormOptions.accessLevels = [
   "easy approach",
@@ -528,6 +571,10 @@ eventyData.customFormOptions.activityChoices = [
   "Skills course / intro training",
   "Rappelling",
   "Via ferrata",
+  "Indoor roped climbing",
+  "Indoor bouldering",
+  "Indoor animation programme",
+  "Escape-style / team game at a climbing gym",
   "Bushcraft / nature stay",
   "Hiking / ridge programme",
   "Drytool / winter techniques",
@@ -546,9 +593,23 @@ eventyData.customFormOptions.serviceChoices = [
   "Evening programme",
   "English-speaking instructor",
   "Indoor backup option",
+  "Indoor climbing gym entry",
+  "Indoor equipment rental",
+  "Cake / celebration",
+  "Animation programme",
   "Additional team building activities",
   "Gift pack for participants"
 ];
+
+eventyData.customFormOptions.localities
+  .filter((locality) => locality.rockType === "indoor")
+  .forEach((locality) => {
+    locality.region = "Prague";
+    locality.district = "Prague";
+    if (locality.value === "lezecka-stena-praha-dle-kapacity") {
+      locality.label = "We recommend a specific gym according to date and capacity";
+    }
+  });
 
 const regionMap = {
   "Praha": "Prague",

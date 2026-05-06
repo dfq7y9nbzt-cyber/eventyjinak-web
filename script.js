@@ -3,6 +3,7 @@ const routeMap = {
   cs: {
     home: "index.html",
     services: "sluzby.html",
+    indoorServices: "indoor-sluzby.html",
     inquiry: "rezervace.html",
     contact: "kontakt.html",
     about: "o-nas.html",
@@ -12,6 +13,7 @@ const routeMap = {
   en: {
     home: "en.html",
     services: "services-en.html",
+    indoorServices: "indoor-services-en.html",
     inquiry: "inquiry-en.html",
     contact: "contact-en.html",
     about: "about-en.html",
@@ -29,7 +31,7 @@ const uiText = {
     whatWeArrange: "Co zařídíme",
     safetyAndOrganisation: "Bezpečnost a organizace",
     customFormTitle: "Poskládejte si vlastní akci krok za krokem",
-    customFormCopy: "V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, druh skály, lokalitu, náročnost přístupu i služby, které pro vás máme zajistit.",
+    customFormCopy: "V detailním formuláři si zvolíte počet osob, termín nebo rozpětí dnů, typ akce, prostředí nebo lokalitu, náročnost přístupu i služby, které pro vás máme zajistit.",
     customFormNote: "Pokud si nejste jistí volbou, napište nám rychlý dotaz a doporučíme vhodnou variantu.",
     documentPlaceholder: "PDF / odkaz doplníme",
     emailPreviewEyebrow: "Návrh e-mailu",
@@ -63,7 +65,7 @@ const uiText = {
     whatWeArrange: "What we arrange",
     safetyAndOrganisation: "Safety and organisation",
     customFormTitle: "Build your event step by step",
-    customFormCopy: "In the detailed form, you choose the group size, dates or date range, event type, rock type, location, approach difficulty and the services you want us to arrange.",
+    customFormCopy: "In the detailed form, you choose the group size, dates or date range, event type, venue type or location, approach difficulty and the services you want us to arrange.",
     customFormNote: "If you are unsure what to choose, send us a quick question and we will recommend the right option.",
     documentPlaceholder: "PDF / link coming soon",
     emailPreviewEyebrow: "Email preview",
@@ -90,7 +92,9 @@ const uiText = {
   }
 };
 const text = uiText[locale];
-const servicesById = Object.fromEntries(eventyData.services.map((service) => [service.id, service]));
+const servicesById = Object.fromEntries(
+  [...eventyData.services, eventyData.indoorFeaturedService].filter(Boolean).map((service) => [service.id, service])
+);
 
 function getRoute(key) {
   return routeMap[locale][key];
@@ -335,7 +339,8 @@ function renderHomePage() {
 
   const featuredGrid = qs("#featured-services");
   if (featuredGrid) {
-    eventyData.services
+    const featuredServices = eventyData.homeFeaturedServices || eventyData.services;
+    featuredServices
       .filter((service) => service.showOnHome !== false)
       .forEach((service) => featuredGrid.appendChild(createServiceCard(service)));
   }
@@ -692,9 +697,15 @@ function getCustomEventBaseSurcharge(eventType, days) {
     "Zábavný event pro skupinu": 2500,
     "Adrenalinový program": 6000,
     "Firemní teambuilding": 4000,
+    "Indoor teambuilding v Praze": 2500,
+    "Indoor oslava nebo skupinová akce": 3500,
+    "Indoor event na míru": 5000,
     "Vícedenní pobyt": 2500,
     "Soukromá oslava nebo uzavřená akce": 3000,
-    "Nevím, chci doporučit vhodný formát": 2000
+    "Nevím, chci doporučit vhodný formát": 2000,
+    "Indoor team building in Prague": 2500,
+    "Indoor celebration or group event": 3500,
+    "Tailor-made indoor event": 5000
   };
 
   return (multipliers[eventType] || 0) * days;
@@ -724,6 +735,7 @@ function getTransportCost(participants, travelKm) {
 }
 
 function getRockTypeCategory(locality) {
+  if (locality.rockType === "indoor") return "indoor";
   return locality.rockType === "piskovec" ? "piskovec" : "skala";
 }
 
@@ -732,12 +744,25 @@ function getDetailedRockTypeLabel(rockType) {
     piskovec: "pískovec",
     zula: "žula a pevná skála",
     vapenec: "vápenec",
-    buliznik: "tvrdá skála / buližník"
+    buliznik: "tvrdá skála / buližník",
+    indoor: "indoor stěna / boulder"
   };
   return labels[rockType] || rockType;
 }
 
 function getRecommendedRockType(selectedActivities, season) {
+  if (
+    selectedActivities.has("Indoor lezení na laně") ||
+    selectedActivities.has("Indoor bouldering") ||
+    selectedActivities.has("Indoor animační program") ||
+    selectedActivities.has("Únikovka / týmová hra na stěně") ||
+    selectedActivities.has("Indoor roped climbing") ||
+    selectedActivities.has("Indoor animation programme") ||
+    selectedActivities.has("Escape-style / team game at a climbing gym")
+  ) {
+    return "indoor";
+  }
+
   if (selectedActivities.has("Drytool / zimní techniky") || selectedActivities.has("Via ferrata")) {
     return "skala";
   }
@@ -765,6 +790,11 @@ function localitySupportsAudience(locality, audienceFit) {
     "borecke-skaly",
     "divoka-sarka",
     "srbsko-alkazar",
+    "smichoff",
+    "lokal-blok",
+    "jungle-letnany",
+    "bigwall-praha",
+    "lezecka-stena-praha-dle-kapacity",
     "drabske-svetnicky",
     "pisecke-skaly",
     "svaty-jan"
@@ -1011,7 +1041,9 @@ function renderCustomExperienceForm() {
     const currentAudienceFit = audienceFitSelect.value;
     const currentSeason = seasonSelect.value;
     const selectedActivities = new Set(new FormData(form).getAll("activities"));
-    localitySelect.innerHTML = '<option value="">Vyberte lokalitu</option>';
+    localitySelect.innerHTML = locale === "en"
+      ? '<option value="">Select location or gym</option>'
+      : '<option value="">Vyberte lokalitu nebo stěnu</option>';
 
     const matchingLocalities = eventyData.customFormOptions.localities
       .filter((item) => (currentRockType ? currentRockType === "any" || getRockTypeCategory(item) === currentRockType : true))
@@ -1179,6 +1211,30 @@ function renderCustomExperienceForm() {
       addPricedLine("Dárkový balíček pro účastníky", giftCost);
     }
 
+    if (selectedServices.has("Vstup na indoor stěnu") || selectedServices.has("Indoor climbing gym entry")) {
+      const entryCost = participants * 300 * days;
+      totalCost += entryCost;
+      addPricedLine(locale === "en" ? "Indoor climbing gym entry" : "Vstup na indoor stěnu", entryCost);
+    }
+
+    if (selectedServices.has("Půjčení indoor vybavení") || selectedServices.has("Indoor equipment rental")) {
+      const rentalCost = participants * 250 * days;
+      totalCost += rentalCost;
+      addPricedLine(locale === "en" ? "Indoor equipment rental" : "Půjčení indoor vybavení", rentalCost);
+    }
+
+    if (selectedServices.has("Dort / oslava") || selectedServices.has("Cake / celebration")) {
+      const cakeCost = 2500;
+      totalCost += cakeCost;
+      addPricedLine(locale === "en" ? "Cake / celebration" : "Dort / oslava", cakeCost);
+    }
+
+    if (selectedServices.has("Animační program") || selectedServices.has("Animation programme")) {
+      const animationCost = 3500;
+      totalCost += animationCost;
+      addPricedLine(locale === "en" ? "Animation programme" : "Animační program", animationCost);
+    }
+
     const priceWithoutVat = roundUpPrice(totalCost * estimator.marginMultiplier);
     const perPerson = roundUpPrice(priceWithoutVat / participants);
 
@@ -1327,6 +1383,76 @@ function initReveal() {
   items.forEach((item) => observer.observe(item));
 }
 
+function normalizeMainNavigation() {
+  const nav = qs(".site-nav");
+  if (!nav) return;
+
+  const links = locale === "en"
+    ? [
+        ["home", "Home"],
+        ["services", "Outdoor services"],
+        ["indoorServices", "Indoor services"],
+        ["inquiry", "Inquiry"],
+        ["contact", "Contact"],
+        ["about", "About"]
+      ]
+    : [
+        ["home", "Domů"],
+        ["services", "Outdoor služby"],
+        ["indoorServices", "Indoor služby"],
+        ["inquiry", "Poptávka"],
+        ["contact", "Kontakt"],
+        ["about", "O nás"]
+      ];
+
+  const currentPath = window.location.pathname.split("/").pop() || (locale === "en" ? "en.html" : "index.html");
+  nav.innerHTML = "";
+
+  links.forEach(([key, label]) => {
+    const link = document.createElement("a");
+    const href = getRoute(key);
+    link.href = href;
+    link.textContent = label;
+    if (href === currentPath) {
+      link.setAttribute("aria-current", "page");
+    }
+    nav.appendChild(link);
+  });
+}
+
+function normalizeFooterLinks() {
+  const footerLinks = qs(".footer-links");
+  if (!footerLinks) return;
+
+  const links = locale === "en"
+    ? [
+        ["for-companies-en.html", "For companies"],
+        ["services-en.html", "Outdoor services"],
+        ["indoor-services-en.html", "Indoor services"],
+        ["inquiry-en.html", "Inquiry"],
+        ["how-cooperation-works-en.html", "How cooperation works"],
+        ["contact-en.html", "Contact"],
+        ["documents-en.html", "Documents"]
+      ]
+    : [
+        ["pro-firmy.html", "Pro firmy"],
+        ["sluzby.html", "Outdoor služby"],
+        ["indoor-sluzby.html", "Indoor služby"],
+        ["rezervace.html", "Poptávka"],
+        ["jak-probiha-spoluprace.html", "Jak probíhá spolupráce"],
+        ["kontakt.html", "Kontakt"],
+        ["dokumenty.html", "Dokumenty"]
+      ];
+
+  footerLinks.innerHTML = "";
+  links.forEach(([href, label]) => {
+    const link = document.createElement("a");
+    link.href = href;
+    link.textContent = label;
+    footerLinks.appendChild(link);
+  });
+}
+
 function getServiceActions(service) {
   return service.actions || {
     primaryLabel: text.serviceDetail,
@@ -1401,6 +1527,8 @@ function localizeDynamicUi() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  normalizeMainNavigation();
+  normalizeFooterLinks();
   initMenu();
   initHeaderScrollState();
   initReveal();

@@ -88,6 +88,34 @@
       text: "Počasí nás nezaskočí. Pro každou akci umíme předem připravit náhradní variantu programu, kterou s vámi odsouhlasíme ještě před termínem akce."
     }
   ],
+  indoorFeaturedService: {
+    id: "pohodovy-lezecky-teambuilding-praha",
+    name: "Pohodový lezecký teambuilding v Praze",
+    audience: "Pro firmy, organizace a skupiny v Praze",
+    teaser:
+      "Indoor lezecký program na vhodné pražské stěně s instruktory, vstupem, vybavením a jednoduchým animačním programem.",
+    priceFrom: "od 14 900 Kč / skupina bez DPH",
+    heroImage: "assets/images/indoor-group-wall.jpg",
+    heroAlt: "Skupinový indoor lezecký program v Praze",
+    cardImage: "assets/images/indoor-group-wall.jpg",
+    cardAlt: "Skupinový indoor lezecký program v Praze",
+    cardSlides: [
+      {
+        src: "assets/images/indoor-group-wall.jpg",
+        alt: "Skupinový indoor lezecký program v Praze"
+      },
+      {
+        src: "assets/images/indoor-climbing-team.jpg",
+        alt: "Tým po indoor boulderingovém programu"
+      }
+    ],
+    actions: {
+      primaryLabel: "Detail služby",
+      primaryHref: "indoor-sluzby.html#indoor-teambuilding",
+      secondaryLabel: "Poptat termín",
+      secondaryHref: "rezervace.html?service=pohodovy-lezecky-teambuilding-praha"
+    }
+  },
   services: [
     {
       id: "lezecky-den-bez-starosti",
@@ -355,6 +383,7 @@
       teaser:
         "Intenzivní program s lezením, slaňováním, výškou a týmovou spoluprací.",
       priceFrom: "od 24 900 Kč / skupina bez DPH",
+      showOnHome: false,
       heroImage: "assets/images/sam-pada.jpg",
       heroAlt: "Lezec při adrenalinovém programu na pískovcové skále",
       heroSlides: [
@@ -591,6 +620,9 @@
     actionTypes: [
       "Lezecký den bez starostí",
       "Firemní lezecký teambuilding",
+      "Pohodový lezecký teambuilding v Praze",
+      "Indoor oslavy či skupinové akce",
+      "Indoor event na míru",
       "Vícedenní outdoor pobyt",
       "Adrenalinový teambuilding",
       "Nevím, chci poradit"
@@ -612,6 +644,8 @@
       "Video / reels",
       "Plná penze (3x jídlo)",
       "Večerní program",
+      "Dort / oslava",
+      "Animační program",
       "Anglicky mluvící instruktor",
       "Dárkové balíčky"
     ],
@@ -628,6 +662,9 @@
       "Zábavný event pro skupinu",
       "Adrenalinový program",
       "Firemní teambuilding",
+      "Indoor teambuilding v Praze",
+      "Indoor oslava nebo skupinová akce",
+      "Indoor event na míru",
       "Vícedenní pobyt",
       "Soukromá oslava nebo uzavřená akce",
       "Nevím, chci doporučit vhodný formát"
@@ -635,7 +672,8 @@
     rockTypes: [
       { value: "any", label: "Je mi to jedno" },
       { value: "piskovec", label: "Písek" },
-      { value: "skala", label: "Skála (vápno, žula a další)" }
+      { value: "skala", label: "Skála (vápno, žula a další)" },
+      { value: "indoor", label: "Indoor stěna / boulder v Praze" }
     ],
     accessLevels: [
       "snadný přístup",
@@ -661,6 +699,10 @@
       "Kurz a nácvik základů",
       "Slaňování",
       "Via ferrata",
+      "Indoor lezení na laně",
+      "Indoor bouldering",
+      "Indoor animační program",
+      "Únikovka / týmová hra na stěně",
       "Bushcraft / pobyt v přírodě",
       "Turistika / hřebenový program",
       "Drytool / zimní techniky",
@@ -678,10 +720,59 @@
       "Večerní program",
       "Anglicky mluvícího instruktora",
       "Záložní indoor variantu",
+      "Vstup na indoor stěnu",
+      "Půjčení indoor vybavení",
+      "Dort / oslava",
+      "Animační program",
       "Teambuildingové aktivity navíc",
       "Dárkový balíček pro účastníky"
     ],
     localities: [
+      {
+        value: "smichoff",
+        label: "Smíchoff",
+        district: "Praha",
+        region: "Praha",
+        rockType: "indoor",
+        access: "snadný přístup",
+        travelKm: 0
+      },
+      {
+        value: "lokal-blok",
+        label: "Lokal Blok",
+        district: "Praha",
+        region: "Praha",
+        rockType: "indoor",
+        access: "snadný přístup",
+        travelKm: 0
+      },
+      {
+        value: "jungle-letnany",
+        label: "Jungle Letňany",
+        district: "Praha",
+        region: "Praha",
+        rockType: "indoor",
+        access: "snadný přístup",
+        travelKm: 0
+      },
+      {
+        value: "bigwall-praha",
+        label: "BigWall Praha",
+        district: "Praha",
+        region: "Praha",
+        rockType: "indoor",
+        access: "snadný přístup",
+        travelKm: 0
+      },
+      {
+        value: "lezecka-stena-praha-dle-kapacity",
+        label: "Konkrétní stěnu doporučíme podle termínu a kapacity",
+        district: "Praha",
+        region: "Praha",
+        rockType: "indoor",
+        access: "snadný přístup",
+        travelKm: 0
+      },
       {
         value: "prachovske-skaly",
         label: "Prachovské skály",
@@ -942,3 +1033,10 @@
     contactSubjectPrefix: "Nový dotaz Eventy Jinak"
   }
 };
+
+eventyData.homeFeaturedServices = [
+  eventyData.services.find((service) => service.id === "lezecky-den-bez-starosti"),
+  eventyData.services.find((service) => service.id === "firemni-lezecky-teambuilding"),
+  eventyData.services.find((service) => service.id === "vicedenni-outdoor-pobyt"),
+  eventyData.indoorFeaturedService
+].filter(Boolean);

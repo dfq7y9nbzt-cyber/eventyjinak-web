@@ -15,6 +15,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/sluzby.html" />
   </url>
   <url>
+    <loc>https://www.eventyjinak.cz/indoor-sluzby.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/indoor-sluzby.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/indoor-services-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/indoor-sluzby.html" />
+  </url>
+  <url>
     <loc>https://www.eventyjinak.cz/rezervace.html</loc>
     <lastmod>2026-05-05</lastmod>
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/rezervace.html" />
@@ -76,6 +83,13 @@
     <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/sluzby.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/services-en.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/sluzby.html" />
+  </url>
+  <url>
+    <loc>https://www.eventyjinak.cz/indoor-services-en.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.eventyjinak.cz/indoor-sluzby.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eventyjinak.cz/indoor-services-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eventyjinak.cz/indoor-sluzby.html" />
   </url>
   <url>
     <loc>https://www.eventyjinak.cz/inquiry-en.html</loc>
