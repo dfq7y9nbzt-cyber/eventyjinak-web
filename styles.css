@@ -942,6 +942,14 @@ body[data-page="indoor-services"] .section-heading {
   margin-bottom: 20px;
 }
 
+body[data-page="indoor-services"] .indoor-intro-card {
+  margin-top: 24px;
+}
+
+body[data-page="indoor-services"] .indoor-intro-card p {
+  max-width: none;
+}
+
 body[data-page="services"] .service-card__body {
   gap: 10px;
 }
@@ -1056,10 +1064,28 @@ body[data-page="indoor-services"] .section-heading h3 {
 
 body[data-page="indoor-services"] .service-detail__content {
   gap: 12px;
+  height: 100%;
+  padding: 4px 0;
 }
 
 body[data-page="indoor-services"] .service-details-stack {
   gap: 22px;
+}
+
+body[data-page="indoor-services"] .service-detail {
+  align-items: stretch;
+}
+
+body[data-page="indoor-services"] .service-detail__media.service-slideshow {
+  min-height: 100%;
+}
+
+body[data-page="indoor-services"] .package-grid {
+  align-items: stretch;
+}
+
+body[data-page="indoor-services"] .package-card {
+  height: 100%;
 }
 
 body[data-page="services"] .reveal {
