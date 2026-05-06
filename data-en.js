@@ -1,5 +1,5 @@
 eventyData.primaryContactLabel = "Inquiry email";
-eventyData.primaryPhone = "Phone number available on request";
+eventyData.primaryPhone = "+420 774 910 543";
 eventyData.baseLocation = "Prague / Central Bohemia";
 
 eventyData.hero.title = "Outdoor and climbing events done differently";

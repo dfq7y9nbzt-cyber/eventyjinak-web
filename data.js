@@ -1,7 +1,7 @@
 ﻿const eventyData = {
   recipientEmail: "info@eventyjinak.cz",
   primaryContactLabel: "Kontaktní e-mail pro poptávky",
-  primaryPhone: "Telefon doplníme při spuštění",
+  primaryPhone: "+420 774 910 543",
   formDelivery: {
     inquiry: {
       endpoint: "https://formsubmit.co/info@eventyjinak.cz",
