@@ -1759,6 +1759,21 @@ html[lang="cs"] .footer-links a {
   .split-layout#custom-experience-home {
     grid-template-columns: 1fr;
   }
+
+  body[data-page="indoor-services"] .service-detail,
+  body[data-page="indoor-services"] .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="indoor-services"] .service-detail__media.service-slideshow {
+    min-height: 0;
+  }
+
+  .team-card__image {
+    height: 360px;
+    min-height: 0;
+    max-height: none;
+  }
 }
 
 @media (max-width: 780px) {
@@ -1772,6 +1787,14 @@ html[lang="cs"] .footer-links a {
 
   .team-highlights {
     grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    gap: 18px;
+  }
+
+  .team-card__image {
+    height: 320px;
   }
 
   .site-header {
@@ -1895,6 +1918,14 @@ html[lang="cs"] .footer-links a {
 
   .custom-home-banner--content {
     padding: 24px 22px;
+  }
+
+  .team-card__image {
+    height: 260px;
+  }
+
+  .team-card__content {
+    gap: 12px;
   }
 
   .photo-showcase__item,
