@@ -15,8 +15,8 @@
   baseLocation: "Praha / Středočeský kraj",
   hero: {
     title: "Lezecké a outdoorové eventy jinak",
-    subtitle:
-      "Prémiové zážitky pro firmy a skupiny z Prahy a okolí. Zajistíme dopravu, instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
+  subtitle:
+      "Prémiové zážitky pro firmy a skupiny z Prahy a okolí. Zajistíme instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
     slides: [
       {
         src: "assets/images/prilepska-skala-bez-lidi.jpg",
@@ -44,8 +44,8 @@
       }
     ],
     body: [
-      "Pořádáme outdoorové a lezecké zážitky pro firmy, týmy a uzavřené skupiny. Nejsme klasický kurz lezení. Připravujeme kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.",
-      "Ať chcete jednodenní lezecký zážitek, firemní teambuilding, víkendový pobyt v přírodě nebo intenzivní adrenalinový program pro malý tým, postaráme se o vše potřebné."
+      "Pořádáme outdoorové, indoor a lezecké zážitky pro firmy, týmy a uzavřené skupiny. Nejsme klasický kurz lezení. Připravujeme kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.",
+      "Ať chcete jednodenní lezecký zážitek, firemní teambuilding, víkendový pobyt v přírodě, indoor program v Praze nebo intenzivní adrenalinový program pro malý tým, postaráme se o vše potřebné."
     ]
   },
   priceNote:
@@ -468,7 +468,7 @@
       name: "Zážitek na míru přesně podle vás",
       audience: "Pro firmy, uzavřené skupiny i jednotlivé speciální poptávky",
       teaser:
-        "Nenašli jste v nabídce přesně to, co hledáte? Poskládejte si vlastní lezecký nebo outdoorový zážitek krok za krokem.",
+        "Nenašli jste v nabídce přesně to, co hledáte? Poskládejte si vlastní lezecký, indoor nebo outdoorový zážitek krok za krokem.",
       priceFrom: "Individuální kalkulace podle zadání",
       heroImage: "assets/images/tatry-scenerie.jpg",
       heroAlt: "Horská a outdoorová scenérie pro službu zážitek na míru",
@@ -494,12 +494,12 @@
       },
       detailText: [
         "Nenašli jste v naší nabídce přesně to, co jste hledali? Máte jasnou představu o lokalitě, typu skály, úrovni dobrodružství nebo službách okolo celé akce? Přesně pro tyto poptávky jsme připravili variantu zážitku na míru.",
-        "V interaktivním formuláři si poskládáte vlastní lezecký nebo outdoorový den krok za krokem. Pokud si naopak nejste jistí a potřebujete poradit, napište nám rychlý dotaz a návrh připravíme společně."
+        "V interaktivním formuláři si poskládáte vlastní lezecký, indoor nebo outdoorový den krok za krokem. Pokud si naopak nejste jistí a potřebujete poradit, napište nám rychlý dotaz a návrh připravíme společně."
       ],
       idealFor: [
         "specifická firemní zadání",
         "skupiny s jasnou představou o lokalitě nebo typu skály",
-        "kombinace lezení, outdooru, dopravy, ubytování a doplňků",
+        "kombinace lezení, indooru, outdooru, dopravy, ubytování a doplňků",
         "klienty, kteří chtějí sestavit akci od základů",
         "eventové agentury a cestovní kanceláře",
         "zahraniční skupiny s individuálním zadáním"

@@ -4,10 +4,10 @@ eventyData.baseLocation = "Prague / Central Bohemia";
 
 eventyData.hero.title = "Outdoor and climbing events done differently";
 eventyData.hero.subtitle =
-  "Premium climbing and outdoor experiences for companies and private groups from Prague and the surrounding area. We arrange transport, instructors, equipment, programme, safety, refreshments and photo coverage.";
+  "Premium climbing, outdoor and indoor experiences for companies and private groups from Prague and the surrounding area. We arrange instructors, equipment, programme, safety, refreshments and photo coverage.";
 eventyData.hero.body = [
-  "We organise outdoor and climbing experiences for companies, teams and private groups. This is not a standard climbing lesson. We create complete tailor-made events from transport and programme design to safe delivery and photo coverage.",
-  "Whether you want a one-day climbing experience, a corporate team building day, a weekend outdoor stay or a more adrenaline-focused programme for a small team, we take care of everything."
+  "We organise outdoor, indoor and climbing experiences for companies, teams and private groups. This is not a standard climbing lesson. We create complete tailor-made events from transport and programme design to safe delivery and photo coverage.",
+  "Whether you want a one-day climbing experience, a corporate team building day, a weekend outdoor stay, an indoor programme in Prague or a more adrenaline-focused programme for a small team, we take care of everything."
 ];
 eventyData.hero.slides = eventyData.hero.slides.map((slide) => ({
   ...slide,
@@ -403,7 +403,7 @@ Object.assign(customService, {
   name: "Tailored experience built around you",
   audience: "For companies, private groups and special one-off requests",
   teaser:
-    "Did not find exactly what you are looking for? Build your own climbing or outdoor experience step by step.",
+    "Did not find exactly what you are looking for? Build your own climbing, indoor or outdoor experience step by step.",
   priceFrom: "Individual quote based on your brief",
   heroAlt: "Outdoor landscape for a tailor-made experience",
   cardAlt: "Outdoor landscape for a tailor-made experience",
@@ -415,12 +415,12 @@ Object.assign(customService, {
   },
   detailText: [
     "Did not find exactly what you were looking for? Do you already know the type of rock, adventure level, location or supporting services you want? This option was designed exactly for those tailor-made requests.",
-    "Inside the interactive form you can build your own climbing or outdoor day step by step. If you would rather get advice first, send us a quick question and we will shape the proposal together."
+    "Inside the interactive form you can build your own climbing, indoor or outdoor day step by step. If you would rather get advice first, send us a quick question and we will shape the proposal together."
   ],
   idealFor: [
     "specific corporate briefs",
     "groups with a clear idea of the location or rock type",
-    "a combination of climbing, outdoor, transport, accommodation and add-ons",
+    "a combination of climbing, indoor, outdoor, transport, accommodation and add-ons",
     "clients who want to build the event from the ground up"
   ],
   process: [
