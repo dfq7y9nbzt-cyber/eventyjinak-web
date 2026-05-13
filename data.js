@@ -49,7 +49,7 @@
     ]
   },
   priceNote:
-    "Ceny vycházejí z aktuální nákladové kalkulace a jsou uvedené bez DPH. Finální nabídku upřesňujeme podle počtu osob, lokality, dopravy, délky programu a zvolených příplatkových služeb.",
+    "Ceny vycházejí z aktuální nákladové kalkulace a jsou uvedené bez DPH. Finální nabídku upřesňujeme podle počtu osob, lokality, dopravy, délky programu a zvolených příplatkových služeb. Cena od platí pro základní variantu, dostupný termín a logisticky jednoduchou lokalitu.",
   safetyText:
     "Bezpečnost je pro nás základ každé akce.",
   safetyHighlights: [
@@ -272,8 +272,7 @@
           "zapůjčení vybavení",
           "bezpečnostní instruktáž",
           "lezení a týmové aktivity",
-          "základní pitný režim a snack",
-          "organizace celé akce"
+          "základní pitný režim a snack"
         ]
       },
       premium: {

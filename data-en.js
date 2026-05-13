@@ -15,7 +15,7 @@ eventyData.hero.slides = eventyData.hero.slides.map((slide) => ({
 }));
 
 eventyData.priceNote =
-  "Prices are based on the current cost model and are listed excluding VAT. The final offer is always refined according to group size, location, transport, programme length and selected add-on services.";
+  "Prices are based on the current cost model and are listed excluding VAT. The final offer is refined according to group size, location, transport, programme length and selected add-ons. Starting prices apply to the basic version, available dates and simple logistics.";
 
 eventyData.safetyText = "Safety is the foundation of every event we run.";
 eventyData.safetyHighlights = [

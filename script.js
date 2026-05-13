@@ -782,6 +782,14 @@ function getRecommendedRockType(selectedActivities, season) {
   return "";
 }
 
+function getMinimumInstructorCount(locality, selectedActivities) {
+  if (locality?.rockType === "indoor" || getRecommendedRockType(selectedActivities, "") === "indoor") {
+    return 1;
+  }
+
+  return eventyData.customEstimator.minInstructors;
+}
+
 function localitySupportsAudience(locality, audienceFit) {
   if (!audienceFit || audienceFit === "je mi to jedno") return true;
 
@@ -1104,9 +1112,10 @@ function renderCustomExperienceForm() {
     }
 
     const estimator = eventyData.customEstimator;
-    const instructorCount = Math.max(estimator.minInstructors, Math.ceil(participants / estimator.participantsPerInstructor));
     const selectedServices = new Set(formData.getAll("requested-services"));
     const selectedActivities = new Set(formData.getAll("activities"));
+    const minimumInstructors = getMinimumInstructorCount(locality, selectedActivities);
+    const instructorCount = Math.max(minimumInstructors, Math.ceil(participants / estimator.participantsPerInstructor));
     const nights = Math.max(0, days - 1 || (selectedServices.has("Ubytování") ? 1 : 0));
 
     const breakdown = [];
