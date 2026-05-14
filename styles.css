@@ -1647,8 +1647,8 @@ textarea:focus {
 }
 
 .site-footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: flex-start;
   gap: 28px;
   margin-top: 72px;
@@ -1684,12 +1684,12 @@ textarea:focus {
 
 .footer-nav-stack {
   max-width: 560px;
+  justify-self: end;
 }
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, max-content) 34px;
-  align-items: center;
+  grid-template-columns: repeat(3, max-content);
   gap: 10px 22px;
   justify-content: end;
 }
@@ -1739,7 +1739,7 @@ html[lang="cs"] .footer-nav-stack {
 }
 
 html[lang="cs"] .footer-links {
-  grid-template-columns: repeat(3, max-content) 34px;
+  grid-template-columns: repeat(3, max-content);
   gap: 10px 34px;
 }
 
@@ -1891,7 +1891,7 @@ html[lang="cs"] .footer-links a {
   }
 
   .site-footer {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: start;
     gap: 20px;
     margin-top: 56px;
@@ -1904,6 +1904,10 @@ html[lang="cs"] .footer-links a {
     justify-items: start;
     justify-content: flex-start;
     width: 100%;
+  }
+
+  .footer-nav-stack {
+    justify-self: start;
   }
 
   .footer-links {
