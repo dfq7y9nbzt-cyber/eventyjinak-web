@@ -16,7 +16,7 @@
   hero: {
     title: "Lezecké a outdoorové eventy jinak",
   subtitle:
-      "Prémiové zážitky pro firmy a skupiny z Prahy a okolí. Zajistíme instruktory, vybavení, program, bezpečnost, občerstvení i fotky. Vy si užijete akci, o zbytek se postaráme.",
+      "Eventy pro firmy, venkovní eventy a firemní teambuilding pro firmy z Prahy a okolí. Připravujeme lezecké programy ve skalách, indoor programy na pražských stěnách a prémiové zážitky pro uzavřené skupiny. Zajistíme instruktory, vybavení, program, bezpečnost, občerstvení i fotky.",
     slides: [
       {
         src: "assets/images/prilepska-skala-bez-lidi.jpg",
@@ -44,7 +44,7 @@
       }
     ],
     body: [
-      "Pořádáme outdoorové, indoor a lezecké zážitky pro firmy, týmy a uzavřené skupiny. Nejsme klasický kurz lezení. Připravujeme kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.",
+      "Pořádáme eventy pro firmy, venkovní eventy, indoor programy a lezecké zážitky pro týmy i uzavřené skupiny. Nejsme klasický kurz lezení. Připravujeme kompletní akce na míru od dopravy přes program až po bezpečný průběh a fotodokumentaci.",
       "Ať chcete jednodenní lezecký zážitek, firemní teambuilding, víkendový pobyt v přírodě, indoor program v Praze nebo intenzivní adrenalinový program pro malý tým, postaráme se o vše potřebné."
     ]
   },
