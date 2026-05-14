@@ -1683,15 +1683,13 @@ textarea:focus {
 }
 
 .footer-nav-stack {
-  display: grid;
-  gap: 12px;
-  justify-items: end;
   max-width: 560px;
 }
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(3, max-content) 34px;
+  align-items: center;
   gap: 10px 22px;
   justify-content: end;
 }
@@ -1704,8 +1702,7 @@ textarea:focus {
 
 .footer-social {
   display: flex;
-  justify-content: flex-end;
-  padding-top: 4px;
+  justify-content: center;
 }
 
 .footer-social a {
@@ -1738,12 +1735,11 @@ textarea:focus {
 }
 
 html[lang="cs"] .footer-nav-stack {
-  gap: 12px;
   padding-top: 12px;
 }
 
 html[lang="cs"] .footer-links {
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(3, max-content) 34px;
   gap: 10px 34px;
 }
 
