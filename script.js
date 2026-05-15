@@ -305,11 +305,18 @@ function renderHomeHeroSlider() {
   const slides = eventyData.hero.slides;
   const wrapper = createElement("div", "hero-slides");
 
+  const ensureHeroSlideLoaded = (item) => {
+    if (!item || item.dataset.loaded === "true") return;
+    item.style.backgroundImage = `url("${item.dataset.bg}")`;
+    item.dataset.loaded = "true";
+  };
+
   slides.forEach((slide, index) => {
     const item = createElement("div", `hero-slide${index === 0 ? " is-active" : ""}`);
-    item.style.backgroundImage = `url("${slide.src}")`;
+    item.dataset.bg = slide.src;
     item.setAttribute("role", "img");
     item.setAttribute("aria-label", slide.alt);
+    if (index === 0) ensureHeroSlideLoaded(item);
     wrapper.appendChild(item);
   });
 
@@ -325,6 +332,7 @@ function renderHomeHeroSlider() {
   window.setInterval(() => {
     slideNodes[activeIndex].classList.remove("is-active");
     activeIndex = (activeIndex + 1) % slideNodes.length;
+    ensureHeroSlideLoaded(slideNodes[activeIndex]);
     slideNodes[activeIndex].classList.add("is-active");
   }, 5000);
 }
