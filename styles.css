@@ -705,6 +705,14 @@ body[data-page="contact"] .inquiry-form--compact {
   gap: 16px;
 }
 
+body[data-page="contact"] .split-layout--wide > .content-card > .eyebrow {
+  margin-bottom: 8px;
+}
+
+body[data-page="contact"] .split-layout--wide > .content-card > h2 {
+  margin-bottom: 20px;
+}
+
 body[data-page="contact"] .form-actions {
   margin-top: 2px;
 }
