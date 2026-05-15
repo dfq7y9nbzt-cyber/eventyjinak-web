@@ -671,27 +671,42 @@ body[data-page="contact"] .split-layout--wide {
 }
 
 body[data-page="contact"] .contact-info-stack {
-  height: 100%;
-  gap: 14px;
+  gap: 10px;
 }
 
 body[data-page="contact"] .contact-info-stack .content-card {
-  padding: 20px 22px;
+  padding: 16px 18px;
 }
 
 body[data-page="contact"] .contact-info-stack .content-card--accent {
-  padding: 22px 24px;
+  padding: 18px 20px;
 }
 
 body[data-page="contact"] .contact-info-stack h2 {
-  font-size: clamp(1.05rem, 1.7vw, 1.32rem);
-  margin-bottom: 8px;
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  margin-bottom: 6px;
 }
 
 body[data-page="contact"] .contact-info-stack p:not(.eyebrow),
 body[data-page="contact"] .contact-info-stack li {
-  font-size: 0.94rem;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+body[data-page="contact"] .contact-info-stack .plain-list {
+  gap: 6px;
+}
+
+body[data-page="contact"] .contact-info-stack .eyebrow {
+  margin-bottom: 7px;
+}
+
+body[data-page="contact"] .inquiry-form--compact {
+  gap: 16px;
+}
+
+body[data-page="contact"] .form-actions {
+  margin-top: 2px;
 }
 
 .services-grid,
