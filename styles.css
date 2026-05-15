@@ -672,11 +672,26 @@ body[data-page="contact"] .split-layout--wide {
 
 body[data-page="contact"] .contact-info-stack {
   height: 100%;
-  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 body[data-page="contact"] .contact-info-stack .content-card {
-  height: 100%;
+  padding: 20px 22px;
+}
+
+body[data-page="contact"] .contact-info-stack .content-card--accent {
+  padding: 22px 24px;
+}
+
+body[data-page="contact"] .contact-info-stack h2 {
+  font-size: clamp(1.05rem, 1.7vw, 1.32rem);
+  margin-bottom: 8px;
+}
+
+body[data-page="contact"] .contact-info-stack p:not(.eyebrow),
+body[data-page="contact"] .contact-info-stack li {
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
 .services-grid,
